@@ -1,0 +1,42 @@
+{
+    "genres": [
+        {
+            "name": "Takedowns",
+            "image": "http://www.clker.com/cliparts/b/c/c/b/1255095200254014966Olympic_sports_Wrestling_pictogram.svg.hi.png",
+            "description": "a maneuver in which an opponent is swiftly brought to the mat from a standing position.",
+            "arts": [
+                {
+                    "name": "Abir",
+                    "logo": "http://www.mardb.com/wp-content/uploads/et_temp/Abir_logo-59757_230x316.jpg"
+                }
+            ],
+            "techniques": [
+                {
+                    "name": "Yehoshua Sofer",
+                    "pic": "http://www.mardb.com/wp-content/uploads/2010/05/Abir-Crouching-Technique.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Sticks",
+            "image": "http://etc.usf.edu/clipart/48800/48847/48847_b001_stick_mth.gif",
+            "description": "Stick-fighting or stickfighting (sometimes spelled stick fighting) is a generic term for martial arts which use simple long slender, blunt, hand-held, generally wooden 'sticks' for fighting; such as a staff, cane, walking stick, baton or similar.",
+            "arts": [
+                {
+                    "name": "La Canne",
+                    "image": "http://www.mardb.com/wp-content/uploads/et_temp/La-Canne-Fighting-89030_230x316.jpg"
+                },
+                {
+                    "name": "Zipota",
+                    "image": "http://www.mardb.com/wp-content/uploads/et_temp/Zipota-Boxing-22008_230x316.jpg"
+                }
+            ],
+            "techniques": [
+                {
+                    "name": "Le Hit Yu Wiss Me Stick",
+                    "pic": "http://4.bp.blogspot.com/_rG_fNT-PI9s/RlmskyCZvOI/AAAAAAAAABs/zjQqHegSn5s/s320/sofer%25202.jpg"
+                }
+            ]
+        }
+    ]
+}
