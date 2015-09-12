@@ -1,6 +1,6 @@
 <div id="arts" ng-repeat="key in arts">
-  <div class="eachArts">
+  <a href="{{'/#/arts/'+key.name}}"><div class="eachArts">
     <h3>{{key.name}}</h3>
     <img src="{{key.image}}">
-  </div>
+  </div></a>
 </div>

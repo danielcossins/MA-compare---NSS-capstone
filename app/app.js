@@ -11,6 +11,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/arts.html',
         controller: 'ArtsCtrl'
       })
+      .when('/arts/:name', {
+        templateUrl: 'partials/art-details.html',
+        controller: 'ArtDetailsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
