@@ -9,16 +9,21 @@ app.controller("ArtDetailsCtrl",
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
     console.log($scope.arts);
-    console.log($routeParams);
+    console.log($routeParams.name);
 
-    for(var i=0; i<$scope.arts.length; i++){
-      console.log("aldskfjasdklfj");
-      console.log($scope.arts[i]);
-      if($scope.arts[i].name===$routeParams.name){
-        console.log($scope.arts[i]);
-        $scope.clickedArt = $scope.arts[i];
-        console.log($scope.clickedArt);
-      }
-    }
+
+    $scope.arts.$loaded()
+      .then(function() {
+        console.log($scope.arts);
+        for(var i=0; i<$scope.arts.length; i++){
+          if($scope.arts[i].name === $routeParams.name){
+            $scope.clickedArt = $scope.arts[i];
+          }
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
+
   }
 ]);
