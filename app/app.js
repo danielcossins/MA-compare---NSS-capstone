@@ -7,6 +7,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/main.html',
         controller: 'MainCtrl'
       })
+      .when('/arts', {
+        templateUrl: 'partials/arts.html',
+        controller: 'ArtsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

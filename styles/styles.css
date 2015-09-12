@@ -1,4 +1,11 @@
+#view {
+  margin-top: 60px; }
+
 .main {
+  border: 5px solid black;
+  border-radius: 20%; }
+
+.eachArts {
   border: 5px solid black;
   border-radius: 20%; }
 
