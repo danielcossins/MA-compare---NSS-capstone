@@ -17,7 +17,7 @@ app.controller("GenreDetailsCtrl",
         console.log($scope.genres);
         for(var i=0; i<$scope.genres.length; i++){
           if($scope.genres[i].name === $routeParams.name){
-            $scope.clickedGenres = $scope.genres[i];
+            $scope.clickedGenre = $scope.genres[i];
           }
         }
       })
