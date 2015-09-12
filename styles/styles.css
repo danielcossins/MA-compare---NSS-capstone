@@ -5,7 +5,11 @@
   border: 5px solid black;
   border-radius: 20%; }
 
-.eachArts {
+.eachArt {
+  border: 5px solid black;
+  border-radius: 20%; }
+
+.eachGenre {
   border: 5px solid black;
   border-radius: 20%; }
 

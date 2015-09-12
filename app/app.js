@@ -19,6 +19,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/genres.html',
         controller: 'GenreCtrl'
       })
+      .when('/genres/:name', {
+        templateUrl: 'partials/genre-details.html',
+        controller: 'GenreDetailsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
