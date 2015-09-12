@@ -1,4 +1,16 @@
-<div>
+<div id="artDetails">
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">
+  <p>{{clickedArt.description}}</p>
+  
+  <div ng-repeat="genre in clickedArt.genres">
+    <h4>{{genre.name}}</h4>
+    <img src="{{genre.image}}" alt="Image here">
+  </div>
+
+  <div ng-repeat="technique in clickedArt.techniques">
+    <h4>{{technique.name}}</h4>
+    <img src="{{technique.image}}" alt="Image here">
+  </div>
+
 </div>
