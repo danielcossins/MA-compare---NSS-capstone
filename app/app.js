@@ -7,6 +7,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/main.html',
         controller: 'MainCtrl'
       })
+      //Art routes
       .when('/arts', {
         templateUrl: 'partials/arts.html',
         controller: 'ArtsCtrl'
@@ -15,6 +16,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/art-details.html',
         controller: 'ArtDetailsCtrl'
       })
+      //Genre routes
       .when('/genres', {
         templateUrl: 'partials/genres.html',
         controller: 'GenreCtrl'
@@ -22,6 +24,11 @@ app.config(['$routeProvider',
       .when('/genres/:name', {
         templateUrl: 'partials/genre-details.html',
         controller: 'GenreDetailsCtrl'
+      })
+      //Technique routes
+      .when('/techniques', {
+        templateUrl: 'partials/techniques.html',
+        controller: 'TechCtrl'
       })
       .otherwise({
         redirectTo: '/'
