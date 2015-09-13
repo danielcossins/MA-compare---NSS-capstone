@@ -30,6 +30,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/techniques.html',
         controller: 'TechCtrl'
       })
+      .when('/techniques/:name', {
+        templateUrl: 'partials/technique-details.html',
+        controller: 'TechDetailsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
