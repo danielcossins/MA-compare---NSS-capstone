@@ -34,6 +34,19 @@ app.config(['$routeProvider',
         templateUrl: 'partials/technique-details.html',
         controller: 'TechDetailsCtrl'
       })
+      //Adding routes
+      .when('/addArt', {
+        templateUrl: 'partials/addArt.html',
+        controllers: 'AddArtCtrl'
+      })
+      .when('/addGenre', {
+        templateUrl: 'partials/addGenre.html',
+        controllers: 'AddGenreCtrl'
+      })
+      .when('/addTechnique', {
+        templateUrl: 'partials/addTechnique.html',
+        controllers: 'AddTechCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
