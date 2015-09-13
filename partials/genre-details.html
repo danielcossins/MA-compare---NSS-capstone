@@ -3,14 +3,14 @@
   <img src="{{clickedGenre.image}}">
   <p>{{clickedGenre.description}}</p>
   
-  <div ng-repeat="arts in clickedGenre.arts">
+  <div ng-repeat="art in clickedGenre.arts">
     <h4>{{art.name}}</h4>
-    <img src="{{art.image}}" alt="Image here">
+    <img src="{{art.image}}" alt="Image">
   </div>
 
   <div ng-repeat="technique in clickedGenre.techniques">
     <h4>{{technique.name}}</h4>
-    <img src="{{technique.image}}" alt="Image here">
+    <img src="{{technique.image}}" alt="Image">
   </div>
 
 </div>
