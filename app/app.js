@@ -37,15 +37,15 @@ app.config(['$routeProvider',
       //Adding routes
       .when('/addArt', {
         templateUrl: 'partials/addArt.html',
-        controllers: 'AddArtCtrl'
+        controller: 'AddArtCtrl'
       })
       .when('/addGenre', {
         templateUrl: 'partials/addGenre.html',
-        controllers: 'AddGenreCtrl'
+        controller: 'AddGenreCtrl'
       })
       .when('/addTechnique', {
         templateUrl: 'partials/addTechnique.html',
-        controllers: 'AddTechCtrl'
+        controller: 'AddTechCtrl'
       })
       .otherwise({
         redirectTo: '/'
