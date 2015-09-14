@@ -3,26 +3,24 @@ app.controller("AddArtCtrl",
    "$routeParams",
    "$firebaseArray",
    "$location",
-  function($scope,  $routeParams, $firebaseArray, $location) {
-    console.log("hi are you awake?");
+   "$http",
+  function($scope,  $routeParams, $firebaseArray, $location, $http) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
-    $scope.test = "this is a test";
-    console.log($scope.test);
 
 
-    $http.get("https://ma-compare.firebaseio.com/genres").
+    $http.get("https://ma-compare.firebaseio.com/genres/.json").
     then(function(data) {
       console.log(data);
-      $scope.genres = data;
+      $scope.genres = data.data;
     });
 
-    $http.get("https://ma-compare.firebaseio.com/techniques").
+    $http.get("https://ma-compare.firebaseio.com/techniques/.json").
     then(function(data) {
       console.log(data);
-      $scope.techniques = data;
+      $scope.techniques = data.data;
     });
   }
 ]);
