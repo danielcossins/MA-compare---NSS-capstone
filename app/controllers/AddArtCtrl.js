@@ -35,53 +35,11 @@ app.controller("AddArtCtrl",
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
       console.log(art);
-      // var genreBoxesArr = angular.element(".genres");
-      // console.log(genreBoxesArr);
-      // for(var i=0; i<genreBoxesArr.length; i++){
-      //   if(genreBoxesArr[i].checked===true){
-      //     console.log("this one matches", genreBoxesArr[i]);
-      //     var genre = {
-      //       name: genreBoxesArr[i].value
-      //     };
-      //     //gets teh image for that genre
-      //     for(var l=0; l<$scope.genres.length; l++){
-      //       if($scope.genres[l].name===genre.name){
-      //         genre.image = $scope.genres[l].image;
-      //       }
-      //     }
-      //     //pushes the genre object
-      //     art.genres.push(genreBoxesArr[i].value);
-      //   }else{
-      //     console.log("no match");
-      //   }
-      // }
-      // var techniqueBoxesArr = angular.element(".techniques");
-      // console.log(techniqueBoxesArr);
-      // for(var j=0; j<techniqueBoxesArr.length; j++){
-      //   if(techniqueBoxesArr[j].checked===true){
-      //     console.log("this one matches", techniqueBoxesArr[j]);
-      //     var technique = {
-      //       name: techniqueBoxesArr[j].value
-      //     };
-      //     //gets the image for that technique
-      //     for(var k=0; k<$scope.techniques.length; k++){
-      //       if($scope.techniques[k].name===technique.name){
-      //         technique.image = $scope.techniques[k].image;
-      //       }
-      //     }
-      //     //pushes the technique object
-      //     art.techniques.push(technique);
-      //   }else{
-      //     console.log("no match");
-      //   }
-      // }
-      // console.log(art);
-
-
     };
 
     function getCheckboxes(className){
       var arr = angular.element(className);
+      console.log(arr);
       var storageArr = [];
       for(var i=0; i<arr.length; i++){
         if(arr[i].checked===true){
@@ -89,11 +47,22 @@ app.controller("AddArtCtrl",
           var obj = {
             name: arr[i].value
           };
-          //pushes the technique object
-          // if(obj.genres===undefined || obj.techniques===undefined){
-          // }else{
-          //   return obj;
-          // }
+          console.log(obj);
+///////////////gets the image for that name
+          if(className===".genres"){
+            for(var k=0; k<$scope.genres.length; k++){
+              if($scope.genres[k].name === obj.name){
+                obj.image = $scope.genres[k].image;
+              }
+            }
+          }else if(className===".techniques"){
+            for(var j=0; j<$scope.techniques.length; j++){
+              if($scope.techniques[j].name === obj.name){
+                obj.image = $scope.techniques[j].image;
+              }
+            }
+          }
+
           if(obj.name!==undefined){
             storageArr.push(obj);
           }
