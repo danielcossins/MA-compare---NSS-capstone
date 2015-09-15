@@ -15,6 +15,7 @@ app.controller("AuthCtrl",
     $scope.currentPicUrl = "";
     // Data from firebase 
     $scope.pins = $firebaseArray(ref);
+    $scope.authData = null;
 
     // Authenticates user to firebase data
     $scope.auth = $firebaseAuth(ref);
@@ -23,14 +24,12 @@ app.controller("AuthCtrl",
     
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
-      
       console.log("authData", authData);
-
       //changes the profile picture based on how user is logged in
       if(authData!==null){
 
-      //sets the user id in a factory for other controllers to use
-      storage.setUserId(authData.uid);
+        //sets the user id in a factory for other controllers to use
+        storage.setUserId(authData.uid);
         switch (authData.provider) {
           case "facebook":
             $scope.currentPicURL = authData.facebook.profileImageURL;
@@ -63,15 +62,17 @@ app.controller("AuthCtrl",
       ref.authWithPassword($scope.user, function(error, authData) {
           console.log("LogCtrl", authData.uid);
           if (error) {
-            $location.path('#/login');
+            $location.path('/#/login');
             // console.log("Login Failed!", error);
           } else {
-
             storage.setUserId(authData.uid);
             console.log("Authenticated successfully with payload:", authData);
-
           }
         });
+    };
+
+    $scope.logout = function(){
+      $scope.auth.$unauth();
     };
 
 
