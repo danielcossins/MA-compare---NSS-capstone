@@ -7,6 +7,7 @@ app.factory("storage", function(){
     },
     setUserId: function(id) {
       userId = id;
+      console.log("userId", userId);
     }
   };
 
