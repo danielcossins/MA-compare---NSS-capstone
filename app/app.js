@@ -47,6 +47,11 @@ app.config(['$routeProvider',
         templateUrl: 'partials/addTechnique.html',
         controller: 'AddTechCtrl'
       })
+      //login
+      .when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'AuthCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
