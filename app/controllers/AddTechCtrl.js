@@ -4,8 +4,9 @@ app.controller("AddTechCtrl",
    "$firebaseArray",
    "$location",
    "$http",
-  function($scope,  $routeParams, $firebaseArray, $location, $http) {
-    var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
+   "getCheckboxes",
+  function($scope,  $routeParams, $firebaseArray, $location, $http, getCheckboxes) {
+    var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     // Data from firebase 
     $scope.techniques = $firebaseArray(ref);
@@ -21,5 +22,22 @@ app.controller("AddTechCtrl",
       console.log(data);
       $scope.genres = data.data;
     });
+
+    $scope.saveToFirebase = function(){
+      var technique = {
+        name: angular.element("#techName").val(),
+        description: angular.element("#techDescription").val(),
+        image: angular.element("#techLogo").val()
+      };
+      technique.arts = getCheckboxes(".arts");
+      console.log(technique.arts);
+      technique.genres = getCheckboxes(".genres");
+      console.log(technique);
+
+      $scope.techniques.$add(technique)
+      .then(function () {
+
+      });
+    };
   }
 ]);

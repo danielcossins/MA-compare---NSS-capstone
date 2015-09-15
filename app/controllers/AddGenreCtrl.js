@@ -31,7 +31,7 @@ app.controller("AddGenreCtrl",
       };
       genre.arts = getCheckboxes(".arts");
       console.log(genre.arts);
-      genre.techniques = getCheckboxes("techniques");
+      genre.techniques = getCheckboxes(".techniques");
       console.log(genre);
 
       $scope.genres.$add(genre)
