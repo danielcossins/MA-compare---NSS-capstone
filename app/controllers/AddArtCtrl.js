@@ -9,6 +9,7 @@ app.controller("AddArtCtrl",
 
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
+    console.log($scope.arts);
 
 
     $http.get("https://ma-compare.firebaseio.com/genres/.json").
@@ -30,11 +31,16 @@ app.controller("AddArtCtrl",
       var art = {
         name: angular.element("#name").val(),
         description: angular.element("#description").val(),
-        image: angular.element("#image").val()
+        image: angular.element("#logo").val()
       };
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
       console.log(art);
+
+      $scope.arts.$add(art)
+      .then(function () {
+
+      });
     };
 
     function getCheckboxes(className){
@@ -62,7 +68,7 @@ app.controller("AddArtCtrl",
               }
             }
           }
-
+/////////////////////////////
           if(obj.name!==undefined){
             storageArr.push(obj);
           }
