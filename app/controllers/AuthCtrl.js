@@ -4,7 +4,8 @@ app.controller("AuthCtrl",
    "$firebaseArray",
    "$location",
    "$firebaseAuth",
-  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth) {
+   "storage",
+  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, storage) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.user = {
       "email": "",
@@ -53,7 +54,7 @@ app.controller("AuthCtrl",
         $scope.currentPicURL = "";
       }
       $scope.authData = authData;
-      // console.log($scope.authData = authData);
+      console.log($scope.authData);
     });
     
     // Authorizes user by email/password
