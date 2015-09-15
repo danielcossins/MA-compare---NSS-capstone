@@ -1,0 +1,42 @@
+
+<div class="container">
+  
+  <div ng-hide="authData">
+    <div class="jumbotron">
+      <img ng-src="http://www.image-tools.com/images/resized_55e4a8c13c600.jpg">
+      <h2> PinApple</h2>
+      <p>Please log into your PinApple account with either of the following:</p>
+        <a href="/#/" class="btn btn-lg btn-primary" ng-click="auth.$authWithOAuthPopup('facebook')"> Facebook</a>
+        <a href="/#/" class="btn btn-lg btn-warning" ng-click="auth.$authWithOAuthPopup('github')"> Github</a>
+        <a href="/#/" class="btn btn-lg btn-info" ng-click="auth.$authWithOAuthPopup('twitter')"> Twitter</a>
+        <a href="/#/" class="btn btn-lg btn-danger" ng-click="auth.$authWithOAuthPopup('google')"> Google</a>
+        <section> 
+          <br/>
+          <p>- or -</p>
+          <form name="loginForm" novalidate>
+            <div class="form-group has-feedback" ng-class="{ 'has-error': loginForm.email.$invalid && loginForm.email.$dirty }">
+              <input server-error class="form-control input-lg" type="text" name="email" ng-model="user.email" placeholder="Email" required autofocus>
+              <span class="ion-at form-control-feedback"></span>
+              <div class="help-block" ng-if="loginForm.email.$dirty" ng-messages="loginForm.email.$error">
+                <div ng-message="required">Please enter your email</div>
+                <div ng-message="server">{{errorMessage.email}}</div>
+              </div>
+            </div>
+
+            <div class="form-group has-feedback" ng-class="{ 'has-error': loginForm.password.$invalid && loginForm.password.$dirty }">
+              <input server-error class="form-control input-lg" type="password" name="password" ng-model="user.password" placeholder="Password" required>
+              <span class="ion-key form-control-feedback"></span>
+              <div class="help-block" ng-if="loginForm.password.$dirty" ng-messages="loginForm.password.$error">
+                <div ng-message="required">Please enter your password</div>
+                <div ng-message="server">{{errorMessage.password}}</div>
+              </div>
+            </div>
+          </form>
+          </br>
+          <a href="#/pins" ng-click="login()" class="btn btn-md btn-default"> Login </a>
+          <a href="#/signup" class="btn btn-md btn-success"> Sign Up </a>
+        </section>  
+    </div>
+  </div>
+
+</div>

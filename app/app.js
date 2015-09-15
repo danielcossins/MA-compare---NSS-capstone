@@ -52,6 +52,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/login.html',
         controller: 'AuthCtrl'
       })
+      .when('/signup', {
+        templateUrl: 'partials/signup.html',
+        controller: 'SignupCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
