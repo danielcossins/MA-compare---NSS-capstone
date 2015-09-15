@@ -13,15 +13,14 @@ app.controller("AuthCtrl",
     };
 
     $scope.currentPicUrl = "";
-    // Data from firebase 
-    $scope.pins = $firebaseArray(ref);
-    $scope.authData = null;
+
 
     // Authenticates user to firebase data
     $scope.auth = $firebaseAuth(ref);
-
     console.log("$scope.auth", $scope.auth);
     
+
+    $scope.authData = null;
     // Any time auth status updates, add the user data to scope
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
@@ -58,17 +57,19 @@ app.controller("AuthCtrl",
     
     // Authorizes user by email/password
     $scope.login = function() {
+      console.log($scope.authData);
 
       ref.authWithPassword($scope.user, function(error, authData) {
-          console.log("LogCtrl", authData.uid);
-          if (error) {
-            $location.path('/#/login');
-            // console.log("Login Failed!", error);
-          } else {
-            storage.setUserId(authData.uid);
-            console.log("Authenticated successfully with payload:", authData);
-          }
-        });
+        console.log("LogCtrl", authData);
+        if (error) {
+          console.log("Auth with password error", error);
+          $location.path('/#/login');
+          // console.log("Login Failed!", error);
+        } else {
+          console.log("Authenticated successfully with payload:", authData);
+          storage.setUserId(authData.uid);
+        }
+      });
     };
 
     $scope.logout = function(){
