@@ -14,5 +14,5 @@ app.factory("getCheckboxes", function(){
         }
       }
       return storageArr;
-  }
-})
+  };
+});

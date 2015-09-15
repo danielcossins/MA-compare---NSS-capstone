@@ -1,7 +1,7 @@
 <h1>Add an Art</h1>
-<input type="text" id="name" class="form-control" placeholder="Art Name">
-<input type="text" id="logo" class="form-control" placeholder="Art logo url">
-<textarea id="description" class="form-control" rows="5" placeholder="Art description"></textarea>
+<input type="text" id="artName" class="form-control" placeholder="Art Name">
+<input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
+<textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
 <h3>Genres in this Art</h3>
 <div ng-repeat="genre in genres">
     <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}

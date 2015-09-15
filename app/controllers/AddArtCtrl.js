@@ -25,14 +25,11 @@ app.controller("AddArtCtrl",
       $scope.techniques = data.data;
     });
 
-
-
-
     $scope.saveToFirebase = function(){
       var art = {
-        name: angular.element("#name").val(),
-        description: angular.element("#description").val(),
-        image: angular.element("#logo").val()
+        name: angular.element("#artName").val(),
+        description: angular.element("#artDescription").val(),
+        image: angular.element("#artLogo").val()
       };
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
@@ -43,22 +40,5 @@ app.controller("AddArtCtrl",
 
       });
     };
-
-    // function getCheckboxes(className){
-    //   var arr = angular.element(className);
-    //   var storageArr = [];
-    //   for(var i=0; i<arr.length; i++){
-    //     if(arr[i].checked===true){
-    //       var obj = {
-    //         name: arr[i].value.split(",")[0],
-    //         image: arr[i].value.split(",")[1]
-    //       };
-    //       if(obj.name!==undefined){
-    //         storageArr.push(obj);
-    //       }
-    //     }
-    //   }
-    //   return storageArr;
-    // }
   }
 ]);
