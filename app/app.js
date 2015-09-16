@@ -17,14 +17,12 @@ var app = angular.module("MAApp",[ 'ngRoute', 'firebase'])
 .run([
    "$firebaseAuth",
    "storage",
-  function($firebaseAuth, storage){
+   "$rootScope",
+  function($firebaseAuth, storage, $rootScope){
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     this.auth = $firebaseAuth(ref);
-
-    this.auth.$onAuth(function(authData) {
-      console.log(authData);
-      storage.setAuthData(authData);
-    });
+    $rootScope.user = ref.getAuth();
+    console.log($rootScope.user);
   }
 ]);
 app.config(['$routeProvider',
