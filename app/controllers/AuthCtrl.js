@@ -68,6 +68,7 @@ app.controller("AuthCtrl",
         } else {
           console.log("Authenticated successfully with payload:", authData);
           storage.setUserId(authData.uid);
+          storage.setAuthData(authData);
         }
       });
     };
