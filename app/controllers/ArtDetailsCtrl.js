@@ -12,6 +12,9 @@ app.controller("ArtDetailsCtrl",
     console.log($routeParams.name);
 
 
+
+
+
     $scope.arts.$loaded()
       .then(function() {
         console.log($scope.arts);
@@ -25,5 +28,14 @@ app.controller("ArtDetailsCtrl",
         console.error(err);
       });
 
+    //voting functionality
+    $scope.clicked=false;
+    $scope.vote = function(){
+      $scope.clickedArt.votes++;
+      console.log($scope.clickedArt);
+      $scope.clicked=true;
+      $scope.arts.$remove($scope.clickedArt);
+      $scope.arts.$add($scope.clickedArt);
+    };
   }
 ]);

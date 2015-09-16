@@ -2,6 +2,7 @@
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">
   <p>{{clickedArt.description}}</p>
+  <button ng-hide="clicked" ng-click="vote()">Vote</button>
   
   <div ng-repeat="genre in clickedArt.genres">
     <h4>{{genre.name}}</h4>
