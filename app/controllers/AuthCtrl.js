@@ -17,6 +17,7 @@ app.controller("AuthCtrl",
     // Authenticates user to firebase data
     $scope.auth = $firebaseAuth(ref);
     console.log("$scope.auth", $scope.auth);
+    storage.setAuthData($scope.auth);
     
 
     $scope.authData = null;
