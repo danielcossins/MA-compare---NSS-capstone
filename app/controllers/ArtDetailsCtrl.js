@@ -41,5 +41,6 @@ app.controller("ArtDetailsCtrl",
       $scope.arts.$remove($scope.clickedArt);
       $scope.arts.$add($scope.clickedArt);
     };
+    
   }
 ]);
