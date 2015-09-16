@@ -12,9 +12,6 @@ app.controller("ArtDetailsCtrl",
     console.log($routeParams.name);
 
 
-
-
-
     $scope.arts.$loaded()
       .then(function() {
         console.log($scope.arts);
