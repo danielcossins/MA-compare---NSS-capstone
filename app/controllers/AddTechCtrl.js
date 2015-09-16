@@ -14,9 +14,7 @@ app.controller("AddTechCtrl",
     $scope.techniques = $firebaseArray(ref);
 
     //changes display by whether or not user is loggin in
-    var auth = new Firebase("https://ma-compare.firebaseio.com/"); 
-    $scope.loggedIn = $firebaseAuth(auth);
-    // $scope.loggedIn = storage.getAuthData();
+    $scope.loggedIn = storage.getAuthData();
 
     $http.get("https://ma-compare.firebaseio.com/arts/.json").
     then(function(data) {

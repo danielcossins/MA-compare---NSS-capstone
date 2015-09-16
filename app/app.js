@@ -22,6 +22,7 @@ var app = angular.module("MAApp",[ 'ngRoute', 'firebase'])
     this.auth = $firebaseAuth(ref);
 
     this.auth.$onAuth(function(authData) {
+      console.log(authData);
       storage.setAuthData(authData);
     });
   }
