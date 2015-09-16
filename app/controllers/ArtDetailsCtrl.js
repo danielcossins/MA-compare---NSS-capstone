@@ -31,7 +31,11 @@ app.controller("ArtDetailsCtrl",
     //voting functionality
     $scope.clicked=false;
     $scope.vote = function(){
-      $scope.clickedArt.votes++;
+      if($scope.clickedArt.votes!==undefined){
+        $scope.clickedArt.votes++;
+      }else{
+        $scope.clickedArt.votes=1;
+      }
       console.log($scope.clickedArt);
       $scope.clicked=true;
       $scope.arts.$remove($scope.clickedArt);

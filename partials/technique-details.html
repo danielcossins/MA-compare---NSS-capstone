@@ -2,6 +2,7 @@
   <h3>{{clickedTech.name}}</h3>
   <img src="{{clickedTech.image}}">
   <p>{{clickedTech.description}}</p>
+  <button ng-hide="clicked" ng-click="vote()">Vote</button>
   
   <div ng-repeat="art in clickedTech.arts">
     <h4>{{art.name}}</h4>

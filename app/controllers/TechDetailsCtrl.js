@@ -25,5 +25,19 @@ app.controller("TechDetailsCtrl",
         console.error(err);
       });
 
+    //voting functionality
+    $scope.clicked=false;
+    $scope.vote = function(){
+      if($scope.clickedTech.votes!==undefined){
+        $scope.clickedTech.votes++;
+      }else{
+        $scope.clickedTech.votes = 1;
+      }
+      console.log($scope.clickedTech);
+      $scope.clicked=true;
+      $scope.techs.$remove($scope.clickedTech);
+      $scope.techs.$add($scope.clickedTech);
+    };
+
   }
 ]);
