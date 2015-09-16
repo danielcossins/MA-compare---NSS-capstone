@@ -1,13 +1,20 @@
-<h1>Add an Art</h1>
-<input type="text" id="artName" class="form-control" placeholder="Art Name">
-<input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
-<textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
-<h3>Genres in this Art</h3>
-<div ng-repeat="genre in genres">
-    <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}
+<div ng-show="loggedIn">
+  <h1>Add an Art</h1>
+  <input type="text" id="artName" class="form-control" placeholder="Art Name">
+  <input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
+  <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
+  <h3>Genres in this Art</h3>
+  <div ng-repeat="genre in genres">
+      <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}
+      <img src="{{genre.image}}" width="30px">
+  </div>
+  <h3>Techniques in this Art</h3>
+  <div ng-repeat="technique in techniques">
+      <input type="checkbox" class="techniques" value="{{technique.name}},{{technique.image}}">{{technique.name}}
+      <img src="{{technique.image}}" width="30px">
+  </div>
+  <button type="button" ng-click="saveToFirebase()">Add this art</button>
 </div>
-<h3>Techniques in this Art</h3>
-<div ng-repeat="technique in techniques">
-    <input type="checkbox" class="techniques" value="{{technique.name}},{{technique.image}}">{{technique.name}}
+<div ng-hide="loggedIn">
+  <h1>Can't do this cause you ain't logged in</h1>
 </div>
-<button type="button" ng-click="saveToFirebase()">Add this art</button>
