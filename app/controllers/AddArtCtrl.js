@@ -15,9 +15,8 @@ app.controller("AddArtCtrl",
     console.log($scope.arts);
 
     //changes display by whether or not user is loggin in
-    var auth = new Firebase("https://ma-compare.firebaseio.com/"); 
-    $scope.loggedIn = $firebaseAuth(auth);
-    // $scope.loggedIn = storage.getAuthData();
+    $scope.loggedIn = storage.getAuthData();
+    console.log($scope.loggedIn);
 
 
     $http.get("https://ma-compare.firebaseio.com/genres/.json").
