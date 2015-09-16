@@ -41,6 +41,7 @@ app.controller("AddGenreCtrl",
       genre.arts = getCheckboxes(".arts");
       console.log(genre.arts);
       genre.techniques = getCheckboxes(".techniques");
+      genre.uid = storage.getAuthData().uid;
       console.log(genre);
 
       $scope.genres.$add(genre)

@@ -38,14 +38,13 @@ app.controller("AddArtCtrl",
       };
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
-      console.log(storage.getAuthData().uid);
       art.uid = storage.getAuthData().uid;
       console.log(art);
 
-      // $scope.arts.$add(art)
-      // .then(function () {
+      $scope.arts.$add(art)
+      .then(function () {
 
-      // });
+      });
     };
   }
 ]);

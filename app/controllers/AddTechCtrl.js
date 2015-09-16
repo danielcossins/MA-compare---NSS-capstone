@@ -41,6 +41,7 @@ app.controller("AddTechCtrl",
       technique.arts = getCheckboxes(".arts");
       console.log(technique.arts);
       technique.genres = getCheckboxes(".genres");
+      technique.uid = storage.getAuthData().uid;
       console.log(technique);
 
       $scope.techniques.$add(technique)
