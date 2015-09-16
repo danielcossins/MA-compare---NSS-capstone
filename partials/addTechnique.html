@@ -1,29 +1,20 @@
-<h1>Add a Technique</h1>
-<input type="text" id="techName" class="form-control" placeholder="Technique Name">
-<input type="text" id="techLogo" class="form-control" placeholder="Technique logo url">
-<textarea id="techDescription" class="form-control" rows="5" placeholder="Technique description"></textarea>
-<h3>Arts in this Technique</h3>
-<div ng-repeat="art in arts">
-    <input type="checkbox" class="arts" value="{{art.name}},{{art.image}}">{{art.name}}
-    <img src="{{art.image}}" width="30px">
+<div ng-show="loggedIn">
+  <h1>Add a Technique</h1>
+  <input type="text" id="techName" class="form-control" placeholder="Technique Name">
+  <input type="text" id="techLogo" class="form-control" placeholder="Technique logo url">
+  <textarea id="techDescription" class="form-control" rows="5" placeholder="Technique description"></textarea>
+  <h3>Arts in this Technique</h3>
+  <div ng-repeat="art in arts">
+      <input type="checkbox" class="arts" value="{{art.name}},{{art.image}}">{{art.name}}
+      <img src="{{art.image}}" width="30px">
+  </div>
+  <h3>Genres in this Technique</h3>
+  <div ng-repeat="genre in genres">
+      <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}
+      <img src="{{genre.image}}" width="30px">
+  </div>
+  <button type="button" ng-click="saveToFirebase()">Add this technique</button>
 </div>
-<h3>Genres in this Technique</h3>
-<div ng-repeat="genre in genres">
-    <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}
-    <img src="{{genre.image}}" width="30px">
+<div ng-hide="loggedIn">
+  <h1>Can't do this cause you ain't logged in</h1>
 </div>
-<button type="button" ng-click="saveToFirebase()">Add this technique</button>
-
-
-
-
-
-
-<!-- <select class="form-control">
-  <option></option>
-  <option ng-repeat="technique in techniques">{{technique.name}}</option>
-</select>
-<select class="form-control">
-  <option></option>
-  <option ng-repeat="genre in genres">{{genre.name}}</option>
-</select> -->

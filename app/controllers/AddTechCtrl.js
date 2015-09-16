@@ -5,11 +5,15 @@ app.controller("AddTechCtrl",
    "$location",
    "$http",
    "getCheckboxes",
-  function($scope,  $routeParams, $firebaseArray, $location, $http, getCheckboxes) {
+   "storage",
+  function($scope,  $routeParams, $firebaseArray, $location, $http, getCheckboxes, storage) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     // Data from firebase 
     $scope.techniques = $firebaseArray(ref);
+
+    //changes display by whether or not user is loggin in
+    $scope.loggedIn = storage.getAuthData();
 
     $http.get("https://ma-compare.firebaseio.com/arts/.json").
     then(function(data) {

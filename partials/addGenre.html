@@ -1,27 +1,20 @@
-<h1>Add a Genre</h1>
-<input type="text" id="genreName" class="form-control" placeholder="Genre Name">
-<input type="text" id="genreLogo" class="form-control" placeholder="Genre logo url">
-<textarea class="form-control" id="genreDescription" rows="5" placeholder="Genre description"></textarea>
-<h3>Arts in this Genre</h3>
-<div ng-repeat="art in arts">
-    <input type="checkbox" class="arts" value="{{art.name}},{{art.image}}">{{art.name}}
-    <img src="{{art.image}}" width="30px">
+<div ng-show="loggedIn"
+  <h1>Add a Genre</h1>
+  <input type="text" id="genreName" class="form-control" placeholder="Genre Name">
+  <input type="text" id="genreLogo" class="form-control" placeholder="Genre logo url">
+  <textarea class="form-control" id="genreDescription" rows="5" placeholder="Genre description"></textarea>
+  <h3>Arts in this Genre</h3>
+  <div ng-repeat="art in arts">
+      <input type="checkbox" class="arts" value="{{art.name}},{{art.image}}">{{art.name}}
+      <img src="{{art.image}}" width="30px">
+  </div>
+  <h3>Techniques in this Genre</h3>
+  <div ng-repeat="technique in techniques">
+      <input type="checkbox" class="techniques" value="{{technique.name}},{{technique.image}}">{{technique.name}}
+      <img src="{{technique.image}}" width="30px">
+  </div>
+  <button type="button" ng-click="saveToFirebase()">Add this genre</button>
 </div>
-<h3>Techniques in this Genre</h3>
-<div ng-repeat="technique in techniques">
-    <input type="checkbox" class="techniques" value="{{technique.name}},{{technique.image}}">{{technique.name}}
-    <img src="{{technique.image}}" width="30px">
+<div ng-hide="loggedIn">
+  <h1>Can't do this cause you ain't logged in</h1>
 </div>
-<button type="button" ng-click="saveToFirebase()">Add this genre</button>
-
-
-
-
-<!-- <select class="form-control">
-  <option></option>
-  <option ng-repeat="art in arts">{{art.name}}</option>
-</select>
-<select class="form-control">
-  <option></option>
-  <option ng-repeat="technique in techniques">{{technique.name}}</option>
-</select> -->
