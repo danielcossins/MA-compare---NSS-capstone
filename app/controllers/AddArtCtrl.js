@@ -13,13 +13,15 @@ app.controller("AddArtCtrl",
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
 
-    //changes display by whether or not user is loggin in
-    $scope.loggedIn = storage.getAuthData();
 
     $http.get("https://ma-compare.firebaseio.com/genres/.json").
     then(function(data) {
       console.log(data);
       $scope.genres = data.data;
+    /////Moves this in here so storage gets loaded in time////////////
+    //changes display by whether or not user is loggin in
+    $scope.loggedIn = storage.getAuthData();
+    /////////////////
     });
 
     $http.get("https://ma-compare.firebaseio.com/techniques/.json").
