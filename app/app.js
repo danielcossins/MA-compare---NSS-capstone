@@ -1,5 +1,31 @@
-var app = angular.module("MAApp",[ 'ngRoute', 'firebase']);
+var app = angular.module("MAApp",[ 'ngRoute', 'firebase'])
+.factory("storage", function(){
+  var authData;
 
+  return {
+
+    getAuthData: function(){
+      return authData;
+    },
+    setAuthData: function(data){
+      authData = data;
+      console.log(authData);
+    }
+  };
+
+})
+.run([
+   "$firebaseAuth",
+   "storage",
+  function($firebaseAuth, storage){
+    var ref = new Firebase("https://ma-compare.firebaseio.com/");
+    this.auth = $firebaseAuth(ref);
+
+    this.auth.$onAuth(function(authData) {
+      storage.setAuthData(authData);
+    });
+  }
+]);
 app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider

@@ -1,15 +1,15 @@
-app.factory("storage", function(){
-  var authData;
+// app.factory("storage", function(){
+//   var authData;
 
-  return {
+//   return {
 
-    getAuthData: function(){
-      return authData;
-    },
-    setAuthData: function(data){
-      authData = data;
-      console.log(authData);
-    }
-  };
+//     getAuthData: function(){
+//       return authData;
+//     },
+//     setAuthData: function(data){
+//       authData = data;
+//       console.log(authData);
+//     }
+//   };
 
-});
+// });
