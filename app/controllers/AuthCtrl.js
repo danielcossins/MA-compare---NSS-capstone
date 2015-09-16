@@ -4,8 +4,9 @@ app.controller("AuthCtrl",
    "$firebaseArray",
    "$location",
    "$firebaseAuth",
+   "$rootScope",
    "storage",
-  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, storage) {
+  function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope, storage) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.user = {
       "email": "",
@@ -26,6 +27,7 @@ app.controller("AuthCtrl",
       //changes the profile picture based on how user is logged in
       storage.setAuthData(authData);
       $scope.authData = authData;
+      $rootScope.user = authData;
       console.log($scope.authData);
     });
     
