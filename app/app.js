@@ -1,24 +1,8 @@
 var app = angular.module("MAApp",[ 'ngRoute', 'firebase'])
-.factory("storage", function(){
-  var authData;
-
-  return {
-
-    getAuthData: function(){
-      return authData;
-    },
-    setAuthData: function(data){
-      authData = data;
-      console.log(authData);
-    }
-  };
-
-})
 .run([
    "$firebaseAuth",
-   "storage",
    "$rootScope",
-  function($firebaseAuth, storage, $rootScope){
+  function($firebaseAuth, $rootScope){
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     this.auth = $firebaseAuth(ref);
     $rootScope.user = ref.getAuth();
