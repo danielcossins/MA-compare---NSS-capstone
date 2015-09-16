@@ -7,15 +7,14 @@ app.controller("AddArtCtrl",
    "$firebaseAuth",
    "$rootScope",
    "getCheckboxes",
-   "storage",
-  function($scope,  $routeParams, $firebaseArray, $location, $http, $firebaseAuth, $rootScope, getCheckboxes, storage) {
+  function($scope,  $routeParams, $firebaseArray, $location, $http, $firebaseAuth, $rootScope, getCheckboxes) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
 
+    //changes display by whether or not user is loggin in
     $scope.loggedIn = $rootScope.user;
-
 
     $http.get("https://ma-compare.firebaseio.com/genres/.json").
     then(function(data) {

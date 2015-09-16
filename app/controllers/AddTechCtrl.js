@@ -7,8 +7,7 @@ app.controller("AddTechCtrl",
    "$firebaseAuth",
    "$rootScope",
    "getCheckboxes",
-   "storage",
-  function($scope,  $routeParams, $firebaseArray, $location, $http, $firebaseAuth, $rootScope, getCheckboxes, storage) {
+  function($scope,  $routeParams, $firebaseArray, $location, $http, $firebaseAuth, $rootScope, getCheckboxes) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     // Data from firebase 

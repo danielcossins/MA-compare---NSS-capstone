@@ -5,7 +5,6 @@ app.controller("AuthCtrl",
    "$location",
    "$firebaseAuth",
    "$rootScope",
-   "storage",
   function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope, storage) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.user = {
@@ -25,7 +24,6 @@ app.controller("AuthCtrl",
     $scope.auth.$onAuth(function(authData) {
       console.log("authData", authData);
       //changes the profile picture based on how user is logged in
-      storage.setAuthData(authData);
       $scope.authData = authData;
       $rootScope.user = authData;
       console.log($scope.authData);
@@ -43,7 +41,6 @@ app.controller("AuthCtrl",
           // console.log("Login Failed!", error);
         } else {
           console.log("Authenticated successfully with payload:", authData);
-          storage.setAuthData(authData);
         }
       });
     };
