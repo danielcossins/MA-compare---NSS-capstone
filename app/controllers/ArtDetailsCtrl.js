@@ -11,7 +11,12 @@ app.controller("ArtDetailsCtrl",
     console.log($scope.arts);
     console.log($routeParams.name);
 
+    var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
 
+    // Data from firebase 
+    $scope.genres = $firebaseArray(ref2);
+
+    //finds the correctly clicked art
     $scope.arts.$loaded()
       .then(function() {
         console.log($scope.arts);
@@ -25,21 +30,11 @@ app.controller("ArtDetailsCtrl",
         console.error(err);
       });
 
-    //voting functionality
-    // $scope.clicked=false;
-    // $scope.vote = function(){
-    //   if($scope.clickedArt.votes!==undefined){
-    //     $scope.clickedArt.votes++;
-    //   }else{
-    //     $scope.clickedArt.votes=1;
-    //   }
-    //   console.log($scope.clickedArt);
-    //   $scope.clicked=true;
-    //   $scope.arts.$remove($scope.clickedArt);
-    //   $scope.arts.$add($scope.clickedArt);
-    // };
+
+
 
     $scope.vote = function(){
+      // $scope.clickedArt.votes = {};
       var votesArr = angular.element(".votes");
       for(var i=0; i<votesArr.length; i++){
         if(votesArr[i].checked){

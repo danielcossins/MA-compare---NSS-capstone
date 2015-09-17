@@ -5,8 +5,8 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><input type="checkbox" class="votes" value="overall">Overall</li>
-      <li><input type="checkbox" class="votes" value="overall">Overall</li>
+      <li><input type="checkbox" class="votes" value="Overall">Overall</li>
+      <li ng-repeat="key in genres"><input type="checkbox" class="votes" value="{{key.name}}">{{key.name}}</li>
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
   </div>
