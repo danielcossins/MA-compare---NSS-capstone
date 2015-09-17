@@ -12,8 +12,6 @@ app.controller("ArtDetailsCtrl",
     console.log($routeParams.name);
 
     var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
-
-    // Data from firebase 
     $scope.genres = $firebaseArray(ref2);
 
     //finds the correctly clicked art

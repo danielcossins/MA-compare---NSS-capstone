@@ -12,8 +12,6 @@ app.controller("TechDetailsCtrl",
     console.log($routeParams.name);
 
     var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
-
-    // Data from firebase 
     $scope.genres = $firebaseArray(ref2);
 
 
@@ -30,19 +28,6 @@ app.controller("TechDetailsCtrl",
         console.error(err);
       });
 
-    //voting functionality
-    // $scope.clicked=false;
-    // $scope.vote = function(){
-    //   if($scope.clickedTech.votes!==undefined){
-    //     $scope.clickedTech.votes++;
-    //   }else{
-    //     $scope.clickedTech.votes = 1;
-    //   }
-    //   console.log($scope.clickedTech);
-    //   $scope.clicked=true;
-    //   $scope.techs.$remove($scope.clickedTech);
-    //   $scope.techs.$add($scope.clickedTech);
-    // };
 
     $scope.vote = function(){
       // $scope.clickedTech.votes = {};
