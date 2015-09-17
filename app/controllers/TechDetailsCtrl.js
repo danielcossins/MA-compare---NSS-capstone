@@ -11,6 +11,11 @@ app.controller("TechDetailsCtrl",
     console.log($scope.techs);
     console.log($routeParams.name);
 
+    var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
+
+    // Data from firebase 
+    $scope.genres = $firebaseArray(ref2);
+
 
     $scope.techs.$loaded()
       .then(function() {
@@ -26,15 +31,33 @@ app.controller("TechDetailsCtrl",
       });
 
     //voting functionality
-    $scope.clicked=false;
+    // $scope.clicked=false;
+    // $scope.vote = function(){
+    //   if($scope.clickedTech.votes!==undefined){
+    //     $scope.clickedTech.votes++;
+    //   }else{
+    //     $scope.clickedTech.votes = 1;
+    //   }
+    //   console.log($scope.clickedTech);
+    //   $scope.clicked=true;
+    //   $scope.techs.$remove($scope.clickedTech);
+    //   $scope.techs.$add($scope.clickedTech);
+    // };
+
     $scope.vote = function(){
-      if($scope.clickedTech.votes!==undefined){
-        $scope.clickedTech.votes++;
-      }else{
-        $scope.clickedTech.votes = 1;
+      // $scope.clickedTech.votes = {};
+      var votesArr = angular.element(".votes");
+      for(var i=0; i<votesArr.length; i++){
+        if(votesArr[i].checked){
+          console.log(votesArr[i], "checked");
+          if($scope.clickedTech.votes[votesArr[i].value]===undefined){
+            $scope.clickedTech.votes[votesArr[i].value] = 1;
+          }else{
+            $scope.clickedTech.votes[votesArr[i].value]++;
+          }
+          console.log($scope.clickedTech);
+        }
       }
-      console.log($scope.clickedTech);
-      $scope.clicked=true;
       $scope.techs.$remove($scope.clickedTech);
       $scope.techs.$add($scope.clickedTech);
     };

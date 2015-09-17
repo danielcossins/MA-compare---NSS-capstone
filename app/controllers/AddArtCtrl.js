@@ -36,6 +36,7 @@ app.controller("AddArtCtrl",
       };
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
+      art.votes = {};
       art.uid = $rootScope.user.uid;
       console.log(art);
 
