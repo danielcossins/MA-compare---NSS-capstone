@@ -1,8 +1,18 @@
 <div id="artDetails">
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Dropdown
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><input type="checkbox" class="votes" value="overall">Overall</li>
+      <li><input type="checkbox" class="votes" value="overall">Overall</li>
+      <button ng-hide="clicked" ng-click="vote()">Vote</button>
+    </ul>
+  </div>
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">
   <p>{{clickedArt.description}}</p>
-  <button ng-hide="clicked" ng-click="vote()">Vote</button>
   
   <div ng-repeat="genre in clickedArt.genres">
     <h4>{{genre.name}}</h4>

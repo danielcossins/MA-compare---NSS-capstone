@@ -36,7 +36,7 @@ app.controller("AddArtCtrl",
       };
       art.genres = getCheckboxes(".genres");
       art.techniques = getCheckboxes(".techniques");
-      art.uid = storage.getAuthData().uid;
+      art.uid = $rootScope.user.uid;
       console.log(art);
 
       $scope.arts.$add(art)

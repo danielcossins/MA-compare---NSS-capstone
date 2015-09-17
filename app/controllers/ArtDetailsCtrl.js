@@ -26,15 +26,32 @@ app.controller("ArtDetailsCtrl",
       });
 
     //voting functionality
-    $scope.clicked=false;
+    // $scope.clicked=false;
+    // $scope.vote = function(){
+    //   if($scope.clickedArt.votes!==undefined){
+    //     $scope.clickedArt.votes++;
+    //   }else{
+    //     $scope.clickedArt.votes=1;
+    //   }
+    //   console.log($scope.clickedArt);
+    //   $scope.clicked=true;
+    //   $scope.arts.$remove($scope.clickedArt);
+    //   $scope.arts.$add($scope.clickedArt);
+    // };
+
     $scope.vote = function(){
-      if($scope.clickedArt.votes!==undefined){
-        $scope.clickedArt.votes++;
-      }else{
-        $scope.clickedArt.votes=1;
+      var votesArr = angular.element(".votes");
+      for(var i=0; i<votesArr.length; i++){
+        if(votesArr[i].checked){
+          console.log(votesArr[i], "checked");
+          if($scope.clickedArt.votes[votesArr[i].value]===undefined){
+            $scope.clickedArt.votes[votesArr[i].value] = 1;
+          }else{
+            $scope.clickedArt.votes[votesArr[i].value]++;
+          }
+          console.log($scope.clickedArt);
+        }
       }
-      console.log($scope.clickedArt);
-      $scope.clicked=true;
       $scope.arts.$remove($scope.clickedArt);
       $scope.arts.$add($scope.clickedArt);
     };
