@@ -12,7 +12,7 @@ app.controller("MainCtrl",
       console.log($scope.arts);
       $scope.bestArt = $scope.arts[0];
       for(var i=0; i<$scope.arts.length; i++){
-        if($scope.arts[i].votes > $scope.bestArt.votes){
+        if($scope.arts[i].votes.Overall > $scope.bestArt.votes.Overall){
           $scope.bestArt = $scope.arts[i];
         }
       }
@@ -35,7 +35,7 @@ app.controller("MainCtrl",
       console.log($scope.techs);
       $scope.bestTech = $scope.techs[0];
       for(var i=0; i<$scope.techs.length; i++){
-        if($scope.techs[i].votes > $scope.bestTech.votes){
+        if($scope.techs[i].votes.Overall > $scope.bestTech.votes.Overall){
           $scope.bestTech = $scope.techs[i];
         }
       }
