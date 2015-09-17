@@ -55,9 +55,31 @@ app.controller("ArtDetailsCtrl",
 
 
 
+
+
+
+
+
+
       var votesArr = angular.element(".votes");
       for(var i=0; i<votesArr.length; i++){
         if(votesArr[i].checked){
+/////////////removes the vote from the previously voted art
+          var previouslyVotedArt = $scope.currentUser[votesArr[i].value];
+          for(var k=0; k<$scope.arts.length; k++){
+            if($scope.arts[k].name===previouslyVotedArt){
+              console.log("before", $scope.arts[k]);
+              console.log(votesArr[i].value);
+              $scope.arts[k].votes[votesArr[i].value]--;
+              // console.log($scope.arts[k].votes[votesArr[i].value]++);
+              console.log("after", $scope.arts[k]);
+              $scope.arts.$remove($scope.arts[k]);
+              $scope.arts.$add($scope.arts[k]);
+            }
+          }
+///////////////////////////////////////////////////////////
+
+
           console.log(votesArr[i], "checked");
           if($scope.clickedArt.votes[votesArr[i].value]===undefined){
             $scope.clickedArt.votes[votesArr[i].value] = 1;
