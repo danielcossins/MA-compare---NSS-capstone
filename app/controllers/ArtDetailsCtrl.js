@@ -67,7 +67,7 @@ app.controller("ArtDetailsCtrl",
       for(var i=0; i<votesArr.length; i++){
         if(votesArr[i].checked){
 /////////////removes the vote from the previously voted art
-          var previouslyVotedArt = $scope.currentUser[votesArr[i].value];
+          var previouslyVotedArt = $scope.currentUser.arts[votesArr[i].value];
           for(var k=0; k<$scope.arts.length; k++){
             if($scope.arts[k].name===previouslyVotedArt){
               console.log("before", $scope.arts[k]);
@@ -90,7 +90,7 @@ app.controller("ArtDetailsCtrl",
             $scope.clickedArt.votes[votesArr[i].value]++;
           }
           console.log($scope.clickedArt);
-          $scope.currentUser[votesArr[i].value] = $scope.clickedArt.name;
+          $scope.currentUser.arts[votesArr[i].value] = $scope.clickedArt.name;
         }
       }
       console.log($scope.currentUser);
