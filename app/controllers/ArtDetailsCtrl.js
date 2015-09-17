@@ -39,6 +39,7 @@ app.controller("ArtDetailsCtrl",
     $scope.vote = function(){
       // $scope.clickedArt.votes = {};
       // $scope.users = [];
+      $scope.currentUser = {};
       var result = false;
       for(var j=0; j<$scope.users.length; j++){
         if($rootScope.user.uid===$scope.users[j].uid){
@@ -50,9 +51,6 @@ app.controller("ArtDetailsCtrl",
         $scope.currentUser.uid = $rootScope.user.uid;
         // $scope.users.push($scope.currentUser);
       }
-      $scope.currentUser = {
-        uid: $rootScope.user.uid
-      };
 
 
 
@@ -72,6 +70,7 @@ app.controller("ArtDetailsCtrl",
       }
       console.log($scope.currentUser);
       console.log($scope.users);
+      $scope.users.$remove($scope.currentUser);
       $scope.users.$add($scope.currentUser);
       $scope.arts.$remove($scope.clickedArt);
       $scope.arts.$add($scope.clickedArt);
