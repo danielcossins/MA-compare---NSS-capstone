@@ -12,8 +12,15 @@
 </div>
 
 <a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt">
-  <h2>Voted best art</h2>
+  <h2>Voted best overall art</h2>
   <h3>{{bestArt.name}}</h3>
   <h5>Number of votes: {{bestArt.votes}}</h5>
   <img src="{{bestArt.image}}">
+</div></a>
+
+<a href="{{'/#/techniques/'+bestTech.name}}"><div id="bestTech">
+  <h2>Voted best overall technique</h2>
+  <h3>{{bestTech.name}}</h3>
+  <h5>Number of votes: {{bestTech.votes}}</h5>
+  <img src="{{bestTech.image}}">
 </div></a>
