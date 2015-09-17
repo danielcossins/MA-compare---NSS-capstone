@@ -1,16 +1,3 @@
-<div class="row">
-  <a href="/#/arts"><div class="col-sm-6 main">
-    <h2>Arts</h2>
-    <img src="http://www.clker.com/cliparts/s/O/i/O/Q/V/pirate-crossed-swords-hi.png" width="100%">
-  </div></a>
-  <a href="/#/genres"><div class="col-sm-3 main">
-    <h3>Genres</h3>
-  </div></a>
-  <a href="/#/techniques"><div class="col-sm-3 main">
-    <h3>Techniques</h3>
-  </div></a>
-</div>
-
 <a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt">
   <h2>Voted best overall art</h2>
   <h3>{{bestArt.name}}</h3>
@@ -25,4 +12,9 @@
   <img src="{{bestTech.image}}">
 </div></a>
 
-<a href="/#/rankings"><h2>View All Rankings</h2></a>
+<!-- <a href="{{'/#/arts/'+.name}}" ng-repeat="key in genres"><div>
+  <h2>Voted best {{key.name}} art</h2>
+  <h3>{{bestArt.name}}</h3>
+  <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
+  <img src="{{bestArt.image}}">
+</div></a> -->

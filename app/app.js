@@ -65,6 +65,11 @@ app.config(['$routeProvider',
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       })
+      //rankings
+      .when('/rankings', {
+        templateUrl: 'partials/rankings.html',
+        controller: 'RankCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
