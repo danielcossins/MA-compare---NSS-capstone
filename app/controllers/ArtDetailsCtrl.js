@@ -41,7 +41,9 @@ app.controller("ArtDetailsCtrl",
       // $scope.users = [];
       $scope.currentUser = {};
       var result = false;
+      console.log("user info", $rootScope.user);
       for(var j=0; j<$scope.users.length; j++){
+        console.log($rootScope.user);
         if($rootScope.user.uid===$scope.users[j].uid){
           $scope.currentUser = $scope.users[j];
           result=true;
@@ -73,8 +75,9 @@ app.controller("ArtDetailsCtrl",
               $scope.arts[k].votes[votesArr[i].value]--;
               // console.log($scope.arts[k].votes[votesArr[i].value]++);
               console.log("after", $scope.arts[k]);
-              $scope.arts.$remove($scope.arts[k]);
-              $scope.arts.$add($scope.arts[k]);
+              // $scope.arts.$remove($scope.arts[k]);
+              // $scope.arts.$add($scope.arts[k]);
+              $scope.arts.$save($scope.arts[k]);
             }
           }
 ///////////////////////////////////////////////////////////
@@ -92,10 +95,12 @@ app.controller("ArtDetailsCtrl",
       }
       console.log($scope.currentUser);
       console.log($scope.users);
-      $scope.users.$remove($scope.currentUser);
-      $scope.users.$add($scope.currentUser);
-      $scope.arts.$remove($scope.clickedArt);
-      $scope.arts.$add($scope.clickedArt);
+      // $scope.users.$remove($scope.currentUser);
+      // $scope.users.$add($scope.currentUser);
+      $scope.users.$save($scope.currentUser);
+      // $scope.arts.$remove($scope.clickedArt);
+      // $scope.arts.$add($scope.clickedArt);
+      $scope.arts.$save($scope.clickedArt);
     };
   }
 ]);
