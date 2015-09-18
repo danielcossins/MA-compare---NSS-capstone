@@ -21,22 +21,17 @@ app.controller("RankCtrl",
 
       $scope.genres.$loaded()
       .then(function() {
-        $scope.count = [0, 1];
+        $scope.count = [];
         console.log($scope.arts);
         $scope.bestArtsArr = [];
         for(var k=0; k<$scope.genres.length; k++){
-          // $scope[k] = $scope.arts[0];
-          // console.log("$scope."+[k], $scope[k]);
-          // for(var j=0; j<$scope.arts.length; j++){
-          //   if($scope.arts[j].votes[$scope.genres[k].name] > $scope.votes[$scope.genres[k].name]){
-          //     $scope[k] = $scope.arts[j];
-          //   }
-          // }
+          //count needed for display
+          $scope.count.push(k);
+
+
           $scope[k] = $scope.arts[0];
           console.log("$scope."+[k], $scope[k]);
           for(var j=0; j<$scope.arts.length; j++){
-            console.log("art", $scope.arts[j].votes[$scope.genres[k].name]);
-            console.log("local", $scope[k].votes[$scope.genres[k].name]);
             if($scope.arts[j].votes[$scope.genres[k].name]>$scope[k].votes[$scope.genres[k].name]){
               $scope[k] = $scope.arts[j];
               $scope.bestArtsArr.push($scope[k]);
