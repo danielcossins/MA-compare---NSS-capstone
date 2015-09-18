@@ -9,7 +9,10 @@
 }
 .mouseover:hover{
   // position: relative;
-  padding: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   border: 10px solid black;
 }
 a{
