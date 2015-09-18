@@ -111,7 +111,15 @@ app.controller("ArtDetailsCtrl",
       }else{
         $scope.edit=true;
       }
-      console.log($scope.edit);
+      // angular.element("#artName").val() = $scope.clickedArt.name;
+      document.getElementById("artName").value = $scope.clickedArt.name;
+      document.getElementById("artLogo").value = $scope.clickedArt.image;
+      document.getElementById("artDescription").value = $scope.clickedArt.description;
     }
+
+    $scope.update = function(){
+      $scope.clickedArt.name = angular.element("#artName").val();
+      console.log($scope.clickedArt);
+    };
   }
 ]);
