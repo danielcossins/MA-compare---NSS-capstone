@@ -30,6 +30,13 @@ a:active {
   text-decoration: none;
   color: black; }
 
+img {
+  border-radius: 20%;
+  margin: 10px; }
+
+.eachGenre img {
+  max-width: 200px; }
+
 .main {
   border: 5px solid black;
   border-radius: 20%; }
