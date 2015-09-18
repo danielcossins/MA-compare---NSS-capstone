@@ -12,9 +12,11 @@
   <img src="{{bestTech.image}}">
 </div></a>
 
-<!-- <a href="{{'/#/arts/'+{{{{key.name}}.name}}" ng-repeat="key in genres"><div>
-  <h2>Voted best {{key.name}} art</h2>
-  <h3>{{{{key.name}}.name}}</h3>
-  <h5>Number of votes: {{{{key.name}}.votes.{{key.name}}}}</h5>
-  <img src="{{{{key.name}}.image}}">
-</div></a> -->
+<a href="{{'/#/arts/'+bestArtsArr[key].name}}" ng-repeat="key in count">
+  <div ng-repeat="key in count">
+  <h2>Voted best {{genres[key].name}} art</h2>
+  <h3>{{bestArtsArr[key].name}}</h3>
+  <h5>Number of votes: {{bestArtsArr[key].votes[genres[key].name]}}</h5>
+  <img src="{{bestArtsArr[key].image}}">
+</div>
+</a>
