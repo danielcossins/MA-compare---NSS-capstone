@@ -7,6 +7,8 @@ app.controller("ArtDetailsCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
+    $scope.edit=false;
+
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
     console.log($scope.arts);
@@ -102,5 +104,14 @@ app.controller("ArtDetailsCtrl",
       // $scope.arts.$add($scope.clickedArt);
       $scope.arts.$save($scope.clickedArt);
     };
+
+    $scope.changeEdit = function(){
+      if($scope.edit){
+        $scope.edit=false;
+      }else{
+        $scope.edit=true;
+      }
+      console.log($scope.edit);
+    }
   }
 ]);

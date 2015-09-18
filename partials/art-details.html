@@ -10,6 +10,14 @@
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
   </div>
+  <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
+
+  <div ng-show="edit">
+    <input type="text" id="artName" class="form-control" placeholder="Art Name">
+    <input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
+    <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
+  </div>
+
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">
   <p>{{clickedArt.description}}</p>
