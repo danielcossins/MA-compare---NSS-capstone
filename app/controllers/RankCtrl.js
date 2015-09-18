@@ -26,65 +26,86 @@ app.controller("RankCtrl",
             $scope.bestArt = $scope.arts[i];
           }
         }
-      })
-      .catch(function(err) {
-        console.error(err);
-      });
 
-      $scope.techs.$loaded()
-      .then(function() {
-        $scope.bestTech = $scope.techs[0];
-        for(var i=0; i<$scope.techs.length; i++){
-          if($scope.techs[i].votes.Overall > $scope.bestTech.votes.Overall){
-            $scope.bestTech = $scope.techs[i];
+
+
+
+
+
+        $scope.techs.$loaded()
+        .then(function() {
+          $scope.bestTech = $scope.techs[0];
+          for(var i=0; i<$scope.techs.length; i++){
+            if($scope.techs[i].votes.Overall > $scope.bestTech.votes.Overall){
+              $scope.bestTech = $scope.techs[i];
+            }
           }
-        }
-      })
-      .catch(function(err) {
-        console.error(err);
-      });
 
 
 
 
 
 
-      $scope.count = [];
-      console.log($scope.arts);
-      $scope.bestArtsArr = [];
-      $scope.bestTechsArr = [];
-      for(var k=0; k<$scope.genres.length; k++){
-        //count needed for display
-        $scope.count.push(k);
 
 
-        $scope.art = $scope.arts[0];
-        console.log("$scope.art", $scope.art);
-        for(var j=0; j<$scope.arts.length; j++){
-          if($scope.arts[j].votes[$scope.genres[k].name]>$scope.art.votes[$scope.genres[k].name]){
-            $scope.art = $scope.arts[j];
+          $scope.count = [];
+          console.log($scope.arts);
+          $scope.bestArtsArr = [];
+          $scope.bestTechsArr = [];
+          for(var k=0; k<$scope.genres.length; k++){
+            //count needed for display
+            $scope.count.push(k);
+
+
+            $scope.art = $scope.arts[0];
             $scope.bestArtsArr.push($scope.art);
-          }
-        }
-        console.log("for "+$scope.genres[k].name, $scope.art);
+            console.log("$scope.art", $scope.art);
+            for(var j=0; j<$scope.arts.length; j++){
+              if($scope.arts[j].votes[$scope.genres[k].name]>$scope.art.votes[$scope.genres[k].name]){
+                $scope.art = $scope.arts[j];
+                $scope.bestArtsArr[k] = $scope.art;
+              }
+            }
+            console.log("for "+$scope.genres[k].name, $scope.art);
 
 
 
-        $scope.tech = $scope.techs[0];
-        console.log($scope.tech);
-        /////POSSIBLE BUG: DOESN"T LOAD $scope.techs if remove console.log
-        console.log($scope.techs);
-        //might need to move all of this to $scope.techs.$loaded()
-        console.log("$scope.tech", $scope.tech);
-        for(var l=0; l<$scope.techs.length; l++){
-          if($scope.techs[l].votes[$scope.genres[k].name]>$scope.tech.votes[$scope.genres[k].name]){
-            $scope.tech = $scope.techs[l];
+            $scope.tech = $scope.techs[0];
             $scope.bestTechsArr.push($scope.tech);
+            console.log($scope.tech);
+            /////POSSIBLE BUG: DOESN"T LOAD $scope.techs if remove console.log
+            console.log($scope.techs);
+            //might need to move all of this to $scope.techs.$loaded()
+            console.log("$scope.tech", $scope.tech);
+            for(var l=0; l<$scope.techs.length; l++){
+              console.log("techs", $scope.techs[l].votes[$scope.genres[k].name]);
+              console.log("local", $scope.tech.votes[$scope.genres[k].name]);
+              if($scope.techs[l].votes[$scope.genres[k].name]>$scope.tech.votes[$scope.genres[k].name]){
+                console.log("made it in");
+                $scope.tech = $scope.techs[l];
+                $scope.bestTechsArr[k] = $scope.tech;
+              }
+            }
+            console.log($scope.bestTechsArr);
+            console.log("for "+$scope.genres[k].name, $scope.tech);
           }
-        }
-        console.log($scope.bestTechsArr);
-        console.log("for "+$scope.genres[k].name, $scope.tech);
-      }
+        })
+        .catch(function(err) {
+          console.error(err);
+        });
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
+
+      
+
+
+
+
+
+
+      
     })
     .catch(function(err) {
       console.error(err);
