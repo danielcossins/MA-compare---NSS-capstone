@@ -31,8 +31,7 @@ a:active {
   color: black; }
 
 img {
-  border-radius: 20%;
-  margin: 10px; }
+  border-radius: 20%; }
 
 .eachGenre img {
   max-width: 200px; }
@@ -60,5 +59,8 @@ img {
 .eachTech {
   border: 5px solid black;
   border-radius: 20%; }
+
+.rankImg {
+  max-width: 50%; }
 
 /*# sourceMappingURL=styles.css.map */
