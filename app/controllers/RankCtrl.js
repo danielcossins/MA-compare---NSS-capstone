@@ -63,6 +63,7 @@ app.controller("RankCtrl",
             for(var j=0; j<$scope.arts.length; j++){
               if($scope.arts[j].votes[$scope.genres[k].name]>$scope.art.votes[$scope.genres[k].name]){
                 $scope.art = $scope.arts[j];
+                //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
                 $scope.bestArtsArr[k] = $scope.art;
               }
             }
@@ -83,6 +84,7 @@ app.controller("RankCtrl",
               if($scope.techs[l].votes[$scope.genres[k].name]>$scope.tech.votes[$scope.genres[k].name]){
                 console.log("made it in");
                 $scope.tech = $scope.techs[l];
+                //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
                 $scope.bestTechsArr[k] = $scope.tech;
               }
             }
