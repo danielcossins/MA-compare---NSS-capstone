@@ -8,6 +8,25 @@
   padding: 0px;
   border: 10px solid black; }
 
+a {
+  color: black; }
+
+a:link {
+  text-decoration: none;
+  color: black; }
+
+a:visited {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  text-decoration: none;
+  color: black; }
+
+a:active {
+  text-decoration: none;
+  color: black; }
+
 .main {
   border: 5px solid black;
   border-radius: 20%; }
