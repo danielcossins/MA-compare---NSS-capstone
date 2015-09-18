@@ -1,10 +1,35 @@
+//overall stuff
 #view{
   margin-top: 60px;
 }
-
+.mouseover{
+  padding: 10px;
+  // padding-top: 10px;
+  // padding-bottom: 10px;
+}
+.mouseover:hover{
+  padding: 0px;
+  border: 10px solid black;
+}
+body{
+  // font-family: Bangers;
+}
+/////////
 .main{
   border: 5px solid black;
   border-radius: 20%;
+}
+// #main {
+//   padding-bottom: 80px;
+// }
+#divider{
+  margin-top: 80px;
+  border-top: 2px solid #e5e5e5 ;
+  padding-top: 20px;
+
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e5e5e5 ;
+  margin-bottom: 40px;
 }
 
 .eachArt{
@@ -21,3 +46,23 @@
   border: 5px solid black;
   border-radius: 20%;
 }
+
+// #bestArt:hover{
+//   border: 5px
+// }
+
+// .navbar-default {
+//   background-color: black;
+//   border-color: black;
+
+
+//   // .container-fluid{
+//   //   #bs-example-navbar-collapse-1{
+//   //     ul{
+//   //       li.active{
+//   //         color: white;
+//   //       }
+//   //     }
+//   //   }
+//   // }
+// }

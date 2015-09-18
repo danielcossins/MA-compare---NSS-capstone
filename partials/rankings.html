@@ -1,25 +1,25 @@
-<a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt">
+<a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="mouseover">
   <h2>Voted best overall art</h2>
   <h3>{{bestArt.name}}</h3>
   <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
   <img src="{{bestArt.image}}">
 </div></a>
 
-<a href="{{'/#/techniques/'+bestTech.name}}"><div id="bestTech">
+<a href="{{'/#/techniques/'+bestTech.name}}"><div id="bestTech" class="mouseover">
   <h2>Voted best overall technique</h2>
   <h3>{{bestTech.name}}</h3>
   <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
   <img src="{{bestTech.image}}">
 </div></a>
 
-<a href="{{'/#/arts/'+bestArtsArr[key].name}}" ng-repeat="key in count"><div>
+<a href="{{'/#/arts/'+bestArtsArr[key].name}}" ng-repeat="key in count" class="mouseover"><div>
   <h2>Voted best {{genres[key].name}} art</h2>
   <h3>{{bestArtsArr[key].name}}</h3>
   <h5>Number of votes: {{bestArtsArr[key].votes[genres[key].name]}}</h5>
   <img src="{{bestArtsArr[key].image}}">
 </div></a>
 
-<a href="{{'/#/techniques/'+bestTechsArr[key].name}}" ng-repeat="key in count"><div>
+<a href="{{'/#/techniques/'+bestTechsArr[key].name}}" ng-repeat="key in count" class="mouseover"><div>
   <h2>Voted best {{genres[key].name}} technique</h2>
   <h3>{{bestTechsArr[key].name}}</h3>
   <h5>Number of votes: {{bestTechsArr[key].votes[genres[key].name]}}</h5>
