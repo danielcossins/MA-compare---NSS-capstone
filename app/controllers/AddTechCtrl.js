@@ -41,7 +41,7 @@ app.controller("AddTechCtrl",
       technique.arts = getCheckboxes(".arts");
       console.log(technique.arts);
       technique.genres = getCheckboxes(".genres");
-      technique.votes = {};
+      technique.votes = {Overall: 0};
       technique.uid = $rootScope.user.uid;
       console.log(technique);
 
