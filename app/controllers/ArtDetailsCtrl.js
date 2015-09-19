@@ -9,6 +9,7 @@ app.controller("ArtDetailsCtrl",
 
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
+    // $scope.videos=[];
 
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
@@ -31,6 +32,11 @@ app.controller("ArtDetailsCtrl",
         for(var i=0; i<$scope.arts.length; i++){
           if($scope.arts[i].name === $routeParams.name){
             $scope.clickedArt = $scope.arts[i];
+            if($scope.clickedArt.video!==undefined){
+              $scope.video = $scope.clickedArt.video;
+              $scope.video = $scope.video.split("=")[1];
+              console.log($scope.video);
+            }
           }
         }
       })
@@ -118,12 +124,14 @@ app.controller("ArtDetailsCtrl",
       document.getElementById("artName").value = $scope.clickedArt.name;
       document.getElementById("artLogo").value = $scope.clickedArt.image;
       document.getElementById("artDescription").value = $scope.clickedArt.description;
+      document.getElementById("artVideo").value = $scope.clickedArt.video;
     };
 
     $scope.update = function(){
       $scope.clickedArt.name = angular.element("#artName").val();
       $scope.clickedArt.image = angular.element("#artLogo").val();
       $scope.clickedArt.description = angular.element("#artDescription").val();
+      $scope.clickedArt.video = angular.element("#artVideo").val();
       getGenreBoxes();
       getTechBoxes();
 
@@ -198,5 +206,11 @@ app.controller("ArtDetailsCtrl",
         }
       }
     }
+
+    // $scope.addVideos = function(){
+    //   var videoArr = angular.element(".artVideo");
+    //   $scope.videos[$scope.videos.length-1] = videoArr[$scope.videos.length-1];
+    //   console.log($scope.videos);
+    // };
   }
 ]);

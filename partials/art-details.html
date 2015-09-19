@@ -1,7 +1,7 @@
 <div id="artDetails">
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Dropdown
+      Vote
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -17,6 +17,10 @@
       <input type="text" id="artName" class="form-control" placeholder="Art Name">
       <input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
       <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
+      <h3>Videos</h3>
+      <input type="text" id="artVideo" class="form-control artVideo" placeholder="Video url">
+      <!-- <input type="text" class="form-control artVideo" placeholder="Video url" ng-repeat="vid in videos"> -->
+      <!-- <button type="button" class="btn btn-default" ng-click="addVideo()">Add another video</button> -->
 
       <!-- dropdown for checkboxes -->
       <div class="dropdown">
@@ -52,6 +56,11 @@
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">
   <p>{{clickedArt.description}}</p>
+
+ <!--  <iframe width="420" height="315"
+  src="http://www.youtube.com/embed/{{video}}" allowfullscreen>
+  </iframe> -->
+  <!-- <iframe width="420" height="315" src="{{clickedArt.video}}" frameborder="0" allowfullscreen></iframe> -->
   
   <div ng-repeat="genre in clickedArt.genres">
     <h4>{{genre.name}}</h4>
@@ -62,5 +71,10 @@
     <h4>{{technique.name}}</h4>
     <img src="{{technique.image}}" alt="Image">
   </div>
+  <!-- <iframe width="420" height="315"
+  src="http://www.youtube.com/embed/7nt33U4EMnI?autoplay=1">
+  </iframe> -->
+<!-- https://www.youtube.com/watch?v=Q8Vc0jM3Qoo -->
+
 
 </div>
