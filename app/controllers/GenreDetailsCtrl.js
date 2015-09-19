@@ -36,7 +36,7 @@ app.controller("GenreDetailsCtrl",
         for(var k=0; k<$scope.arts.length; k++){
           if($scope.arts[k].genres!==undefined){
             for(var l=0; l<$scope.arts[k].genres.length; l++){
-              if($scope.arts[k].genres[l].name === $scope.clickedGenre.name){
+              if($scope.arts[k].genres[l] === $scope.clickedGenre.name){
                 $scope.matchingArts.push({name: $scope.arts[k].name, image: $scope.arts[k].image});
               }  
             }
@@ -51,7 +51,7 @@ app.controller("GenreDetailsCtrl",
         for(var j=0; j<$scope.techniques.length; j++){
           if($scope.techniques[j].genres!==undefined){
             for(var h=0; h<$scope.techniques[j].genres.length; h++){
-              if($scope.techniques[j].genres[h].name === $scope.clickedGenre.name){
+              if($scope.techniques[j].genres[h] === $scope.clickedGenre.name){
                 $scope.matchingTechs.push({name: $scope.techniques[j].name, image: $scope.techniques[j].image});
               }  
             }
