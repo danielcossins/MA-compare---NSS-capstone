@@ -47,10 +47,6 @@ app.controller("AuthCtrl",
       });
     };
 
-    $scope.logout = function(){
-      $scope.auth.$unauth();
-    };
-
 
   }
 ]);

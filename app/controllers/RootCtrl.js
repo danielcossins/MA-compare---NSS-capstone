@@ -8,15 +8,9 @@ app.controller("RootCtrl",
 
     $scope.search = "";
 
-    // $scope.loggedIn = $rootScope.user;
-    // $scope.loggedIn = ref.getAuth();
-
     $scope.logout = function(){
       $scope.auth.$unauth();
-      // $route.reload();
-      location.reload();
-      // $rootScope.user = null;
-      // $rootScope.user = ref.getAuth();
+      // location.reload();
     };
   }
 ]);
