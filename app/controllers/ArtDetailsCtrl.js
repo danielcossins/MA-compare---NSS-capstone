@@ -41,35 +41,35 @@ app.controller("ArtDetailsCtrl",
         }
       }
 
-      // $scope.genres.$loaded()
-      // .then(function(){
-      //   $scope.matchingGenres = [];
-      //   for(var k=0; k<$scope.genres.length; k++){
-      //     if($scope.genres[k].genres!==undefined){
-      //       for(var l=0; l<$scope.genres[k].genres.length; l++){
-      //         if($scope.genres[k].arts[l].name === $scope.clickedArt.name){
-      //           $scope.matchingGenres.push({name: $scope.genres[k].name, image: $scope.genres[k].image});
-      //         }  
-      //       }
-      //     }
-      //   }
-      //   console.log($scope.matchingArts);
-      // });
+      $scope.genres.$loaded()
+      .then(function(){
+        $scope.matchingGenres = [];
+        for(var k=0; k<$scope.genres.length; k++){
+          if($scope.clickedArt.genres!==undefined){
+            for(var l=0; l<$scope.clickedArt.genres.length; l++){
+              if($scope.genres[k].name === $scope.clickedArt.genres[l]){
+                $scope.matchingGenres.push({name: $scope.genres[k].name, image: $scope.genres[k].image});
+              }
+            }
+          }
+        }
+        console.log($scope.matchingGenres);
+      });
 
-      // $scope.techniques.$loaded()
-      // .then(function(){
-      //   $scope.matchingTechs = [];
-      //   for(var j=0; j<$scope.techniques.length; j++){
-      //     if($scope.techniques[j].genres!==undefined){
-      //       for(var h=0; h<$scope.techniques[j].genres.length; h++){
-      //         if($scope.techniques[j].genres[h].name === $scope.clickedGenre.name){
-      //           $scope.matchingTechs.push({name: $scope.techniques[j].name, image: $scope.techniques[j].image});
-      //         }  
-      //       }
-      //     }
-      //   }
-      //   console.log($scope.matchingTechs);
-      // });
+      $scope.techniques.$loaded()
+      .then(function(){
+        $scope.matchingTechs = [];
+        for(var j=0; j<$scope.techniques.length; j++){
+          if($scope.clickedArt.techniques!==undefined){
+            for(var h=0; h<$scope.clickedArt.techniques.length; h++){
+              if($scope.techniques[j].name === $scope.clickedArt.techniques[h]){
+                $scope.matchingTechs.push({name: $scope.techniques[j].name, image: $scope.techniques[j].image});
+              }
+            }
+          }
+        }
+        console.log($scope.matchingTechs);
+      });
     })
     .catch(function(err) {
       console.error(err);

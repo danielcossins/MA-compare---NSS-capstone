@@ -77,7 +77,7 @@
     <div class="panel-heading">
       <h3>Covered Genres</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in clickedArt.genres">
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in matchingGenres">
       <div class="mouseover">
       <a href="{{'/#/genres/'+genre.name}}">
         <div class="panel-heading">
@@ -95,7 +95,7 @@
     <div class="panel-heading">
       <h3>Included Techniques</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in clickedArt.techniques">
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in matchingTechs">
       <div class="mouseover">
       <a href="{{'/#/techniques/'+technique.name}}">
         <div class="panel-heading">

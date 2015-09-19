@@ -34,9 +34,9 @@ app.controller("AddGenreCtrl",
         description: angular.element("#genreDescription").val(),
         image: angular.element("#genreLogo").val()
        };
-       genre.arts = getCheckboxes(".arts");
-       console.log(genre.arts);
-       genre.techniques = getCheckboxes(".techniques");
+       // genre.arts = getCheckboxes(".arts");
+       // console.log(genre.arts);
+       // genre.techniques = getCheckboxes(".techniques");
        genre.uid = $rootScope.user.uid;
        console.log(genre);
 
