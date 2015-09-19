@@ -182,8 +182,8 @@ app.controller("ArtDetailsCtrl",
       for(var i=0; i<allGenreChecksArr.length; i++){
         if($scope.clickedArt.genres!==undefined){
           for(var j=0; j<$scope.clickedArt.genres.length; j++){
-            console.log($scope.clickedArt.genres[j].name, allGenreChecksArr[i].value);
-            if($scope.clickedArt.genres[j].name===allGenreChecksArr[i].value){
+            console.log($scope.clickedArt.genres[j], allGenreChecksArr[i].value);
+            if($scope.clickedArt.genres[j]===allGenreChecksArr[i].value){
               allGenreChecksArr[i].checked = true;
               console.log(allGenreChecksArr[i]);
             }
@@ -197,8 +197,8 @@ app.controller("ArtDetailsCtrl",
       for(var k=0; k<allTechChecksArr.length; k++){
         if($scope.clickedArt.techniques!==undefined){
           for(var l=0; l<$scope.clickedArt.techniques.length; l++){
-            console.log($scope.clickedArt.techniques[l].name, allTechChecksArr[k].value);
-            if($scope.clickedArt.techniques[l].name===allTechChecksArr[k].value){
+            console.log($scope.clickedArt.techniques[l], allTechChecksArr[k].value);
+            if($scope.clickedArt.techniques[l]===allTechChecksArr[k].value){
               allTechChecksArr[k].checked = true;
               console.log(allTechChecksArr[k]);
             }
