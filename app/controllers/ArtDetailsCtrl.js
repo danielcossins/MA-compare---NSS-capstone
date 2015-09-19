@@ -128,10 +128,10 @@ app.controller("ArtDetailsCtrl",
     };
 
     $scope.update = function(){
-      $scope.clickedArt.name = angular.element("#artName").val();
-      $scope.clickedArt.image = angular.element("#artLogo").val();
-      $scope.clickedArt.description = angular.element("#artDescription").val();
-      $scope.clickedArt.video = angular.element("#artVideo").val();
+      $scope.clickedArt.name = angular.element("#artNameEdit").val();
+      $scope.clickedArt.image = angular.element("#artLogoEdit").val();
+      $scope.clickedArt.description = angular.element("#artDescriptionEdit").val();
+      $scope.clickedArt.video = angular.element("#artVideoEdit").val();
       getGenreBoxes();
       getTechBoxes();
 
