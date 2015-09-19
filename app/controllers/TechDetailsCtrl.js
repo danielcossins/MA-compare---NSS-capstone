@@ -4,7 +4,8 @@ app.controller("TechDetailsCtrl",
    "$firebaseArray",
    "$location",
    "$rootScope",
-  function($scope,  $routeParams, $firebaseArray, $location, $rootScope) {
+   "getCheckboxes",
+  function($scope,  $routeParams, $firebaseArray, $location, $rootScope, getCheckboxes) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     $scope.edit=false;
@@ -121,8 +122,10 @@ app.controller("TechDetailsCtrl",
       $scope.clickedTech.image = angular.element("#techLogoEdit").val();
       $scope.clickedTech.description = angular.element("#techDescriptionEdit").val();
       $scope.clickedTech.video = angular.element("#techVideoEdit").val();
-      getArtBoxes();
-      getGenreBoxes();
+      $scope.clickedTech.arts = getCheckboxes(".checkArts");
+      $scope.clickedTech.genres = getCheckboxes(".checkGenres");
+      // getArtBoxes();
+      // getGenreBoxes();
 
 
 
@@ -165,39 +168,39 @@ app.controller("TechDetailsCtrl",
     };
 
 
-    function getArtBoxes(){
-      var allTechniqueChecksArr = angular.element(".checkArts");
-      console.log(allTechniqueChecksArr);
-      $scope.clickedTech.arts = [];
-      for(var i=0; i<allTechniqueChecksArr.length; i++){
-        if(allTechniqueChecksArr[i].checked===true){
-          console.log("checked");
-          for(var j=0; j<$scope.arts.length; j++){
-            console.log("compare", $scope.arts[j].name, allTechniqueChecksArr[i].value);
-            if($scope.arts[j].name===allTechniqueChecksArr[i].value){
-              console.log("gonna push");
-              $scope.clickedTech.arts.push({name: $scope.arts[j].name, image: $scope.arts[j].image});
-              console.log($scope.clickedTech);
-            }
-          }
-        }
-      }
-    }
-    function getGenreBoxes(){
-      var allGenreChecksArr = angular.element(".checkGenres");
-      $scope.clickedTech.genres = [];
-      for(var i=0; i<allGenreChecksArr.length; i++){
-        if(allGenreChecksArr[i].checked===true){
-          console.log("checked");
-          for(var j=0; j<$scope.genres.length; j++){
-            console.log("compare", $scope.genres[j].name, allGenreChecksArr[i].value);
-            if($scope.genres[j].name===allGenreChecksArr[i].value){
-              console.log("gonna push");
-              $scope.clickedTech.genres.push({name: $scope.genres[j].name, image: $scope.genres[j].image});
-            }
-          }
-        }
-      }
-    }
+    // function getArtBoxes(){
+    //   var allTechniqueChecksArr = angular.element(".checkArts");
+    //   console.log(allTechniqueChecksArr);
+    //   $scope.clickedTech.arts = [];
+    //   for(var i=0; i<allTechniqueChecksArr.length; i++){
+    //     if(allTechniqueChecksArr[i].checked===true){
+    //       console.log("checked");
+    //       for(var j=0; j<$scope.arts.length; j++){
+    //         console.log("compare", $scope.arts[j].name, allTechniqueChecksArr[i].value);
+    //         if($scope.arts[j].name===allTechniqueChecksArr[i].value){
+    //           console.log("gonna push");
+    //           $scope.clickedTech.arts.push({name: $scope.arts[j].name, image: $scope.arts[j].image});
+    //           console.log($scope.clickedTech);
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    // function getGenreBoxes(){
+    //   var allGenreChecksArr = angular.element(".checkGenres");
+    //   $scope.clickedTech.genres = [];
+    //   for(var i=0; i<allGenreChecksArr.length; i++){
+    //     if(allGenreChecksArr[i].checked===true){
+    //       console.log("checked");
+    //       for(var j=0; j<$scope.genres.length; j++){
+    //         console.log("compare", $scope.genres[j].name, allGenreChecksArr[i].value);
+    //         if($scope.genres[j].name===allGenreChecksArr[i].value){
+    //           console.log("gonna push");
+    //           $scope.clickedTech.genres.push({name: $scope.genres[j].name, image: $scope.genres[j].image});
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
   }
 ]);
