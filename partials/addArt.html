@@ -5,12 +5,12 @@
   <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
   <h3>Genres in this Art</h3>
   <div ng-repeat="genre in genres">
-      <input type="checkbox" class="genres" value="{{genre.name}},{{genre.image}}">{{genre.name}}
+      <input type="checkbox" class="genres" value="{{genre.name}}">{{genre.name}}
       <img src="{{genre.image}}" width="30px">
   </div>
   <h3>Techniques in this Art</h3>
   <div ng-repeat="technique in techniques">
-      <input type="checkbox" class="techniques" value="{{technique.name}},{{technique.image}}">{{technique.name}}
+      <input type="checkbox" class="techniques" value="{{technique.name}}">{{technique.name}}
       <img src="{{technique.image}}" width="30px">
   </div>
   <a href="/#/" class="btn btn-default" ng-click="saveToFirebase()">Add this art</a>
