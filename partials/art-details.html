@@ -19,15 +19,25 @@
 
     <!-- dropdown for checkboxes -->
     <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
-      Included Genres
-      <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li>
-      <button class="dropdown-toggle">Done</button>
-    </ul>
-  </div>
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+        Included Genres
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li>
+        <button class="dropdown-toggle">Done</button>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+        Included Techniques
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li>
+        <button class="dropdown-toggle">Done</button>
+      </ul>
+    </div>
     <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
   </div>
 
