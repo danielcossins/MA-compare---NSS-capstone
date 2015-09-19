@@ -1,4 +1,4 @@
-<div id="techniques" ng-repeat="key in techs">
+<div id="techniques" ng-repeat="key in techs | filter: search">
   <a href="{{'/#/techniques/'+key.name}}"><div class="eachTech col-sm-4 mouseover">
     <img src="{{key.image}}" width="100%">
     <h4>{{key.name}}</h4>

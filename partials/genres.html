@@ -1,4 +1,4 @@
-<div id="genres" ng-repeat="key in genres">
+<div id="genres" ng-repeat="key in genres | filter: search">
   <a href="{{'/#/genres/'+key.name}}"><div class="col-sm-3 eachGenre mouseover">
     <img src="{{key.image}}" width="100%">
     <h4>{{key.name}}</h4>

@@ -1,4 +1,4 @@
-<div id="arts" ng-repeat="key in arts">
+<div id="arts" ng-repeat="key in arts | filter: search">
   <a href="{{'/#/arts/'+key.name}}"><div class="eachArt mouseover">
     <h3>{{key.name}}</h3>
     <img src="{{key.image}}">

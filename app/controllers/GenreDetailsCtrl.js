@@ -64,19 +64,6 @@ app.controller("GenreDetailsCtrl",
       console.error(err);
     });
 
-    // $scope.arts.$loaded()
-    //   .then(function(){
-    //     $scope.matchingArts = [];
-    //     for(var k=0; k<$scope.arts.length; k++){
-    //       console.log($scope.arts);
-    //       // for(var l=0; l<$scope.arts[k].genres.length;){
-    //       //   if($scope.arts[k].genres[l].name === $scope.clickedGenre.name){
-    //       //     $scope.matchingArts.push({name: $scope.arts[k].name, image: $scope.arts[k].image});
-    //       //   }  
-    //       // }
-    //     }
-    //   });
-
 
 
 
