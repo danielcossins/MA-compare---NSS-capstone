@@ -55,13 +55,15 @@
   <p>{{clickedTech.description}}</p>
   
   <div ng-repeat="art in clickedTech.arts">
+    <a href="{{'/#/arts/'+art.name}}">
     <h4>{{art.name}}</h4>
     <img src="{{art.image}}" alt="Image">
   </div>
 
-  <div ng-repeat="technique in clickedArt.techniques">
-    <h4>{{technique.name}}</h4>
-    <img src="{{technique.image}}" alt="Image">
+  <div ng-repeat="genre in clickedTech.genres">
+    <a href="{{'/#/genres/'+genre.name}}">
+    <h4>{{genre.name}}</h4>
+    <img src="{{genre.image}}" alt="Image">
   </div>
 
 </div>

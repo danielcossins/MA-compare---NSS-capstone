@@ -63,13 +63,17 @@
   <!-- <iframe width="420" height="315" src="{{clickedArt.video}}" frameborder="0" allowfullscreen></iframe> -->
   
   <div ng-repeat="genre in clickedArt.genres">
+    <a href="{{'/#/genres/'+genre.name}}">
     <h4>{{genre.name}}</h4>
     <img src="{{genre.image}}" alt="Image">
+    </a>
   </div>
 
   <div ng-repeat="technique in clickedArt.techniques">
+    <a href="{{'/#/techniques/'+technique.name}}">
     <h4>{{technique.name}}</h4>
     <img src="{{technique.image}}" alt="Image">
+    </a>
   </div>
   <!-- <iframe width="420" height="315"
   src="http://www.youtube.com/embed/7nt33U4EMnI?autoplay=1">

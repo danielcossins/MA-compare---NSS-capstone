@@ -19,14 +19,18 @@
 
   <h4>Arts that cover this genre:</h4>
   <div ng-repeat="art in matchingArts">
+    <a href="{{'/#/arts/'+art.name}}">
     <h4>{{art.name}}</h4>
     <img src="{{art.image}}" alt="Image">
+    </a>
   </div>
 
   <h4>Techniques in this genre:</h4>
   <div ng-repeat="technique in matchingTechs">
+    <a href="{{'/#/techniques/'+technique.name}}">
     <h4>{{technique.name}}</h4>
     <img src="{{technique.image}}" alt="Image">
+    </a>
   </div>
 
 </div>
