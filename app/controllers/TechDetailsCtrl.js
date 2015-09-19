@@ -113,5 +113,77 @@ app.controller("TechDetailsCtrl",
       document.getElementById("techVideoEdit").value = $scope.clickedTech.video;
     };
 
+
+
+
+
+
+
+
+    $scope.checkCheckboxes = function(){
+      var allGenreChecksArr = angular.element(".checkGenres");
+      console.log(allGenreChecksArr);
+      console.log(allGenreChecksArr[0].value);
+      for(var i=0; i<allGenreChecksArr.length; i++){
+        if($scope.clickedTech.genres!==undefined){
+          for(var j=0; j<$scope.clickedTech.genres.length; j++){
+            console.log($scope.clickedTech.genres[j].name, allGenreChecksArr[i].value);
+            if($scope.clickedTech.genres[j].name===allGenreChecksArr[i].value){
+              allGenreChecksArr[i].checked = true;
+              console.log(allGenreChecksArr[i]);
+            }
+          }
+        }
+      }
+
+      var allArtChecksArr = angular.element(".checkArts");
+      console.log(allArtChecksArr);
+      console.log(allArtChecksArr[0].value);
+      for(var k=0; k<allArtChecksArr.length; k++){
+        if($scope.clickedTech.arts!==undefined){
+          for(var l=0; l<$scope.clickedTech.arts.length; l++){
+            console.log($scope.clickedTech.arts[l].name, allArtChecksArr[k].value);
+            if($scope.clickedTech.arts[l].name===allArtChecksArr[k].value){
+              allArtChecksArr[k].checked = true;
+              console.log(allArtChecksArr[k]);
+            }
+          }
+        }
+      }
+    };
+
+
+    function getTechBoxes(){
+      var allTechniqueChecksArr = angular.element(".checkTechniques");
+      $scope.clickedTech.arts = [];
+      for(var i=0; i<allTechniqueChecksArr.length; i++){
+        if(allTechniqueChecksArr[i].checked===true){
+          console.log("checked");
+          for(var j=0; j<$scope.arts.length; j++){
+            console.log("compare", $scope.arts[j].name, allTechniqueChecksArr[i].value);
+            if($scope.arts[j].name===allTechniqueChecksArr[i].value){
+              console.log("gonna push");
+              $scope.clickedTech.arts.push({name: $scope.arts[j].name, image: $scope.techniques[j].image});
+            }
+          }
+        }
+      }
+    }
+    function getGenreBoxes(){
+      var allGenreChecksArr = angular.element(".checkGenres");
+      $scope.clickedTech.genres = [];
+      for(var i=0; i<allGenreChecksArr.length; i++){
+        if(allGenreChecksArr[i].checked===true){
+          console.log("checked");
+          for(var j=0; j<$scope.genres.length; j++){
+            console.log("compare", $scope.genres[j].name, allGenreChecksArr[i].value);
+            if($scope.genres[j].name===allGenreChecksArr[i].value){
+              console.log("gonna push");
+              $scope.clickedTech.genres.push({name: $scope.genres[j].name, image: $scope.genres[j].image});
+            }
+          }
+        }
+      }
+    }
   }
 ]);
