@@ -2,9 +2,9 @@
   <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
   <div ng-show="edit" class="edit">
     <div ng-show="loggedIn">
-      <input type="text" id="genreNameEdit" class="form-control" placeholder="Art Name">
-      <input type="text" id="genreLogoEdit" class="form-control" placeholder="Art logo url">
-      <textarea id="genreDescriptionEdit" class="form-control" rows="5" placeholder="Art description"></textarea>
+      <input type="text" id="genreNameEdit" class="form-control" placeholder="Genre Name">
+      <input type="text" id="genreLogoEdit" class="form-control" placeholder="Genre logo url">
+      <textarea id="genreDescriptionEdit" class="form-control" rows="5" placeholder="Genre description"></textarea>
       <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
     </div>
     <div ng-hide="loggedIn">

@@ -7,6 +7,9 @@ app.controller("TechDetailsCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
+    $scope.edit=false;
+    $scope.loggedIn = $rootScope.user;
+
     // Data from firebase 
     $scope.techs = $firebaseArray(ref);
     console.log($scope.techs);
@@ -15,8 +18,11 @@ app.controller("TechDetailsCtrl",
     var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
     $scope.genres = $firebaseArray(ref2);
 
-    var ref3 = new Firebase("https://ma-compare.firebaseio.com/users"); 
-    $scope.users = $firebaseArray(ref3);
+    var ref3 = new Firebase("https://ma-compare.firebaseio.com/arts"); 
+    $scope.arts = $firebaseArray(ref3);
+
+    var ref4 = new Firebase("https://ma-compare.firebaseio.com/users"); 
+    $scope.users = $firebaseArray(ref4);
     console.log($scope.users);
 
 
@@ -92,6 +98,19 @@ app.controller("TechDetailsCtrl",
       // $scope.techs.$remove($scope.clickedTech);
       // $scope.techs.$add($scope.clickedTech);
       $scope.techs.$save($scope.clickedTech);
+    };
+
+    $scope.changeEdit = function(){
+      if($scope.edit){
+        $scope.edit=false;
+      }else{
+        $scope.edit=true;
+      }
+      // angular.element("#artName").val() = $scope.clickedArt.name;
+      document.getElementById("techNameEdit").value = $scope.clickedTech.name;
+      document.getElementById("techLogoEdit").value = $scope.clickedTech.image;
+      document.getElementById("techDescriptionEdit").value = $scope.clickedTech.description;
+      document.getElementById("techVideoEdit").value = $scope.clickedTech.video;
     };
 
   }

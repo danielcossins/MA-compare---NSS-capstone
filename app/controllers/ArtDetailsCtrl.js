@@ -121,10 +121,10 @@ app.controller("ArtDetailsCtrl",
         $scope.edit=true;
       }
       // angular.element("#artName").val() = $scope.clickedArt.name;
-      document.getElementById("artName").value = $scope.clickedArt.name;
-      document.getElementById("artLogo").value = $scope.clickedArt.image;
-      document.getElementById("artDescription").value = $scope.clickedArt.description;
-      document.getElementById("artVideo").value = $scope.clickedArt.video;
+      document.getElementById("artNameEdit").value = $scope.clickedArt.name;
+      document.getElementById("artLogoEdit").value = $scope.clickedArt.image;
+      document.getElementById("artDescriptionEdit").value = $scope.clickedArt.description;
+      document.getElementById("artVideoEdit").value = $scope.clickedArt.video;
     };
 
     $scope.update = function(){

@@ -1,7 +1,7 @@
 <div id="techDetails">
   <div class="dropdown">
     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      Dropdown
+      Vote
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -10,6 +10,46 @@
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
   </div>
+
+  <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
+  <div ng-show="edit" class="edit">
+    <div ng-show="loggedIn">
+      <input type="text" id="techNameEdit" class="form-control" placeholder="Technique Name">
+      <input type="text" id="techLogoEdit" class="form-control" placeholder="Technique logo url">
+      <textarea id="techDescriptionEdit" class="form-control" rows="5" placeholder="Technique description"></textarea>
+      <h3>Videos</h3>
+      <input type="text" id="techVideoEdit" class="form-control" placeholder="Video url">
+      <!-- <input type="text" class="form-control artVideo" placeholder="Video url" ng-repeat="vid in videos"> -->
+      <!-- <button type="button" class="btn btn-default" ng-click="addVideo()">Add another video</button> -->
+
+      <!-- dropdown for checkboxes -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+          Included Arts
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="key in arts"><input type="checkbox" class="checkArts" value="{{key.name}}">{{key.name}}</li>
+          <button class="dropdown-toggle">Done</button>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+          Included Genres
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li>
+          <button class="dropdown-toggle">Done</button>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
+    </div>
+    <div ng-hide="loggedIn">
+      <h2>Sorry, you are not logged in</h2>
+    </div>
+  </div>
+
   <h3>{{clickedTech.name}}</h3>
   <img src="{{clickedTech.image}}">
   <p>{{clickedTech.description}}</p>
