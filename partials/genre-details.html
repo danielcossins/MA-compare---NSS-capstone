@@ -17,7 +17,45 @@
   <img src="{{clickedGenre.image}}" alt="Image">
   <p>{{clickedGenre.description}}</p>
 
-  <h4>Arts that cover this genre:</h4>
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Covered Arts</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="art in matchingArts">
+      <div class="mouseover">
+      <a href="{{'/#/arts/'+art.name}}">
+        <div class="panel-heading">
+          <h4>{{art.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{art.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Covered Techniques</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in matchingTechs">
+      <div class="mouseover">
+      <a href="{{'/#/techniques/'+technique.name}}">
+        <div class="panel-heading">
+          <h4>{{technique.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{technique.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- <h4>Arts that cover this genre:</h4>
   <div ng-repeat="art in matchingArts">
     <a href="{{'/#/arts/'+art.name}}">
     <h4>{{art.name}}</h4>
@@ -31,6 +69,6 @@
     <h4>{{technique.name}}</h4>
     <img src="{{technique.image}}" alt="Image">
     </a>
-  </div>
+  </div> -->
 
 </div>

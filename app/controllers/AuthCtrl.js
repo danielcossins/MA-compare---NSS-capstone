@@ -31,6 +31,7 @@ app.controller("AuthCtrl",
     
     // Authorizes user by email/password
     $scope.login = function() {
+
       console.log($scope.authData);
 
       ref.authWithPassword($scope.user, function(error, authData) {
@@ -41,6 +42,7 @@ app.controller("AuthCtrl",
           // console.log("Login Failed!", error);
         } else {
           console.log("Authenticated successfully with payload:", authData);
+          // $rootScope.user = $scope.authData;
         }
       });
     };

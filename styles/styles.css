@@ -10,7 +10,7 @@
   padding-right: 0px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border: 10px solid black; }
+  border: 7px solid black; }
 
 a {
   color: black; }
@@ -44,6 +44,9 @@ img {
   padding-bottom: 20px;
   border-bottom: 5px solid black;
   margin-bottom: 40px; }
+
+#userInfo {
+  float: right; }
 
 .main {
   border: 5px solid black;

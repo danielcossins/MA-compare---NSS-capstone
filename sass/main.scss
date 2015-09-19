@@ -15,7 +15,9 @@
   padding-right: 0px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border: 10px solid black;
+  border: 7px solid black;
+
+  // background-color: lightgray;
 }
 a{
   color: black;
@@ -57,6 +59,9 @@ body{
   padding-bottom: 20px;
   border-bottom: 5px solid black ;
   margin-bottom: 40px;
+}
+#userInfo{
+  float: right;
 }
 /////////
 /////////
