@@ -13,33 +13,41 @@
   <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
 
   <div ng-show="edit" class="edit">
-    <input type="text" id="artName" class="form-control" placeholder="Art Name">
-    <input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
-    <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
+    <div ng-show="loggedIn">
+      <input type="text" id="artName" class="form-control" placeholder="Art Name">
+      <input type="text" id="artLogo" class="form-control" placeholder="Art logo url">
+      <textarea id="artDescription" class="form-control" rows="5" placeholder="Art description"></textarea>
 
-    <!-- dropdown for checkboxes -->
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
-        Included Genres
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li>
-        <button class="dropdown-toggle">Done</button>
-      </ul>
+      <!-- dropdown for checkboxes -->
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+          Included Genres
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li>
+          <button class="dropdown-toggle">Done</button>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+          Included Techniques
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li>
+          <button class="dropdown-toggle">Done</button>
+        </ul>
+      </div>
+      <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
     </div>
-    <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
-        Included Techniques
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li>
-        <button class="dropdown-toggle">Done</button>
-      </ul>
+    <div ng-hide="loggedIn">
+      <h2>Sorry, you are not logged in</h2>
     </div>
-    <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
   </div>
+
+
+  <!-- Here's the real population -->
 
   <h3>{{clickedArt.name}}</h3>
   <img src="{{clickedArt.image}}">

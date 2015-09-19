@@ -8,6 +8,7 @@ app.controller("ArtDetailsCtrl",
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     $scope.edit=false;
+    $scope.loggedIn = $rootScope.user;
 
     // Data from firebase 
     $scope.arts = $firebaseArray(ref);
