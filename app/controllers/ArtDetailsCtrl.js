@@ -125,5 +125,20 @@ app.controller("ArtDetailsCtrl",
       $scope.arts.$save($scope.clickedArt);
       $scope.edit=false;
     };
+
+    $scope.checkCheckboxes = function(){
+      var allGenreChecksArr = angular.element(".checkGenres");
+      console.log(allGenreChecksArr);
+      console.log(allGenreChecksArr[0].value);
+      for(var i=0; i<allGenreChecksArr.length; i++){
+        for(var j=0; j<$scope.clickedArt.genres.length; j++){
+          console.log($scope.clickedArt.genres[j].name, allGenreChecksArr[i].value);
+          if($scope.clickedArt.genres[j].name===allGenreChecksArr[i].value){
+            allGenreChecksArr[i].checked = true;
+            console.log(allGenreChecksArr[i]);
+          }
+        }
+      }
+    };
   }
 ]);
