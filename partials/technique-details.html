@@ -54,7 +54,46 @@
   <img src="{{clickedTech.image}}" alt="Image">
   <p>{{clickedTech.description}}</p>
   
-  <div ng-repeat="art in clickedTech.arts">
+
+
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Covered Genres</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in matchingGenres">
+      <div class="mouseover">
+      <a href="{{'/#/genres/'+genre.name}}">
+        <div class="panel-heading">
+          <h4>{{genre.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{genre.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Included Arts</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="art in matchingArts">
+      <div class="mouseover">
+      <a href="{{'/#/arts/'+art.name}}">
+        <div class="panel-heading">
+          <h4>{{art.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{art.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+
+  <<!-- div ng-repeat="art in clickedTech.arts">
     <a href="{{'/#/arts/'+art.name}}">
     <h4>{{art.name}}</h4>
     <img src="{{art.image}}" alt="Image">
@@ -64,6 +103,6 @@
     <a href="{{'/#/genres/'+genre.name}}">
     <h4>{{genre.name}}</h4>
     <img src="{{genre.image}}" alt="Image">
-  </div>
+  </div> -->
 
 </div>

@@ -28,17 +28,47 @@ app.controller("TechDetailsCtrl",
 
 
     $scope.techs.$loaded()
-      .then(function() {
-        console.log($scope.techs);
-        for(var i=0; i<$scope.techs.length; i++){
-          if($scope.techs[i].name === $routeParams.name){
-            $scope.clickedTech = $scope.techs[i];
+    .then(function() {
+      console.log($scope.techs);
+      for(var i=0; i<$scope.techs.length; i++){
+        if($scope.techs[i].name === $routeParams.name){
+          $scope.clickedTech = $scope.techs[i];
+        }
+      }
+
+      $scope.genres.$loaded()
+      .then(function(){
+        $scope.matchingGenres = [];
+        for(var k=0; k<$scope.genres.length; k++){
+          if($scope.clickedTech.genres!==undefined){
+            for(var l=0; l<$scope.clickedTech.genres.length; l++){
+              if($scope.genres[k].name === $scope.clickedTech.genres[l]){
+                $scope.matchingGenres.push({name: $scope.genres[k].name, image: $scope.genres[k].image});
+              }
+            }
           }
         }
-      })
-      .catch(function(err) {
-        console.error(err);
+        console.log($scope.matchingGenres);
       });
+
+      $scope.arts.$loaded()
+      .then(function(){
+        $scope.matchingArts = [];
+        for(var j=0; j<$scope.arts.length; j++){
+          if($scope.clickedTech.arts!==undefined){
+            for(var h=0; h<$scope.clickedTech.arts.length; h++){
+              if($scope.arts[j].name === $scope.clickedTech.arts[h]){
+                $scope.matchingArts.push({name: $scope.arts[j].name, image: $scope.arts[j].image});
+              }
+            }
+          }
+        }
+        console.log($scope.matchingArts);
+      });
+    })
+    .catch(function(err) {
+      console.error(err);
+    });
 
 
     $scope.vote = function(){
@@ -142,8 +172,8 @@ app.controller("TechDetailsCtrl",
       for(var i=0; i<allGenreChecksArr.length; i++){
         if($scope.clickedTech.genres!==undefined){
           for(var j=0; j<$scope.clickedTech.genres.length; j++){
-            console.log($scope.clickedTech.genres[j].name, allGenreChecksArr[i].value);
-            if($scope.clickedTech.genres[j].name===allGenreChecksArr[i].value){
+            console.log($scope.clickedTech.genres[j], allGenreChecksArr[i].value);
+            if($scope.clickedTech.genres[j]===allGenreChecksArr[i].value){
               allGenreChecksArr[i].checked = true;
               console.log(allGenreChecksArr[i]);
             }
@@ -157,8 +187,8 @@ app.controller("TechDetailsCtrl",
       for(var k=0; k<allArtChecksArr.length; k++){
         if($scope.clickedTech.arts!==undefined){
           for(var l=0; l<$scope.clickedTech.arts.length; l++){
-            console.log($scope.clickedTech.arts[l].name, allArtChecksArr[k].value);
-            if($scope.clickedTech.arts[l].name===allArtChecksArr[k].value){
+            console.log($scope.clickedTech.arts[l], allArtChecksArr[k].value);
+            if($scope.clickedTech.arts[l]===allArtChecksArr[k].value){
               allArtChecksArr[k].checked = true;
               console.log(allArtChecksArr[k]);
             }
