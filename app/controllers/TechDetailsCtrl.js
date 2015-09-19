@@ -106,7 +106,6 @@ app.controller("TechDetailsCtrl",
       }else{
         $scope.edit=true;
       }
-      // angular.element("#artName").val() = $scope.clickedArt.name;
       document.getElementById("techNameEdit").value = $scope.clickedTech.name;
       document.getElementById("techLogoEdit").value = $scope.clickedTech.image;
       document.getElementById("techDescriptionEdit").value = $scope.clickedTech.description;
@@ -117,7 +116,20 @@ app.controller("TechDetailsCtrl",
 
 
 
+    $scope.update = function(){
+      $scope.clickedTech.name = angular.element("#techNameEdit").val();
+      $scope.clickedTech.image = angular.element("#techLogoEdit").val();
+      $scope.clickedTech.description = angular.element("#techDescriptionEdit").val();
+      $scope.clickedTech.video = angular.element("#techVideoEdit").val();
+      getArtBoxes();
+      getGenreBoxes();
 
+
+
+      console.log($scope.clickedTech);
+      $scope.techs.$save($scope.clickedTech);
+      $scope.edit=false;
+    };
 
 
     $scope.checkCheckboxes = function(){
@@ -153,8 +165,9 @@ app.controller("TechDetailsCtrl",
     };
 
 
-    function getTechBoxes(){
-      var allTechniqueChecksArr = angular.element(".checkTechniques");
+    function getArtBoxes(){
+      var allTechniqueChecksArr = angular.element(".checkArts");
+      console.log(allTechniqueChecksArr);
       $scope.clickedTech.arts = [];
       for(var i=0; i<allTechniqueChecksArr.length; i++){
         if(allTechniqueChecksArr[i].checked===true){
@@ -163,7 +176,8 @@ app.controller("TechDetailsCtrl",
             console.log("compare", $scope.arts[j].name, allTechniqueChecksArr[i].value);
             if($scope.arts[j].name===allTechniqueChecksArr[i].value){
               console.log("gonna push");
-              $scope.clickedTech.arts.push({name: $scope.arts[j].name, image: $scope.techniques[j].image});
+              $scope.clickedTech.arts.push({name: $scope.arts[j].name, image: $scope.arts[j].image});
+              console.log($scope.clickedTech);
             }
           }
         }
