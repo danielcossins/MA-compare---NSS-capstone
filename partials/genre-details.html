@@ -17,12 +17,14 @@
   <img src="{{clickedGenre.image}}">
   <p>{{clickedGenre.description}}</p>
 
-  <div ng-repeat="art in clickedGenre.arts">
+  <h4>Arts that cover this genre:</h4>
+  <div ng-repeat="art in matchingArts">
     <h4>{{art.name}}</h4>
     <img src="{{art.image}}" alt="Image">
   </div>
 
-  <div ng-repeat="technique in clickedGenre.techniques">
+  <h4>Techniques in this genre:</h4>
+  <div ng-repeat="technique in matchingTechs">
     <h4>{{technique.name}}</h4>
     <img src="{{technique.image}}" alt="Image">
   </div>
