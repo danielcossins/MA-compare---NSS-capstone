@@ -61,20 +61,71 @@
   src="http://www.youtube.com/embed/{{video}}" allowfullscreen>
   </iframe> -->
   <!-- <iframe width="420" height="315" src="{{clickedArt.video}}" frameborder="0" allowfullscreen></iframe> -->
-  
-  <div ng-repeat="genre in clickedArt.genres">
-    <a href="{{'/#/genres/'+genre.name}}">
-    <h4>{{genre.name}}</h4>
-    <img src="{{genre.image}}" alt="Image">
-    </a>
+
+  <!-- <div class="media" ng-repeat="genre in clickedArt.genres">
+    <div class="media-left">
+      <a href="{{'/#/genres/'+genre.name}}">
+        <img width="200px" class="media-object" src="{{genre.image}}" alt="Image">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{genre.name}}</h4>
+      ...
+    </div>
+  </div> -->
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Covered Genres</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in clickedArt.genres">
+      <div class="mouseover">
+      <a href="{{'/#/genres/'+genre.name}}">
+        <div class="panel-heading">
+          <h4>{{genre.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{genre.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
   </div>
 
-  <div ng-repeat="technique in clickedArt.techniques">
-    <a href="{{'/#/techniques/'+technique.name}}">
-    <h4>{{technique.name}}</h4>
-    <img src="{{technique.image}}" alt="Image">
-    </a>
+  <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3>Included Techniques</h3>
+    </div>
+    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in clickedArt.techniques">
+      <div class="mouseover">
+      <a href="{{'/#/techniques/'+technique.name}}">
+        <div class="panel-heading">
+          <h4>{{technique.name}}</h4>
+        </div>
+        <div class="panel-body">
+          <img src="{{technique.image}}" alt="Image" width="100%">
+        </div>
+      </a>
+      </div>
+    </div>
   </div>
+
+  <!-- <div ng-repeat="genre in clickedArt.genres" class="mouseover">
+    <a href="{{'/#/genres/'+genre.name}}">
+      <div>
+        <h4>{{genre.name}}</h4>
+        <img src="{{genre.image}}" alt="Image" width="200px">
+      </div>
+    </a>
+  </div> -->
+
+  <!-- <div ng-repeat="technique in clickedArt.techniques" class="mouseover">
+    <a href="{{'/#/techniques/'+technique.name}}">
+      <div>
+        <h4>{{technique.name}}</h4>
+        <img src="{{technique.image}}" alt="Image">
+      </div>
+    </a>
+  </div> -->
   <!-- <iframe width="420" height="315"
   src="http://www.youtube.com/embed/7nt33U4EMnI?autoplay=1">
   </iframe> -->
