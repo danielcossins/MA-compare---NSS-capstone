@@ -121,6 +121,22 @@ app.controller("ArtDetailsCtrl",
       $scope.clickedArt.name = angular.element("#artName").val();
       $scope.clickedArt.image = angular.element("#artLogo").val();
       $scope.clickedArt.description = angular.element("#artDescription").val();
+      var allGenreChecksArr = angular.element(".checkGenres");
+      $scope.clickedArt.genres = [];
+      for(var i=0; i<allGenreChecksArr.length; i++){
+        if(allGenreChecksArr[i].checked===true){
+          console.log("checked");
+          for(var j=0; j<$scope.genres.length; j++){
+            console.log("compare", $scope.genres[j].name, allGenreChecksArr[i].value);
+            if($scope.genres[j].name===allGenreChecksArr[i].value){
+              console.log("gonna push");
+              $scope.clickedArt.genres.push({name: $scope.genres[j].name, image: $scope.genres[j].image});
+            }
+          }
+        }
+      }
+
+
       console.log($scope.clickedArt);
       $scope.arts.$save($scope.clickedArt);
       $scope.edit=false;
