@@ -115,11 +115,15 @@ app.controller("ArtDetailsCtrl",
       document.getElementById("artName").value = $scope.clickedArt.name;
       document.getElementById("artLogo").value = $scope.clickedArt.image;
       document.getElementById("artDescription").value = $scope.clickedArt.description;
-    }
+    };
 
     $scope.update = function(){
       $scope.clickedArt.name = angular.element("#artName").val();
+      $scope.clickedArt.image = angular.element("#artLogo").val();
+      $scope.clickedArt.description = angular.element("#artDescription").val();
       console.log($scope.clickedArt);
+      $scope.arts.$save($scope.clickedArt);
+      $scope.edit=false;
     };
   }
 ]);

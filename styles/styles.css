@@ -2,7 +2,8 @@
   margin-top: 60px; }
 
 .mouseover {
-  padding: 10px; }
+  padding: 10px;
+  border: 5px solid black; }
 
 .mouseover:hover {
   padding-left: 0px;
@@ -35,6 +36,14 @@ img {
 
 .eachGenre img {
   max-width: 200px; }
+
+.edit {
+  margin-top: 40px;
+  border-top: 5px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 5px solid black;
+  margin-bottom: 40px; }
 
 .main {
   border: 5px solid black;
