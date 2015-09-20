@@ -231,7 +231,7 @@ app.controller("ArtDetailsCtrl",
       var xhr = uploadImage();
       xhr.onload = function() {
         $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
-        console.log($scope.photoUpload);
+        angular.element("#newImage").html("<img src='"+$scope.photoUpload+"' width='50px'>");
       };
     };
 
