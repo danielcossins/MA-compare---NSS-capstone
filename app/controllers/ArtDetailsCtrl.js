@@ -197,14 +197,14 @@ app.controller("ArtDetailsCtrl",
       }
       $scope.voteShow=false;
       // angular.element("#artName").val() = $scope.clickedArt.name;
-      document.getElementById("artNameEdit").value = $scope.clickedArt.name;
+      document.getElementById("artNameEdit").innerHTML = $scope.clickedArt.name;
       document.getElementById("artLogoEdit").value = $scope.clickedArt.image;
       document.getElementById("artDescriptionEdit").value = $scope.clickedArt.description;
-      document.getElementById("artVideoEdit").value = $scope.clickedArt.video;
+      // document.getElementById("artVideoEdit").value = $scope.clickedArt.video;
     };
 
     $scope.update = function(){
-      $scope.clickedArt.name = angular.element("#artNameEdit").val();
+      // $scope.clickedArt.name = angular.element("#artNameEdit").val();
       $scope.clickedArt.image = angular.element("#artLogoEdit").val();
       $scope.clickedArt.description = angular.element("#artDescriptionEdit").val();
       $scope.clickedArt.video = angular.element("#artVideoEdit").val();

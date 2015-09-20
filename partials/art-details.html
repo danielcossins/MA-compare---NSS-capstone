@@ -20,16 +20,18 @@
 
   <div ng-show="edit" class="edit"><!-- ng-show="vote" -->
     <div ng-show="loggedIn">
-      <input type="text" id="artNameEdit" class="form-control" placeholder="Art Name">
+      <h4 class="accentBG middle smallDivider" id="artNameEdit"></h4>
+      <label for="artLogoEdit">Change logo url</label>
       <input type="text" id="artLogoEdit" class="form-control" placeholder="Art logo url">
-      <textarea id="artDescriptionEdit" class="form-control" rows="5" placeholder="Art description"></textarea>
-      <h3>Videos</h3>
-      <input type="text" id="artVideoEdit" class="form-control" placeholder="Video url">
+      <label for="artDescriptionEdit" class="topMargin">Edit description</label>
+      <textarea id="artDescriptionEdit" class="form-control bottomMargin" rows="5" placeholder="Art description"></textarea>
+      <!-- <h3>Videos</h3>
+      <input type="text" id="artVideoEdit" class="form-control" placeholder="Video url"> -->
       <!-- <input type="text" class="form-control artVideo" placeholder="Video url" ng-repeat="vid in videos"> -->
       <!-- <button type="button" class="btn btn-default" ng-click="addVideo()">Add another video</button> -->
 
       <!-- dropdown for checkboxes -->
-      <div class="dropdown">
+      <div class="verticalMargins">
         <button class="btn btn-default" type="button" ng-click="checkCheckboxes(); changeGenreCheck()">
           Included Genres
         </button>
@@ -40,7 +42,7 @@
           <!-- <button ng-click="changeGenreCheck()">Done</button> -->
         </ul>
       </div>
-      <div class="dropdown">
+      <div class="verticalMargins">
         <button class="btn btn-default" type="button" ng-click="checkCheckboxes(); changeTechCheck()">
           Included Techniques
         </button>

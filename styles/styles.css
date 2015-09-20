@@ -65,8 +65,14 @@ img {
   margin-bottom: 40px; }
 
 .verticalMargins {
-  margin-top: 5px;
-  margin-bottom: 5px; }
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.bottomMargin {
+  margin-bottom: 20px; }
+
+.topMargin {
+  margin-top: 20px; }
 
 #userInfo {
   float: right; }
