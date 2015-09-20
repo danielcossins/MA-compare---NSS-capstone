@@ -10,6 +10,30 @@ app.controller("ArtDetailsCtrl",
 
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
+    $scope.vote=false;
+    $scope.changeVote = function(){
+      if($scope.vote){
+        $scope.vote=false;
+      }else{
+        $scope.vote=true;
+      }
+    };
+    $scope.genreCheck=false;
+    $scope.changeVote = function(){
+      if($scope.genreCheck){
+        $scope.genreCheck=false;
+      }else{
+        $scope.genreCheck=true;
+      }
+    };
+    $scope.techCheck=false;
+    $scope.changeVote = function(){
+      if($scope.techCheck){
+        $scope.techCheck=false;
+      }else{
+        $scope.techCheck=true;
+      }
+    };
     // $scope.videos=[];
 
     // Data from firebase 

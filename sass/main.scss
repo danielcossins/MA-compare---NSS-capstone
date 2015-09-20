@@ -144,6 +144,9 @@ body{
 .rankImg{
   max-width: 50%;
 }
+li{
+  list-style-type: none;
+}
 
 
 //navbar INVERSE stying
@@ -196,7 +199,7 @@ input[type=checkbox].css-checkbox {
               line-height:36px;
               background-repeat:no-repeat;
               background-position: 0 0;
-              font-size:36px;
+              font-size: 1 em;
               vertical-align:middle;
               cursor:pointer;
 
@@ -206,7 +209,7 @@ input[type=checkbox].css-checkbox {
               background-position: 0 -36px;
             }
             label.css-label {
-        background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_168832285dc5b6889ff69833fd6c89ed.png);
+        background-image:url(../images/csscheckbox_168832285dc5b6889ff69833fd6c89ed.png);
         -webkit-touch-callout: none;
         -webkit-user-select: none;
         -khtml-user-select: none;

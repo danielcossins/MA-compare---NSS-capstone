@@ -1,12 +1,13 @@
 <div id="artDetails">
   <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    <button class="btn btn-default" type="button" ng-click="changeVote()">
       Vote
-      <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><input type="checkbox" class="votes css-checkbox" value="Overall"><label class="css-label">Overall</label></li>
-      <li ng-repeat="key in genres"><input type="checkbox" class="votes" value="{{key.name}}">{{key.name}}</li>
+    <ul ng-hide="vote" class="smallDivider">
+      <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox" value="Overall">
+      <label for="Overall" class="css-label votes">Overall</label></li>
+      <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
+      <label for="{{key.name}}" class="css-label votes">{{key.name}}</label></li>
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
   </div>
@@ -149,6 +150,4 @@
   </iframe> -->
 <!-- https://www.youtube.com/watch?v=Q8Vc0jM3Qoo -->
 
-<input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" checked="checked">
-<label for="checkboxG5" class="css-label">Option 2</label>
 </div>
