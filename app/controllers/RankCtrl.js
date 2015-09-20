@@ -61,6 +61,13 @@ app.controller("RankCtrl",
             $scope.bestArtsArr.push($scope.art);
             console.log("$scope.art", $scope.art);
             for(var j=0; j<$scope.arts.length; j++){
+              if($scope.art.votes[$scope.genres[k].name]===undefined){
+                $scope.art.votes[$scope.genres[k].name] = 0;
+              }
+              if($scope.art.votes[$scope.genres[k].name]===0){
+                $scope.art.name = "No award";
+                $scope.art.image = "";
+              }
               if($scope.arts[j].votes[$scope.genres[k].name]>$scope.art.votes[$scope.genres[k].name]){
                 $scope.art = $scope.arts[j];
                 //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
@@ -70,7 +77,9 @@ app.controller("RankCtrl",
             console.log("for "+$scope.genres[k].name, $scope.art);
 
 
-
+            // $scope.tech = {
+            //   name: "No award"
+            // };
             $scope.tech = $scope.techs[0];
             $scope.bestTechsArr.push($scope.tech);
             console.log($scope.tech);
@@ -79,6 +88,13 @@ app.controller("RankCtrl",
             //might need to move all of this to $scope.techs.$loaded()
             console.log("$scope.tech", $scope.tech);
             for(var l=0; l<$scope.techs.length; l++){
+              if($scope.tech.votes[$scope.genres[k].name]===undefined){
+                $scope.tech.votes[$scope.genres[k].name] = 0;
+              }
+              if($scope.tech.votes[$scope.genres[k].name]===0){
+                $scope.tech.name = "No award";
+                $scope.tech.image = "";
+              }
               console.log("techs", $scope.techs[l].votes[$scope.genres[k].name]);
               console.log("local", $scope.tech.votes[$scope.genres[k].name]);
               if($scope.techs[l].votes[$scope.genres[k].name]>$scope.tech.votes[$scope.genres[k].name]){

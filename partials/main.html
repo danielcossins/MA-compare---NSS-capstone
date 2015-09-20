@@ -12,8 +12,9 @@
 </div>
 
 <h2 id="divider">Top Rankings</h2>
+<a href="/#/rankings"><h6 class="mouseover">View All Rankings >></h6></a>
 
-<a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="mouseover">
+<!-- <a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="mouseover">
   <h2>Voted best overall art</h2>
   <h3>{{bestArt.name}}</h3>
   <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
@@ -25,6 +26,57 @@
   <h3>{{bestTech.name}}</h3>
   <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
   <img src="{{bestTech.image}}">
-</div></a>
+</div></a> -->
 
-<a href="/#/rankings"><h2 class="mouseover">View All Rankings</h2></a>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Voted best overall art</h2>
+  </div>
+  <a href="{{'/#/arts/'+bestArt.name}}">
+    <div class="panel-body mouseover">
+      <div class="media">
+        <div class="media-left">
+          <img src="{{bestArt.image}}">
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">{{bestArt.name}}</h3>
+          <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Voted best overall technique</h2>
+  </div>
+  <a href="{{'/#/techniques/'+bestTech.name}}">
+    <div class="panel-body mouseover">
+      <div class="media">
+        <div class="media-left">
+          <img src="{{bestTech.image}}">
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">{{bestTech.name}}</h3>
+          <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<!-- <div class="panel panel-default">
+  <div class="mouseover">
+  <a href="{{'/#/techniques/'+bestTech.name}}">
+    <div class="panel-heading">
+      <h2>Voted best overall technique</h2>
+    </div>
+    <div class="panel-body">
+      <h3>{{bestTech.name}}</h3>
+      <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
+      <img src="{{bestTech.image}}">
+    </div>
+  </a>
+  </div>
+</div> -->

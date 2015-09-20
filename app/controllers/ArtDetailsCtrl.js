@@ -173,6 +173,7 @@ app.controller("ArtDetailsCtrl",
       console.log($scope.clickedArt);
       $scope.arts.$save($scope.clickedArt);
       $scope.edit=false;
+      location.reload();
     };
 
     $scope.checkCheckboxes = function(){

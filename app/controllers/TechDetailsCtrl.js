@@ -162,6 +162,7 @@ app.controller("TechDetailsCtrl",
       console.log($scope.clickedTech);
       $scope.techs.$save($scope.clickedTech);
       $scope.edit=false;
+      location.reload();
     };
 
 

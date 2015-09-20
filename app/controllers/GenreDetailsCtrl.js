@@ -89,6 +89,7 @@ app.controller("GenreDetailsCtrl",
       console.log($scope.clickedGenre);
       $scope.genres.$save($scope.clickedGenre);
       $scope.edit=false;
+      location.reload();
     };
 
   }
