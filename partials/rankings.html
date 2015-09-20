@@ -1,4 +1,4 @@
-<a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="col-sm-6 mouseover">
+<!-- <a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="col-sm-6 mouseover">
   <h2>Voted best overall art</h2>
   <h3>{{bestArt.name}}</h3>
   <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
@@ -10,7 +10,7 @@
   <h3>{{bestTech.name}}</h3>
   <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
   <img src="{{bestTech.image}}" class="rankImg">
-</div></a>
+</div></a> -->
 
 <!-- <a href="{{'/#/arts/'+bestArtsArr[key].name}}" ng-repeat="key in count"><div class="mouseover">
   <h2>Voted best {{genres[key].name}} art</h2>
@@ -25,7 +25,23 @@
   <h5>Number of votes: {{bestTechsArr[key].votes[genres[key].name]}}</h5>
   <img src="{{bestTechsArr[key].image}}" class="rankImg">
 </div></a> -->
+
+<!-- ARTS -->
 <div class="col-sm-6">
+<!-- OVERALL -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2>Voted best overall art</h2>
+  </div>
+  <a href="{{'/#/arts/'+bestArt.name}}">
+    <div class="panel-body mouseover">
+      <img src="{{bestArt.image}}" class="rankImg">
+      <h3>{{bestArt.name}}</h3>
+      <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
+    </div>
+  </a>
+</div>
+<!-- GENRE RANKINGS -->
 <div class="panel panel-default" ng-repeat="key in count">
   <div class="panel-heading">
     <h2>Voted best {{genres[key].name}} art</h2>
@@ -40,17 +56,33 @@
 </div>
 </div>
 
+
+<!-- TECHNIQUES -->
 <div class="col-sm-6">
-<div class="panel panel-default" ng-repeat="key in count">
-  <div class="panel-heading">
-    <h2>Voted best {{genres[key].name}} technique</h2>
-  </div>
-  <a href="{{'/#/techniques/'+bestTechsArr[key].name}}">
-    <div class="panel-body mouseover">
-      <img src="{{bestTechsArr[key].image}}" class="rankImg">
-      <h3>{{bestTechsArr[key].name}}</h3>
-      <h5>Number of votes: {{bestTechsArr[key].votes[genres[key].name]}}</h5>
+  <!-- OVERALL -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Voted best overall technique</h2>
     </div>
-  </a>
-</div>
+    <a href="{{'/#/techniques/'+bestTech.name}}">
+      <div class="panel-body mouseover">
+        <img src="{{bestTech.image}}" class="rankImg">
+        <h3>{{bestTech.name}}</h3>
+        <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
+      </div>
+    </a>
+  </div>
+  <!-- GENRE RAKNINGS -->
+  <div class="panel panel-default" ng-repeat="key in count">
+    <div class="panel-heading">
+      <h2>Voted best {{genres[key].name}} technique</h2>
+    </div>
+    <a href="{{'/#/techniques/'+bestTechsArr[key].name}}">
+      <div class="panel-body mouseover">
+        <img src="{{bestTechsArr[key].image}}" class="rankImg">
+        <h3>{{bestTechsArr[key].name}}</h3>
+        <h5>Number of votes: {{bestTechsArr[key].votes[genres[key].name]}}</h5>
+      </div>
+    </a>
+  </div>
 </div>

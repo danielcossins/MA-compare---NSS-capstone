@@ -3,6 +3,7 @@
 
 .mouseover {
   padding: 10px;
+  border-radius: 20%;
   border: 5px solid black; }
 
 .mouseover:hover {
