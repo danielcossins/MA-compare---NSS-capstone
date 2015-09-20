@@ -211,12 +211,25 @@ app.controller("ArtDetailsCtrl",
       // $scope.clickedArt.video = angular.element("#artVideoEdit").val();
       $scope.clickedArt.genres = getCheckboxes(".checkGenres");
       $scope.clickedArt.techniques = getCheckboxes(".checkTechniques");
-      if($scope.clickedArt.photots === undefined){
-        $scope.clickedArt.photos = [];
+      // if($scope.photoUpload!==undefined){
+      //   if($scope.clickedArt.photos === undefined){
+      //     $scope.clickedArt.photos = [];
+      //   }
+      //   $scope.clickedArt.photos.push($scope.photoUpload);
+      // }
+      if($scope.photoUpload!==undefined){
+        if($scope.clickedArt.photos === undefined){
+          $scope.clickedArt.photos = [];
+        }
+        $scope.clickedArt.photos.push($scope.photoUpload);
+      }else{
+        if(angular.element("#photoUrl").val()!==""){
+          if($scope.clickedArt.photos === undefined){
+            $scope.clickedArt.photos = [];
+          }
+          $scope.clickedArt.photos.push(angular.element("#photoUrl").val());
+        }
       }
-      $scope.clickedArt.photos.push($scope.photoUpload);
-      // getGenreBoxes();
-      // getTechBoxes();
       
 
 
@@ -224,7 +237,7 @@ app.controller("ArtDetailsCtrl",
       console.log($scope.clickedArt);
       $scope.arts.$save($scope.clickedArt);
       $scope.edit=false;
-      location.reload();
+      // location.reload();
     };
 
     $scope.setUpload = function(){
