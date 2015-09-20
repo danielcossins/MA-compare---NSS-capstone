@@ -10,13 +10,14 @@ app.controller("ArtDetailsCtrl",
 
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
-    $scope.vote=false;
+    $scope.voteShow=false;
     $scope.changeVote = function(){
-      if($scope.vote){
-        $scope.vote=false;
+      if($scope.voteShow){
+        $scope.voteShow=false;
       }else{
-        $scope.vote=true;
+        $scope.voteShow=true;
       }
+      $scope.edit=false;
     };
     $scope.genreCheck=false;
     $scope.changeGenreCheck = function(){
@@ -175,6 +176,7 @@ app.controller("ArtDetailsCtrl",
       }else{
         $scope.edit=true;
       }
+      $scope.voteShow=false;
       // angular.element("#artName").val() = $scope.clickedArt.name;
       document.getElementById("artNameEdit").value = $scope.clickedArt.name;
       document.getElementById("artLogoEdit").value = $scope.clickedArt.image;

@@ -10,7 +10,7 @@ app.controller("RootCtrl",
 
     $scope.logout = function(){
       $scope.auth.$unauth();
-      // location.reload();
+      location.reload();
     };
   }
 ]);

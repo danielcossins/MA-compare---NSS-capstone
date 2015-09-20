@@ -5,7 +5,7 @@
     </button>
     <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
   </div>
-  <ul ng-hide="vote">
+  <ul ng-show="voteShow" class="edit"><!-- ng-hide="edit" -->
     <div ng-show="loggedIn" class="smallDivider">
       <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox" value="Overall">
       <label for="Overall" class="css-label votes">Overall</label></li>
@@ -18,7 +18,7 @@
     </div>
   </ul>
 
-  <div ng-show="edit" class="edit">
+  <div ng-show="edit" class="edit"><!-- ng-show="vote" -->
     <div ng-show="loggedIn">
       <input type="text" id="artNameEdit" class="form-control" placeholder="Art Name">
       <input type="text" id="artLogoEdit" class="form-control" placeholder="Art logo url">
@@ -92,7 +92,7 @@
           <img src="{{genre.image}}" alt="Image" width="100%" max-width="200px">
         </div>
         <div class="panel-heading">
-          <h4 class="middle label label-default">{{genre.name}}</h4>
+          <h4 class="middle accent">{{genre.name}}</h4>
         </div>
       </a>
       </div>
@@ -110,7 +110,7 @@
           <img src="{{technique.image}}" alt="Image" width="100%" max-width="200px">
         </div>
         <div class="panel-heading">
-          <h4 class="middle label label-default">{{technique.name}}</h4>
+          <h4 class="middle accent">{{technique.name}}</h4>
         </div>
       </a>
       </div>
