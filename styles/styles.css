@@ -1,6 +1,13 @@
 #view {
   margin-top: 60px; }
 
+.accentBG {
+  color: white;
+  background-color: #d43f3a; }
+
+.accent {
+  color: #d43f3a; }
+
 .mouseover {
   padding: 10px;
   border-radius: 20%;

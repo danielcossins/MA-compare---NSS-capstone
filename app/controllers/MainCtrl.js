@@ -2,6 +2,11 @@ app.controller("MainCtrl",
   ["$scope",
    "$firebaseArray",
   function($scope, $firebaseArray) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    angular.element("#home").addClass("active");
+    /////
+
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     // Data from firebase 

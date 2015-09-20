@@ -2,6 +2,11 @@ app.controller("RankCtrl",
   ["$scope",
    "$firebaseArray",
   function($scope, $firebaseArray) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    angular.element("#rankings").addClass("active");
+    /////
+
     var ref = new Firebase("https://ma-compare.firebaseio.com/genres"); 
     $scope.genres = $firebaseArray(ref);
 

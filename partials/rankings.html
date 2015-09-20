@@ -20,9 +20,9 @@
     </div>
     <a href="{{'/#/arts/'+bestArtsArr[key].name}}">
       <div class="panel-body mouseover">
-        <img src="{{bestArtsArr[key].image}}" class="rankImg" alt="Image">
-        <h3 >{{bestArtsArr[key].name}}</h3>
-        <h5 class="label label-danger">Number of votes: {{bestArtsArr[key].votes[genres[key].name]}}</h5>
+        <img src="{{bestArtsArr[key].image}}" class="rankImg middle">
+        <button class="btn btn-danger middle verticalMargins"><h3 class="middle">{{bestArtsArr[key].name}}</h3></button>
+        <h4 class="label label-default middle" max-width="20px">Number of votes: <span class="badge">{{bestArtsArr[key].votes[genres[key].name]}}</span></h4>
       </div>
     </a>
   </div>

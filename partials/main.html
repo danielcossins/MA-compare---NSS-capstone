@@ -11,8 +11,8 @@
   </div></a>
 </div>
 
-<h2 class="divider">Top Rankings</h2>
-<a href="/#/rankings"><h6 class="mouseover">View All Rankings >></h6></a>
+<h2 class="divider">Top Rankings <span><button class="btn btn-xs btn-danger"><a href="/#/rankings">View All Rankings >></a></button></span></h2>
+
 
 <!-- <a href="{{'/#/arts/'+bestArt.name}}"><div id="bestArt" class="mouseover">
   <h2>Voted best overall art</h2>
@@ -39,8 +39,8 @@
           <img src="{{bestArt.image}}" alt="Image">
         </div>
         <div class="media-body">
-          <h3 class="media-heading">{{bestArt.name}}</h3>
-          <h5>Number of votes: {{bestArt.votes.Overall}}</h5>
+          <h3 class="media-heading middle accent verticalMargins">{{bestArt.name}}</h3>
+          <h4 class="label label-default middle verticalMargins" max-width="20px">Number of votes: <span class="badge">{{bestArt.votes.Overall}}</span></h4>
         </div>
       </div>
     </div>
@@ -58,8 +58,8 @@
           <img src="{{bestTech.image}}" alt="Image">
         </div>
         <div class="media-body">
-          <h3 class="media-heading">{{bestTech.name}}</h3>
-          <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
+          <h3 class="media-heading middle accent verticalMargins">{{bestTech.name}}</h3>
+          <h4 class="label label-default middle verticalMargins" max-width="20px">Number of votes: <span class="badge">{{bestTech.votes.Overall}}</span></h4>
         </div>
       </div>
     </div>

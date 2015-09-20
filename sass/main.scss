@@ -1,6 +1,16 @@
 //overall stuff
+// $accentColor: #d9534f;
+$accentColor: #d43f3a;
 #view{
   margin-top: 60px;
+}
+.accentBG{
+  color: white;
+  background-color: $accentColor;
+}
+.accent{
+  color: $accentColor;
+  // background-color: $accentColor;
 }
 .mouseover{
   padding: 10px;
