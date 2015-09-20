@@ -211,6 +211,10 @@ app.controller("ArtDetailsCtrl",
       // $scope.clickedArt.video = angular.element("#artVideoEdit").val();
       $scope.clickedArt.genres = getCheckboxes(".checkGenres");
       $scope.clickedArt.techniques = getCheckboxes(".checkTechniques");
+      if($scope.clickedArt.photots === undefined){
+        $scope.clickedArt.photos = [];
+      }
+      $scope.clickedArt.photos.push($scope.photoUpload);
       // getGenreBoxes();
       // getTechBoxes();
       
