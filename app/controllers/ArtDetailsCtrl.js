@@ -19,7 +19,7 @@ app.controller("ArtDetailsCtrl",
       }
     };
     $scope.genreCheck=false;
-    $scope.changeVote = function(){
+    $scope.changeGenreCheck = function(){
       if($scope.genreCheck){
         $scope.genreCheck=false;
       }else{
@@ -27,7 +27,7 @@ app.controller("ArtDetailsCtrl",
       }
     };
     $scope.techCheck=false;
-    $scope.changeVote = function(){
+    $scope.changeTechCheck = function(){
       if($scope.techCheck){
         $scope.techCheck=false;
       }else{
