@@ -1,18 +1,23 @@
 <div id="artDetails">
-  <div class="dropdown">
+  <div class="btn-group" role="group">
     <button class="btn btn-default" type="button" ng-click="changeVote()">
       Vote
     </button>
-    <ul ng-hide="vote" class="smallDivider">
+    <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
+  </div>
+  <ul ng-hide="vote">
+    <div ng-show="loggedIn" class="smallDivider">
       <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox" value="Overall">
       <label for="Overall" class="css-label votes">Overall</label></li>
       <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
       <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
-    </ul>
-  </div>
+    </div>
+    <div ng-hide="loggedIn" class="alert alert-warning">
+      You are not logged in.
+    </div>
+  </ul>
 
-  <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
   <div ng-show="edit" class="edit">
     <div ng-show="loggedIn">
       <input type="text" id="artNameEdit" class="form-control" placeholder="Art Name">
@@ -48,15 +53,15 @@
       </div>
       <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
     </div>
-    <div ng-hide="loggedIn">
-      <h2>Sorry, you are not logged in</h2>
+    <div ng-hide="loggedIn" class="alert alert-warning">
+      You are not logged in.
     </div>
   </div>
 
 
   <!-- Here's the real population -->
 
-  <h1 class="accentBG middle divider">{{clickedArt.name}}</h1>
+  <h1 class="accentBG middle divider detailsHeader">{{clickedArt.name}}</h1>
   <img class="jumbotron middle verticalMargins" src="{{clickedArt.image}}" alt="Image" width="60%">
   <p class="accentBG smallDivider">{{clickedArt.description}}</p>
 
