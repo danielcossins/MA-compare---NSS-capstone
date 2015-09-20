@@ -11,7 +11,18 @@
   padding-right: 0px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border: 7px solid black; }
+  border: 8px solid black; }
+
+.middle {
+  display: block;
+  text-align: center;
+  margin: 0 auto; }
+
+.label {
+  max-width: 80%; }
+
+.badge {
+  background-color: black; }
 
 a {
   color: black; }
@@ -46,6 +57,10 @@ img {
   border-bottom: 5px solid black;
   margin-bottom: 40px; }
 
+.verticalMargins {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
 #userInfo {
   float: right; }
 
@@ -53,13 +68,21 @@ img {
   border: 5px solid black;
   border-radius: 20%; }
 
-#divider {
+.divider {
   margin-top: 80px;
   border-top: 2px solid #e5e5e5;
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 2px solid #e5e5e5;
   margin-bottom: 40px; }
+
+.smallDivider {
+  margin-top: 20px;
+  border-top: 2px solid #e5e5e5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 20px; }
 
 .eachArt {
   border: 5px solid black;
