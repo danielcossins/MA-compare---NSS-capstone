@@ -1,7 +1,7 @@
 app.factory("uploadImage", function(){
-  return function(className){
+  return function(id){
     var link;
-    var selectedFile = document.getElementById('exampleInputFile').files[0];
+    var selectedFile = document.getElementById(id).files[0];
     var fd = new FormData(); 
     fd.append("image", selectedFile);
     var xhr = new XMLHttpRequest();

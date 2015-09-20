@@ -224,14 +224,15 @@ app.controller("ArtDetailsCtrl",
     };
 
     $scope.setUpload = function(){
-      console.log(angular.element("#exampleInputFile").val());
+      console.log(angular.element("#artUpload").val());
       // $scope.photoUpload = angular.element("#exampleInputFile").val();
       // console.log(uploadImage());
       // $scope.photoUpload = uploadImage();
-      var xhr = uploadImage();
+      var xhr = uploadImage("artUpload");
+      angular.element("#upload").html("<h5 class='accent'>Please wait . . .</h5>");
       xhr.onload = function() {
         $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
-        angular.element("#newImage").html("<img src='"+$scope.photoUpload+"' width='50px'>");
+        angular.element("#upload").html("<img src='"+$scope.photoUpload+"' width='50px'>");
       };
     };
 

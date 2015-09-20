@@ -25,13 +25,12 @@
       <input type="text" id="artLogoEdit" class="form-control" placeholder="Art logo url">
       <label for="artDescriptionEdit" class="topMargin">Edit description</label>
       <textarea id="artDescriptionEdit" class="form-control bottomMargin" rows="5" placeholder="Art description"></textarea>
-      <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
+      <div class="form-group" id="upload">
+        <label for="artUpload">File input</label>
+        <input type="file" id="artUpload">
         <p class="help-block">Example block-level help text here.</p>
+        <button type="button" ng-click="setUpload()">show</button>
       </div>
-      <button type="button" ng-click="setUpload()">show</button>
-      <div id="newImage"></div>
       <!-- <img src="{{photoUpload}}" alt="Image" width="30px"> -->
       <!-- <h3>Videos</h3>
       <input type="text" id="artVideoEdit" class="form-control" placeholder="Video url"> -->
