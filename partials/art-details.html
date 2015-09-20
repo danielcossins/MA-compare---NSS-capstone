@@ -53,9 +53,9 @@
 
   <!-- Here's the real population -->
 
-  <h3>{{clickedArt.name}}</h3>
-  <img src="{{clickedArt.image}}" alt="Image">
-  <p>{{clickedArt.description}}</p>
+  <h1 class="accentBG middle divider">{{clickedArt.name}}</h1>
+  <img class="jumbotron middle verticalMargins" src="{{clickedArt.image}}" alt="Image" width="60%">
+  <p class="accentBG verticalMargins divider">{{clickedArt.description}}</p>
 
  <!--  <iframe width="420" height="315"
   src="http://www.youtube.com/embed/{{video}}" allowfullscreen>
@@ -75,9 +75,9 @@
   </div> -->
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3>Covered Genres</h3>
+      <h3 class="middle accent">Covered Genres</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in matchingGenres">
+    <div class="panel-body panel panel-default col-md-4 col-sm-3" ng-repeat="genre in matchingGenres">
       <div class="mouseover">
       <a href="{{'/#/genres/'+genre.name}}">
         <div class="panel-heading">
@@ -93,7 +93,7 @@
 
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3>Included Techniques</h3>
+      <h3 class="middle accent">Included Techniques</h3>
     </div>
     <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in matchingTechs">
       <div class="mouseover">
