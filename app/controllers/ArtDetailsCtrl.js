@@ -12,6 +12,7 @@ app.controller("ArtDetailsCtrl",
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
     $scope.voteShow=false;
+    $scope.clickedOnce=false;
 
     // $scope.videos=[];
 
@@ -209,24 +210,18 @@ app.controller("ArtDetailsCtrl",
       $scope.clickedArt.image = angular.element("#artLogoEdit").val();
       $scope.clickedArt.description = angular.element("#artDescriptionEdit").val();
       // $scope.clickedArt.video = angular.element("#artVideoEdit").val();
-      $scope.clickedArt.genres = getCheckboxes(".checkGenres");
-      $scope.clickedArt.techniques = getCheckboxes(".checkTechniques");
-      // if($scope.photoUpload!==undefined){
-      //   if($scope.clickedArt.photos === undefined){
-      //     $scope.clickedArt.photos = [];
-      //   }
-      //   $scope.clickedArt.photos.push($scope.photoUpload);
-      // }
+      if($scope.clickedOnce){
+        $scope.clickedArt.genres = getCheckboxes(".checkGenres");
+        $scope.clickedArt.techniques = getCheckboxes(".checkTechniques");
+      }
+      //This deals with photo gallary
+      if($scope.clickedArt.photos === undefined){
+        $scope.clickedArt.photos = [];
+      }
       if($scope.photoUpload!==undefined){
-        if($scope.clickedArt.photos === undefined){
-          $scope.clickedArt.photos = [];
-        }
         $scope.clickedArt.photos.push($scope.photoUpload);
       }else{
         if(angular.element("#photoUrl").val()!==""){
-          if($scope.clickedArt.photos === undefined){
-            $scope.clickedArt.photos = [];
-          }
           $scope.clickedArt.photos.push(angular.element("#photoUrl").val());
         }
       }
@@ -254,6 +249,7 @@ app.controller("ArtDetailsCtrl",
     };
 
     $scope.checkCheckboxes = function(){
+      $scope.clickedOnce=true;
       var allGenreChecksArr = angular.element(".checkGenres");
       console.log(allGenreChecksArr);
       console.log(allGenreChecksArr[0].value);
