@@ -25,11 +25,11 @@
       <input type="text" id="artLogoEdit" class="form-control" placeholder="Art logo url">
       <label for="artDescriptionEdit" class="topMargin">Edit description</label>
       <textarea id="artDescriptionEdit" class="form-control bottomMargin" rows="5" placeholder="Art description"></textarea>
-      <div class="form-group" id="upload">
-        <label for="artUpload">File input</label>
+      <div class="form-group divider" id="upload">
+        <label for="artUpload">Upload an Image</label>
         <input type="file" id="artUpload">
-        <p class="help-block">Example block-level help text here.</p>
-        <button type="button" ng-click="setUpload()">show</button>
+        <p class="help-block">This will be added to the photo gallary.</p>
+        <button type="button" ng-click="setUpload()">Upload</button>
       </div>
       <!-- <img src="{{photoUpload}}" alt="Image" width="30px"> -->
       <!-- <h3>Videos</h3>
@@ -126,41 +126,32 @@
     </div>
   </div>
 
-  <!-- <div class="row panel panel-default">
+
+  <!-- Photo Gallary -->
+  <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3 class="middle accent">Included Techniques</h3>
+      <h3 class="middle accent">Photo Gallary</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in matchingTechs">
-      <div class="mouseover">
-      <a href="{{'/#/techniques/'+technique.name}}">
-        <div class="panel-heading">
-          <h4>{{technique.name}}</h4>
-        </div>
+    <div class="panel-body panel panel-default col-sm-4" ng-repeat="photo in clickedArt.photos">
+      <!-- <div class="mouseover"> -->
         <div class="panel-body">
-          <img src="{{technique.image}}" alt="Image" width="100%">
+          <img src="{{photo}}" alt="Image" width="100%">
         </div>
-      </a>
-      </div>
+        <!-- <div class="panel-heading">
+          <h4 class="middle accent">{{technique.name}}</h4>
+        </div> -->
+      <!-- </div> -->
     </div>
-  </div> -->
+  </div>
 
-  <!-- <div ng-repeat="genre in clickedArt.genres" class="mouseover">
-    <a href="{{'/#/genres/'+genre.name}}">
-      <div>
-        <h4>{{genre.name}}</h4>
-        <img src="{{genre.image}}" alt="Image" width="200px">
-      </div>
-    </a>
-  </div> -->
 
-  <!-- <div ng-repeat="technique in clickedArt.techniques" class="mouseover">
-    <a href="{{'/#/techniques/'+technique.name}}">
-      <div>
-        <h4>{{technique.name}}</h4>
-        <img src="{{technique.image}}" alt="Image">
-      </div>
-    </a>
-  </div> -->
+
+
+
+
+
+
+
   <!-- <iframe width="420" height="315"
   src="http://www.youtube.com/embed/7nt33U4EMnI?autoplay=1">
   </iframe> -->
