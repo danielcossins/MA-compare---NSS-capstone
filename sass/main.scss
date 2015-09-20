@@ -1,5 +1,5 @@
 //overall stuff
-// $accentColor: #d9534f;
+$accentColorLight: #d9534f;
 $accentColor: #d43f3a;
 #view{
   margin-top: 60px;
@@ -145,22 +145,28 @@ body{
   max-width: 50%;
 }
 
-// #bestArt:hover{
-//   border: 5px
-// }
 
-// .navbar-default {
-//   background-color: black;
-//   border-color: black;
+//navbar INVERSE stying
+.navbar-inverse .navbar-nav>.active>a{
+  background-color: $accentColor;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+  background-color: $accentColor;
+}
+.navbar-inverse .navbar-nav>li>a{
+  color: white;
+}
+a:visited{
+  color: white;
+}
 
-
-//   // .container-fluid{
-//   //   #bs-example-navbar-collapse-1{
-//   //     ul{
-//   //       li.active{
-//   //         color: white;
-//   //       }
-//   //     }
-//   //   }
-//   // }
-// }
+//navbar WHITE stying
+.navbar-default .navbar-nav>.active>a{
+  background-color: $accentColor;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  background-color: $accentColor;
+}
+.navbar-default .navbar-nav>li>a{
+  color: white;
+}

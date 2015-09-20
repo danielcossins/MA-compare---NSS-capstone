@@ -106,4 +106,25 @@ img {
 .rankImg {
   max-width: 50%; }
 
+.navbar-inverse .navbar-nav > .active > a {
+  background-color: #d43f3a; }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+  background-color: #d43f3a; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white; }
+
+a:visited {
+  color: white; }
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: #d43f3a; }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+  background-color: #d43f3a; }
+
+.navbar-default .navbar-nav > li > a {
+  color: white; }
+
 /*# sourceMappingURL=styles.css.map */
