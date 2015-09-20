@@ -7,7 +7,7 @@
       <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox" value="Overall">
       <label for="Overall" class="css-label votes">Overall</label></li>
       <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
-      <label for="{{key.name}}" class="css-label votes">{{key.name}}</label></li>
+      <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
   </div>
@@ -31,18 +31,19 @@
         <ul ng-show="genreCheck" class="smallDivider">
           <!-- <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li> -->
           <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}genre" class="css-checkbox checkGenres" value="{{key.name}}">
-          <label for="{{key.name}}genre" class="css-label votes">{{key.name}}</label></li>
+          <label for="{{key.name}}genre" class="css-label">{{key.name}}</label></li>
           <!-- <button ng-click="changeGenreCheck()">Done</button> -->
         </ul>
       </div>
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ng-click="checkCheckboxes()">
+        <button class="btn btn-default" type="button" ng-click="checkCheckboxes(); changeTechCheck()">
           Included Techniques
-          <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li>
-          <button class="dropdown-toggle">Done</button>
+        <ul class="smallDivider" ng-show="techCheck">
+          <!-- <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li> -->
+          <li ng-repeat="key in techniques"><input type="checkbox" name="checkboxG5" id="{{key.name}}techniques" class="css-checkbox checkTechniques" value="{{key.name}}">
+          <label for="{{key.name}}techniques" class="css-label">{{key.name}}</label></li>
+          <!-- <button ng-click="changeTechCheck()">Done</button> -->
         </ul>
       </div>
       <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
