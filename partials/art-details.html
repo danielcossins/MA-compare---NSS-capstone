@@ -5,7 +5,7 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><input type="checkbox" class="votes" value="Overall">Overall</li>
+      <li><input type="checkbox" class="votes css-checkbox" value="Overall"><label class="css-label">Overall</label></li>
       <li ng-repeat="key in genres"><input type="checkbox" class="votes" value="{{key.name}}">{{key.name}}</li>
       <button ng-hide="clicked" ng-click="vote()">Vote</button>
     </ul>
@@ -149,5 +149,6 @@
   </iframe> -->
 <!-- https://www.youtube.com/watch?v=Q8Vc0jM3Qoo -->
 
-
+<input type="checkbox" name="checkboxG5" id="checkboxG5" class="css-checkbox" checked="checked">
+<label for="checkboxG5" class="css-label">Option 2</label>
 </div>
