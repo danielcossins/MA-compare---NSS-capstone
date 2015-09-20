@@ -35,32 +35,23 @@ app.controller("ArtDetailsCtrl",
         $scope.voteShow=true;
       }
       $scope.edit=false;
-      // $scope.users.$loaded()
-      // .then(function(){
-        var voteChecksArr = angular.element(".votes");
-        console.log(voteChecksArr);
-        console.log($scope.users);
-        for(var i=0; i<$scope.users.length; i++){
-          if($rootScope.user.uid===$scope.users[i].uid){
-            console.log($scope.users[i]);
-            console.log($scope.users[i].arts);
-            for(var k=0; k<voteChecksArr.length; k++){
-              console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedArt.name);
-              if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedArt.name){
-                voteChecksArr[k].checked=true;
-              }
-            }
-            // for(var k=0; k<$scope.users[i].arts.length; k++){
 
-            //   for(var j=0; j<voteChecksArr.length; j++){
-            //     if($scope.users[i].arts[k]===voteChecksArr[j].value){
-            //       voteChecksArr[j].checked=true;
-            //     }
-            //   }
-            // }
+      //This checks the checkboxes
+      var voteChecksArr = angular.element(".votes");
+      console.log(voteChecksArr);
+      console.log($scope.users);
+      for(var i=0; i<$scope.users.length; i++){
+        if($rootScope.user.uid===$scope.users[i].uid){
+          console.log($scope.users[i]);
+          console.log($scope.users[i].arts);
+          for(var k=0; k<voteChecksArr.length; k++){
+            console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedArt.name);
+            if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedArt.name){
+              voteChecksArr[k].checked=true;
+            }
           }
         }
-      // });
+      }
     };
     $scope.genreCheck=false;
     $scope.changeGenreCheck = function(){
@@ -164,6 +155,7 @@ app.controller("ArtDetailsCtrl",
 
 
       var votesArr = angular.element(".votes");
+      console.log(votesArr);
       for(var i=0; i<votesArr.length; i++){
         if(votesArr[i].checked){
 /////////////removes the vote from the previously voted art
@@ -184,6 +176,7 @@ app.controller("ArtDetailsCtrl",
 
 
           console.log(votesArr[i], "checked");
+          console.log($scope.clickedArt.votes[votesArr[i].value]);
           if($scope.clickedArt.votes[votesArr[i].value]===undefined){
             $scope.clickedArt.votes[votesArr[i].value] = 1;
           }else{
@@ -193,6 +186,7 @@ app.controller("ArtDetailsCtrl",
           $scope.currentUser.arts[votesArr[i].value] = $scope.clickedArt.name;
         }
       }
+      console.log($scope.clickedArt);
       console.log($scope.currentUser);
       console.log($scope.users);
       // $scope.users.$remove($scope.currentUser);
