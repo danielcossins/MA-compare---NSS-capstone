@@ -11,6 +11,23 @@ app.controller("ArtDetailsCtrl",
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
     $scope.voteShow=false;
+
+    // $scope.videos=[];
+
+    // Data from firebase 
+    $scope.arts = $firebaseArray(ref);
+    console.log($scope.arts);
+    console.log($routeParams.name);
+
+    var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
+    $scope.genres = $firebaseArray(ref2);
+    var ref3 = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
+    $scope.techniques = $firebaseArray(ref3);
+
+    var ref4 = new Firebase("https://ma-compare.firebaseio.com/users"); 
+    $scope.users = $firebaseArray(ref4);
+    console.log($scope.users);
+
     $scope.changeVote = function(){
       if($scope.voteShow){
         $scope.voteShow=false;
@@ -18,6 +35,32 @@ app.controller("ArtDetailsCtrl",
         $scope.voteShow=true;
       }
       $scope.edit=false;
+      // $scope.users.$loaded()
+      // .then(function(){
+        var voteChecksArr = angular.element(".votes");
+        console.log(voteChecksArr);
+        console.log($scope.users);
+        for(var i=0; i<$scope.users.length; i++){
+          if($rootScope.user.uid===$scope.users[i].uid){
+            console.log($scope.users[i]);
+            console.log($scope.users[i].arts);
+            for(var k=0; k<voteChecksArr.length; k++){
+              console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedArt.name);
+              if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedArt.name){
+                voteChecksArr[k].checked=true;
+              }
+            }
+            // for(var k=0; k<$scope.users[i].arts.length; k++){
+
+            //   for(var j=0; j<voteChecksArr.length; j++){
+            //     if($scope.users[i].arts[k]===voteChecksArr[j].value){
+            //       voteChecksArr[j].checked=true;
+            //     }
+            //   }
+            // }
+          }
+        }
+      // });
     };
     $scope.genreCheck=false;
     $scope.changeGenreCheck = function(){
@@ -35,21 +78,9 @@ app.controller("ArtDetailsCtrl",
         $scope.techCheck=true;
       }
     };
-    // $scope.videos=[];
 
-    // Data from firebase 
-    $scope.arts = $firebaseArray(ref);
-    console.log($scope.arts);
-    console.log($routeParams.name);
 
-    var ref2 = new Firebase("https://ma-compare.firebaseio.com/genres"); 
-    $scope.genres = $firebaseArray(ref2);
-    var ref3 = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
-    $scope.techniques = $firebaseArray(ref3);
 
-    var ref4 = new Firebase("https://ma-compare.firebaseio.com/users"); 
-    $scope.users = $firebaseArray(ref4);
-    console.log($scope.users);
 
     //finds the correctly clicked art
     $scope.arts.$loaded()
@@ -65,6 +96,8 @@ app.controller("ArtDetailsCtrl",
           }
         }
       }
+
+      
 
       $scope.genres.$loaded()
       .then(function(){
