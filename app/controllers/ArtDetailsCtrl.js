@@ -5,7 +5,8 @@ app.controller("ArtDetailsCtrl",
    "$location",
    "$rootScope",
    "getCheckboxes",
-  function($scope,  $routeParams, $firebaseArray, $location, $rootScope, getCheckboxes) {
+   "uploadImage",
+  function($scope,  $routeParams, $firebaseArray, $location, $rootScope, getCheckboxes, uploadImage) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     $scope.edit=false;
@@ -207,11 +208,12 @@ app.controller("ArtDetailsCtrl",
       // $scope.clickedArt.name = angular.element("#artNameEdit").val();
       $scope.clickedArt.image = angular.element("#artLogoEdit").val();
       $scope.clickedArt.description = angular.element("#artDescriptionEdit").val();
-      $scope.clickedArt.video = angular.element("#artVideoEdit").val();
+      // $scope.clickedArt.video = angular.element("#artVideoEdit").val();
       $scope.clickedArt.genres = getCheckboxes(".checkGenres");
       $scope.clickedArt.techniques = getCheckboxes(".checkTechniques");
       // getGenreBoxes();
       // getTechBoxes();
+      
 
 
 
@@ -219,6 +221,18 @@ app.controller("ArtDetailsCtrl",
       $scope.arts.$save($scope.clickedArt);
       $scope.edit=false;
       location.reload();
+    };
+
+    $scope.setUpload = function(){
+      console.log(angular.element("#exampleInputFile").val());
+      // $scope.photoUpload = angular.element("#exampleInputFile").val();
+      // console.log(uploadImage());
+      // $scope.photoUpload = uploadImage();
+      var xhr = uploadImage();
+      xhr.onload = function() {
+        $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
+        console.log($scope.photoUpload);
+      };
     };
 
     $scope.checkCheckboxes = function(){

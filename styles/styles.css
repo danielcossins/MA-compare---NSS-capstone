@@ -121,9 +121,6 @@ li {
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
   background-color: #d43f3a; }
 
-.navbar-inverse .navbar-nav > li > a {
-  color: white; }
-
 a:visited {
   color: white; }
 
