@@ -165,10 +165,7 @@ app.controller("ArtDetailsCtrl",
               console.log("before", $scope.arts[k]);
               console.log(votesArr[i].value);
               $scope.arts[k].votes[votesArr[i].value]--;
-              // console.log($scope.arts[k].votes[votesArr[i].value]++);
               console.log("after", $scope.arts[k]);
-              // $scope.arts.$remove($scope.arts[k]);
-              // $scope.arts.$add($scope.arts[k]);
               $scope.arts.$save($scope.arts[k]);
             }
           }
@@ -188,12 +185,7 @@ app.controller("ArtDetailsCtrl",
       }
       console.log($scope.clickedArt);
       console.log($scope.currentUser);
-      console.log($scope.users);
-      // $scope.users.$remove($scope.currentUser);
-      // $scope.users.$add($scope.currentUser);
       $scope.users.$save($scope.currentUser);
-      // $scope.arts.$remove($scope.clickedArt);
-      // $scope.arts.$add($scope.clickedArt);
       $scope.arts.$save($scope.clickedArt);
     };
 
