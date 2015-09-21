@@ -55,19 +55,18 @@
   <p>{{clickedTech.description}}</p>
   
 
-
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3>Covered Genres</h3>
+      <h3 class="middle accent">Included Arts</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="genre in matchingGenres">
+    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="art in matchingArts">
       <div class="mouseover">
-      <a href="{{'/#/genres/'+genre.name}}">
-        <div class="panel-heading">
-          <h4>{{genre.name}}</h4>
-        </div>
+      <a href="{{'/#/arts/'+art.name}}">
         <div class="panel-body">
-          <img src="{{genre.image}}" alt="Image" width="100%">
+          <img src="{{art.image}}" alt="Image" width="100%" max-width="200px">
+        </div>
+        <div class="panel-heading">
+          <h4 class="middle accent">{{art.name}}</h4>
         </div>
       </a>
       </div>
@@ -75,6 +74,24 @@
   </div>
 
   <div class="row panel panel-default">
+    <div class="panel-heading">
+      <h3 class="middle accent">Covered Genres</h3>
+    </div>
+    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="genre in matchingGenres">
+      <div class="mouseover">
+      <a href="{{'/#/genres/'+genre.name}}">
+        <div class="panel-body">
+          <img src="{{genre.image}}" alt="Image" width="100%" max-width="200px">
+        </div>
+        <div class="panel-heading">
+          <h4 class="middle accent">{{genre.name}}</h4>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="row panel panel-default">
     <div class="panel-heading">
       <h3>Included Arts</h3>
     </div>
@@ -90,7 +107,7 @@
       </a>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- div ng-repeat="art in clickedTech.arts">
