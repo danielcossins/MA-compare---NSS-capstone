@@ -35,13 +35,14 @@ app.controller("TechDetailsCtrl",
           $scope.clickedTech = $scope.techs[i];
           if($scope.clickedTech.videos!==undefined){
             for(var q=0; q<$scope.clickedTech.videos.length; q++){
-              $scope.clickedTech.videos[q] = $scope.clickedTech.videos[q].split("=")[1];
+              console.log($scope.clickedTech.videos);
+              console.log($scope.clickedTech.videos[q].indexOf('='));
+              if($scope.clickedTech.videos[q].indexOf('=') !== -1){
+                $scope.clickedTech.videos[q] = $scope.clickedTech.videos[q].split("=")[1];
+              }
               angular.element("#video").append("<iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.clickedTech.videos[q]+"' allowfullscreen></iframe>");
+              console.log($scope.clickedTech.videos[q]);
             }
-            // $scope.video = $scope.clickedTech.video;
-            // $scope.video = $scope.video.split("=")[1];
-            // console.log($scope.video);
-            // angular.element("#video").html("<iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.video+"' allowfullscreen></iframe>");
           }
         }
       }
@@ -150,7 +151,7 @@ app.controller("TechDetailsCtrl",
       document.getElementById("techNameEdit").value = $scope.clickedTech.name;
       document.getElementById("techLogoEdit").value = $scope.clickedTech.image;
       document.getElementById("techDescriptionEdit").value = $scope.clickedTech.description;
-      document.getElementById("techVideoEdit").value = $scope.clickedTech.video;
+      // document.getElementById("techVideoEdit").value = $scope.clickedTech.videos;
     };
 
 
@@ -161,9 +162,18 @@ app.controller("TechDetailsCtrl",
       $scope.clickedTech.name = angular.element("#techNameEdit").val();
       $scope.clickedTech.image = angular.element("#techLogoEdit").val();
       $scope.clickedTech.description = angular.element("#techDescriptionEdit").val();
-      $scope.clickedTech.video = angular.element("#techVideoEdit").val();
       $scope.clickedTech.arts = getCheckboxes(".checkArts");
       $scope.clickedTech.genres = getCheckboxes(".checkGenres");
+      if($scope.clickedTech.videos!==undefined){
+        console.log($scope.clickedTech.videos);
+        console.log(angular.element("#techVideoEdit").val());
+        $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+      }else{
+        console.log($scope.clickedTech.videos);
+        $scope.clickedTech.videos = [];
+        console.log(angular.element("#techVideoEdit").val());
+        $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+      }
       // getArtBoxes();
       // getGenreBoxes();
 
@@ -172,7 +182,7 @@ app.controller("TechDetailsCtrl",
       console.log($scope.clickedTech);
       $scope.techs.$save($scope.clickedTech);
       $scope.edit=false;
-      location.reload();
+      // location.reload();
     };
 
 
