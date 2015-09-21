@@ -82,12 +82,6 @@ app.controller("ArtDetailsCtrl",
       for(var i=0; i<$scope.arts.length; i++){
         if($scope.arts[i].name === $routeParams.name){
           $scope.clickedArt = $scope.arts[i];
-          if($scope.clickedArt.video!==undefined){
-            $scope.video = $scope.clickedArt.video;
-            $scope.video = $scope.video.split("=")[1];
-            console.log($scope.video);
-            angular.element("#video").html("<iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.video+"' allowfullscreen></iframe>");
-          }
         }
       }
 

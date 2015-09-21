@@ -33,6 +33,12 @@ app.controller("TechDetailsCtrl",
       for(var i=0; i<$scope.techs.length; i++){
         if($scope.techs[i].name === $routeParams.name){
           $scope.clickedTech = $scope.techs[i];
+          if($scope.clickedTech.video!==undefined){
+            $scope.video = $scope.clickedTech.video;
+            $scope.video = $scope.video.split("=")[1];
+            console.log($scope.video);
+            angular.element("#video").html("<iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.video+"' allowfullscreen></iframe>");
+          }
         }
       }
 
