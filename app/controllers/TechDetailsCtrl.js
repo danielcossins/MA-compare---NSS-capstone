@@ -177,6 +177,11 @@ app.controller("TechDetailsCtrl",
           }
           console.log($scope.clickedTech);
           $scope.currentUser.techniques[votesArr[i].value] = $scope.clickedTech.name;
+        }else{
+          if($scope.currentUser.techniques[votesArr[i].value]===$scope.clickedTech.name){
+            $scope.currentUser.techniques[votesArr[i].value] = "no vote";
+            $scope.clickedTech.votes[votesArr[i].value]--;
+          }
         }
       }
       $scope.users.$save($scope.currentUser);
