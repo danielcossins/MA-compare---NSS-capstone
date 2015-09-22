@@ -163,10 +163,14 @@ app.controller("TechDetailsCtrl",
       $scope.clickedTech.arts = getCheckboxes(".checkArts");
       $scope.clickedTech.genres = getCheckboxes(".checkGenres");
       if($scope.clickedTech.videos!==undefined){
-        $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+        if(angular.element("#techVideoEdit").val()){
+          $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+        }
       }else{
-        $scope.clickedTech.videos = [];
-        $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+        if(angular.element("#techVideoEdit").val()){
+          $scope.clickedTech.videos = [];
+          $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
+        }
       }
 
 
