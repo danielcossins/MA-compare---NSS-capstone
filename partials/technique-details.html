@@ -1,17 +1,24 @@
 <div id="techDetails">
-  <div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <div class="btn-group" role="group">
+    <button class="btn btn-default" type="button" ng-click="changeVote()">
       Vote
-      <span class="caret"></span>
     </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-      <li><input type="checkbox" class="votes" value="Overall">Overall</li>
-      <li ng-repeat="key in genres"><input type="checkbox" class="votes" value="{{key.name}}">{{key.name}}</li>
-      <button ng-hide="clicked" ng-click="vote()">Vote</button>
-    </ul>
+    <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
   </div>
+  <ul ng-show="voteShow" class="edit"><!-- ng-hide="edit" -->
+    <div ng-show="loggedIn" class="smallDivider">
+      <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox votes" value="Overall">
+      <label for="Overall" class="css-label">Overall</label></li>
+      <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
+      <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
+      <button class="btn btn-default" ng-click="vote()">Vote</button>
+    </div>
+    <div ng-hide="loggedIn" class="alert alert-warning">
+      You are not logged in.
+    </div>
+  </ul>
 
-  <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
+  <!-- <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button> -->
   <div ng-show="edit" class="edit">
     <div ng-show="loggedIn">
       <input type="text" id="techNameEdit" class="form-control" placeholder="Technique Name">
@@ -97,40 +104,5 @@
     </div>
     <div class="panel-body panel panel-default">
       <div class="middle" id="video"></div>
-    <!-- </div> -->
   </div>
-
-  <!-- <div class="row panel panel-default">
-    <div class="panel-heading">
-      <h3>Included Arts</h3>
-    </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="art in matchingArts">
-      <div class="mouseover">
-      <a href="{{'/#/arts/'+art.name}}">
-        <div class="panel-heading">
-          <h4>{{art.name}}</h4>
-        </div>
-        <div class="panel-body">
-          <img src="{{art.image}}" alt="Image" width="100%">
-        </div>
-      </a>
-      </div>
-    </div>
-  </div> -->
-
-
-  <!-- div ng-repeat="art in clickedTech.arts">
-    <a href="{{'/#/arts/'+art.name}}">
-    <h4>{{art.name}}</h4>
-    <img src="{{art.image}}" alt="Image">
-  </div>
-
-  <div ng-repeat="genre in clickedTech.genres">
-    <a href="{{'/#/genres/'+genre.name}}">
-    <h4>{{genre.name}}</h4>
-    <img src="{{genre.image}}" alt="Image">
-  </div> -->
-  <!-- <div id="video"></div> -->
-
-          <!-- <div id="video"></div> -->
 </div>

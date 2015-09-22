@@ -10,6 +10,7 @@ app.controller("TechDetailsCtrl",
 
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
+    $scope.voteShow=false;
 
     // Data from firebase 
     $scope.techs = $firebaseArray(ref);
@@ -25,6 +26,32 @@ app.controller("TechDetailsCtrl",
     var ref4 = new Firebase("https://ma-compare.firebaseio.com/users"); 
     $scope.users = $firebaseArray(ref4);
     console.log($scope.users);
+
+    $scope.changeVote = function(){
+      if($scope.voteShow){
+        $scope.voteShow=false;
+      }else{
+        $scope.voteShow=true;
+      }
+      $scope.edit=false;
+
+      //This checks the checkboxes
+      var voteChecksArr = angular.element(".votes");
+      console.log(voteChecksArr);
+      console.log($scope.users);
+      for(var i=0; i<$scope.users.length; i++){
+        if($rootScope.user.uid===$scope.users[i].uid){
+          console.log($scope.users[i]);
+          console.log($scope.users[i].arts);
+          for(var k=0; k<voteChecksArr.length; k++){
+            console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedArt.name);
+            if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedArt.name){
+              voteChecksArr[k].checked=true;
+            }
+          }
+        }
+      }
+    };
 
 
     $scope.techs.$loaded()
