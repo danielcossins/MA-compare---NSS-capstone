@@ -42,10 +42,10 @@ app.controller("TechDetailsCtrl",
       for(var i=0; i<$scope.users.length; i++){
         if($rootScope.user.uid===$scope.users[i].uid){
           console.log($scope.users[i]);
-          console.log($scope.users[i].arts);
+          console.log($scope.users[i].techniques);
           for(var k=0; k<voteChecksArr.length; k++){
-            console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedTech.name);
-            if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedTech.name){
+            console.log($scope.users[i].techniques, voteChecksArr[k].value, $scope.clickedTech.name);
+            if($scope.users[i].techniques[voteChecksArr[k].value]===$scope.clickedTech.name){
               voteChecksArr[k].checked=true;
             }
           }
