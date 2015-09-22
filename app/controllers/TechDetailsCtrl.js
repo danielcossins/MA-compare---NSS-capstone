@@ -52,6 +52,7 @@ app.controller("TechDetailsCtrl",
         }
       }
     };
+    
 
 
     $scope.techs.$loaded()
