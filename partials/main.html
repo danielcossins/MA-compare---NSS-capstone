@@ -27,8 +27,70 @@
   <h5>Number of votes: {{bestTech.votes.Overall}}</h5>
   <img src="{{bestTech.image}}">
 </div></a> -->
-
 <div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="middle accentBG">Voted best overall art</h2>
+  </div>
+  <a href="{{'/#/arts/'+bestArt.name}}">
+    <div class="panel-body mouseover">
+      <div class="media">
+        <a href="{{'/#/arts/'+bestArts.name}}">
+        <div class="media-left">
+          <img class="media-object" src="{{bestArt.image}}" alt="Image">
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading middle accent verticalMargins">{{bestArt.name}}</h2>
+          <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestArt.votes.Overall}}</span></h4>
+        </div>
+        </a>
+      </div>
+    </div>
+  </a>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="middle accentBG">Voted best overall technique</h2>
+  </div>
+  <a href="{{'/#/arts/'+bestArt.name}}">
+    <div class="panel-body mouseover">
+      <div class="media">
+        <a href="{{'/#/techniques/'+bestTech.name}}">
+        <div class="media-left">
+          <img class="media-object" src="{{bestTech.image}}" alt="Image">
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading middle accent verticalMargins">{{bestTech.name}}</h2>
+          <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestTech.votes.Overall}}</span></h4>
+        </div>
+        </a>
+      </div>
+    </div>
+  </a>
+</div>
+<!-- <div class="media mouseover">
+  <a href="{{'/#/arts/'+bestArts.name}}">
+  <div class="media-left">
+    <img class="media-object" src="{{bestArt.image}}" alt="Image">
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading middle accent verticalMargins">{{bestArt.name}}</h3>
+    <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestArt.votes.Overall}}</span></h4>
+  </div>
+  </a>
+</div> -->
+<!-- <div class="media mouseover">
+  <a href="{{'/#/techniques/'+bestTech.name}}">
+  <div class="media-left">
+    <img class="media-object" src="{{bestTech.image}}" alt="Image">
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading middle accent verticalMargins">{{bestTech.name}}</h3>
+    <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestTech.votes.Overall}}</span></h4>
+  </div>
+  </a>
+</div> -->
+
+<!-- <div class="panel panel-default">
   <div class="panel-heading">
     <h2>Voted best overall art</h2>
   </div>
@@ -53,18 +115,12 @@
   </div>
   <a href="{{'/#/techniques/'+bestTech.name}}">
     <div class="panel-body mouseover">
-      <div class="media">
-        <div class="media-left">
-          <img src="{{bestTech.image}}" alt="Image" width="90%">
-        </div>
-        <div class="media-body">
+      <img src="{{bestTech.image}}" alt="Image" width="10%">
           <h3 class="media-heading middle accent verticalMargins">{{bestTech.name}}</h3>
           <h4 class="label label-default middle verticalMargins" max-width="20px">Number of votes: <span class="badge">{{bestTech.votes.Overall}}</span></h4>
-        </div>
-      </div>
     </div>
   </a>
-</div>
+</div> -->
 
 <!-- <div class="panel panel-default">
   <div class="mouseover">

@@ -2,8 +2,7 @@ app.controller("SignupCtrl",
   ["$scope",
    "$routeParams",
   "$firebaseObject",
-  "storage",
-  function($scope, $routeParams, $firebaseObject, storage) {
+  function($scope, $routeParams, $firebaseObject) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
 
     // Grabs user input from DOM
