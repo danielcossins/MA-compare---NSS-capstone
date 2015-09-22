@@ -11,7 +11,7 @@
       <label for="Overall" class="css-label">Overall</label></li>
       <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
       <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
-      <button ng-hide="clicked" class="btn btn-default" ng-click="vote()">Vote</button>
+      <button class="btn btn-default" ng-click="vote()">Vote</button>
     </div>
     <div ng-hide="loggedIn" class="alert alert-warning">
       You are not logged in.
@@ -86,7 +86,7 @@
  <!--  <iframe width="420" height="315"
   src="http://www.youtube.com/embed/{{video}}" allowfullscreen>
   </iframe> -->
-  
+
    <!-- <iframe width="420" height="315"
   src="http://www.youtube.com/embed/yoYZB1wf17c" allowfullscreen>
   </iframe> -->

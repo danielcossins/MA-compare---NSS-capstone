@@ -44,8 +44,8 @@ app.controller("TechDetailsCtrl",
           console.log($scope.users[i]);
           console.log($scope.users[i].arts);
           for(var k=0; k<voteChecksArr.length; k++){
-            console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedArt.name);
-            if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedArt.name){
+            console.log($scope.users[i].arts, voteChecksArr[k].value, $scope.clickedTech.name);
+            if($scope.users[i].arts[voteChecksArr[k].value]===$scope.clickedTech.name){
               voteChecksArr[k].checked=true;
             }
           }
