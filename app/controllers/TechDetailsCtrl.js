@@ -52,7 +52,23 @@ app.controller("TechDetailsCtrl",
         }
       }
     };
-    
+    $scope.genreCheck=false;
+    $scope.changeGenreCheck = function(){
+      if($scope.genreCheck){
+        $scope.genreCheck=false;
+      }else{
+        $scope.genreCheck=true;
+      }
+    };
+    $scope.artCheck=false;
+    $scope.changeArtsCheck = function(){
+      if($scope.artCheck){
+        $scope.artCheck=false;
+      }else{
+        $scope.artCheck=true;
+      }
+    };
+
 
 
     $scope.techs.$loaded()
