@@ -11,6 +11,7 @@ app.controller("TechDetailsCtrl",
     $scope.edit=false;
     $scope.loggedIn = $rootScope.user;
     $scope.voteShow=false;
+    $scope.clickedOnce = false;
 
     // Data from firebase 
     $scope.techs = $firebaseArray(ref);
@@ -190,6 +191,7 @@ app.controller("TechDetailsCtrl",
       }else{
         $scope.edit=true;
       }
+      $scope.voteShow = false;
       document.getElementById("techNameEdit").value = $scope.clickedTech.name;
       document.getElementById("techLogoEdit").value = $scope.clickedTech.image;
       document.getElementById("techDescriptionEdit").value = $scope.clickedTech.description;
@@ -204,8 +206,10 @@ app.controller("TechDetailsCtrl",
       $scope.clickedTech.name = angular.element("#techNameEdit").val();
       $scope.clickedTech.image = angular.element("#techLogoEdit").val();
       $scope.clickedTech.description = angular.element("#techDescriptionEdit").val();
-      $scope.clickedTech.arts = getCheckboxes(".checkArts");
-      $scope.clickedTech.genres = getCheckboxes(".checkGenres");
+      if($scope.clickedOnce){
+        $scope.clickedTech.arts = getCheckboxes(".checkArts");
+        $scope.clickedTech.genres = getCheckboxes(".checkGenres");
+      }
       if($scope.clickedTech.videos!==undefined){
         if(angular.element("#techVideoEdit").val()){
           $scope.clickedTech.videos.push(angular.element("#techVideoEdit").val());
@@ -227,6 +231,7 @@ app.controller("TechDetailsCtrl",
 
 
     $scope.checkCheckboxes = function(){
+      $scope.clickedOnce = true;
       var allGenreChecksArr = angular.element(".checkGenres");
       console.log(allGenreChecksArr);
       console.log(allGenreChecksArr[0].value);
