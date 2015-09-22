@@ -13,22 +13,23 @@
   </div>
 
 
-  <h3>{{clickedGenre.name}}</h3>
-  <img src="{{clickedGenre.image}}" alt="Image">
-  <p>{{clickedGenre.description}}</p>
+  <h3 class="blackBG middle divider detailsHeader">{{clickedGenre.name}}</h3>
+  <img class="jumbotron middle verticalMargins" src="{{clickedGenre.image}}" alt="Image">
+  <p class="blackBG smallDivider">{{clickedGenre.description}}</p>
+
 
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3>Covered Arts</h3>
+      <h3 class="middle accent">Included Arts</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="art in matchingArts">
+    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="art in matchingArts">
       <div class="mouseover">
       <a href="{{'/#/arts/'+art.name}}">
-        <div class="panel-heading">
-          <h4>{{art.name}}</h4>
-        </div>
         <div class="panel-body">
-          <img src="{{art.image}}" alt="Image" width="100%">
+          <img src="{{art.image}}" alt="Image" width="100%" max-width="200px">
+        </div>
+        <div class="panel-heading">
+          <h4 class="middle accent">{{art.name}}</h4>
         </div>
       </a>
       </div>
@@ -37,38 +38,19 @@
 
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3>Covered Techniques</h3>
+      <h3 class="middle accent">Covered Genres</h3>
     </div>
-    <div class="panel-body panel panel-default col-sm-3" ng-repeat="technique in matchingTechs">
+    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="genre in matchingGenres">
       <div class="mouseover">
-      <a href="{{'/#/techniques/'+technique.name}}">
-        <div class="panel-heading">
-          <h4>{{technique.name}}</h4>
-        </div>
+      <a href="{{'/#/genres/'+genre.name}}">
         <div class="panel-body">
-          <img src="{{technique.image}}" alt="Image" width="100%">
+          <img src="{{genre.image}}" alt="Image" width="100%" max-width="200px">
+        </div>
+        <div class="panel-heading">
+          <h4 class="middle accent">{{genre.name}}</h4>
         </div>
       </a>
       </div>
     </div>
   </div>
-
-  
-
-  <!-- <h4>Arts that cover this genre:</h4>
-  <div ng-repeat="art in matchingArts">
-    <a href="{{'/#/arts/'+art.name}}">
-    <h4>{{art.name}}</h4>
-    <img src="{{art.image}}" alt="Image">
-    </a>
-  </div>
-
-  <h4>Techniques in this genre:</h4>
-  <div ng-repeat="technique in matchingTechs">
-    <a href="{{'/#/techniques/'+technique.name}}">
-    <h4>{{technique.name}}</h4>
-    <img src="{{technique.image}}" alt="Image">
-    </a>
-  </div> -->
-
 </div>

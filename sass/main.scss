@@ -1,6 +1,7 @@
 //overall stuff
 $accentColorLight: #d9534f;
 $accentColor: #d43f3a;
+$black: #222;
 #view{
   margin-top: 60px;
 }
@@ -11,6 +12,13 @@ $accentColor: #d43f3a;
 .accent{
   color: $accentColor;
   // background-color: $accentColor;
+}
+.black{
+  color: $black;
+}
+.blackBG{
+  color: white;
+  background-color: $black;
 }
 .mouseover{
   padding: 10px;

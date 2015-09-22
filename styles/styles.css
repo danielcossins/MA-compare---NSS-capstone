@@ -8,6 +8,13 @@
 .accent {
   color: #d43f3a; }
 
+.black {
+  color: #222; }
+
+.blackBG {
+  color: white;
+  background-color: #222; }
+
 .mouseover {
   padding: 10px;
   border-radius: 20%;
