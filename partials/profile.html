@@ -14,9 +14,11 @@
 <h3 class="middle accentBG">{{user.password.email}}</h3>
 <h3 class="accent topMargin middle">Voted Arts</h3>
 <ul>
-  <li class="verticalMargins middle" ng-repeat="(key, art) in clickedUser.arts">{{key}}: <a href="{{'/#/arts/'+art}}"><span class="accent">{{art}}</span></a></li>
+  <li class="verticalMargins middle" ng-repeat="(key, art) in clickedUser.arts">{{key}}: <a ng-if="art != 'no vote'" href="{{'/#/arts/'+art}}"><span class="accent">{{art}}</span></a>
+  <span ng-if="art == 'no vote'" class="accent">{{art}}</span></li>
 </ul>
 <h3 class="accent topMargin middle">Voted Techniques</h3>
 <ul>
-  <li class="verticalMargins middle" ng-repeat="(key, tech) in clickedUser.techniques">{{key}}: <a href="{{'/#/techniques/'+tech}}"><span class="accent"> {{tech}}</span></a></li>
+  <li class="verticalMargins middle" ng-repeat="(key, tech) in clickedUser.techniques">{{key}}: <a  ng-if="tech != 'no vote'" href="{{'/#/techniques/'+tech}}"><span class="accent"> {{tech}}</span></a>
+  <span ng-if="tech == 'no vote'" class="accent">{{tech}}</span></li>
 </ul>
