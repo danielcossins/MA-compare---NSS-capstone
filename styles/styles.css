@@ -134,6 +134,9 @@ li {
 a:visited {
   color: white; }
 
+a.gray:visited {
+  color: gray; }
+
 .navbar-default .navbar-nav > .active > a {
   background-color: #d43f3a; }
 
