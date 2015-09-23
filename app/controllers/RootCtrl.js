@@ -2,7 +2,8 @@ app.controller("RootCtrl",
   ["$scope",
   "$rootScope",
   "$firebaseAuth",
-  function($scope, $rootScope, $firebaseAuth) {
+  "$location",
+  function($scope, $rootScope, $firebaseAuth, $location) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.auth = $firebaseAuth(ref);
 
@@ -10,6 +11,7 @@ app.controller("RootCtrl",
 
     $scope.logout = function(){
       $scope.auth.$unauth();
+      $location.path('/#/');
       location.reload();
     };
   }

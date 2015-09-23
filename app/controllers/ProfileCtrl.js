@@ -4,7 +4,14 @@ app.controller("ProfileCtrl",
    "$firebaseArray",
    "$location",
    "$rootScope",
-  function($scope,  $routeParams, $firebaseArray, $location, $rootScope) {
+   "$firebaseAuth",
+   "uploadImage",
+  function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
+  // var ref2 = new Firebase("https://ma-compare.firebaseio.com/");
+  // $scope.auth = $firebaseAuth(ref2);
+
+
+
     var ref = new Firebase("https://ma-compare.firebaseio.com/users"); 
 
     // Data from firebase 
@@ -19,5 +26,31 @@ app.controller("ProfileCtrl",
         }
       }
     });
+
+    // $scope.setUpload = function(){
+    //   console.log(angular.element("#profileUpload").val());
+    //   // $scope.photoUpload = angular.element("#exampleInputFile").val();
+    //   // console.log(uploadImage());
+    //   // $scope.photoUpload = uploadImage();
+    //   var xhr = uploadImage("profileUpload");
+    //   angular.element("#profile").html("<h5 class='accent'>Please wait . . .</h5>");
+    //   xhr.onload = function() {
+    //     $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
+    //     angular.element("#profile").html("<img src='"+$scope.photoUpload+"' width='50px'>");
+    //   };
+    // };
+
+    // $scope.savePhoto = function(){
+    //   //This deals with photo gallary
+    //   var image = "";
+    //   if(angular.element("#profileUpload").val()!==undefined){
+    //     image = angular.element("#profileUpload").val();
+    //   }else{
+    //     if(angular.element("#profileUrl").val()!==""){
+    //       image = angular.element("#profileUrl").val();
+    //     }
+    //   }
+    //   $scope.auth.$save(image);
+    // };
   }
 ]);
