@@ -21,11 +21,16 @@
   <!-- <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button> -->
   <div ng-show="edit" class="edit">
     <div ng-show="loggedIn">
-      <input type="text" id="techNameEdit" class="form-control" placeholder="Technique Name">
+      <h4 class="accentBG middle smallDivider" id="techNameEdit"></h4>
+      <!-- <input type="text" id="techNameEdit" class="form-control" placeholder="Technique Name"> -->
+      <label for="techLogoEdit">Change logo url</label>
       <input type="text" id="techLogoEdit" class="form-control" placeholder="Technique logo url">
+      <label for="techDescriptionEdit" class="topMargin">Edit description</label>
       <textarea id="techDescriptionEdit" class="form-control" rows="5" placeholder="Technique description"></textarea>
-      <h3>Videos</h3>
-      <input type="text" id="techVideoEdit" class="form-control" placeholder="Video url">
+      <div class="smallDivider">
+        <h3 class="accent">Add a Video</h3>
+        <input type="text" id="techVideoEdit" class="form-control" placeholder="Video url">
+      </div>
       <!-- <input type="text" class="form-control artVideo" placeholder="Video url" ng-repeat="vid in videos"> -->
       <!-- <button type="button" class="btn btn-default" ng-click="addVideo()">Add another video</button> -->
 

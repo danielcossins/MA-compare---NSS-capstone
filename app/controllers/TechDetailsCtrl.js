@@ -197,7 +197,7 @@ app.controller("TechDetailsCtrl",
         $scope.edit=true;
       }
       $scope.voteShow = false;
-      document.getElementById("techNameEdit").value = $scope.clickedTech.name;
+      document.getElementById("techNameEdit").innerHTML = $scope.clickedTech.name;
       document.getElementById("techLogoEdit").value = $scope.clickedTech.image;
       document.getElementById("techDescriptionEdit").value = $scope.clickedTech.description;
       // document.getElementById("techVideoEdit").value = $scope.clickedTech.videos;
@@ -208,7 +208,7 @@ app.controller("TechDetailsCtrl",
 
 
     $scope.update = function(){
-      $scope.clickedTech.name = angular.element("#techNameEdit").val();
+      // $scope.clickedTech.name = angular.element("#techNameEdit").val();
       $scope.clickedTech.image = angular.element("#techLogoEdit").val();
       $scope.clickedTech.description = angular.element("#techDescriptionEdit").val();
       if($scope.clickedOnce){
