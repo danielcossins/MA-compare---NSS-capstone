@@ -22,7 +22,7 @@ app.controller("AddTechCtrl",
       $scope.arts = data.data;
       /////Moves this in here so storage gets loaded in time////////////
     //changes display by whether or not user is loggin in
-    $scope.loggedIn = storage.getAuthData();
+    // $scope.loggedIn = storage.getAuthData();
     /////////////////
     });
 
