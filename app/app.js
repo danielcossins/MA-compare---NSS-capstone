@@ -70,6 +70,11 @@ app.config(['$routeProvider',
         templateUrl: 'partials/rankings.html',
         controller: 'RankCtrl'
       })
+      //user profile
+      .when('/profile', {
+        templateUrl: 'partials/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

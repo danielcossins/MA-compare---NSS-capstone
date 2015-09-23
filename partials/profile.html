@@ -1,0 +1,10 @@
+<img class="middle" src="{{user.password.profileImageURL}}" width="50%">
+<h3 class="middle accentBG">{{user.password.email}}</h3>
+<h3 class="accent topMargin">Voted Arts</h3>
+<ul>
+  <li class="verticalMargins" ng-repeat="(key, art) in clickedUser.arts">{{key}}: <a href="{{'/#/arts/'+art}}"><span class="accent">{{art}}</span></a></li>
+</ul>
+<h3 class="accent topMargin">Voted Voted Techniques</h3>
+<ul>
+  <li class="verticalMargins" ng-repeat="(key, tech) in clickedUser.techniques">{{key}}: <a href="{{'/#/techniques/'+tech}}"><span class="accent"> {{tech}}</span></a></li>
+</ul>

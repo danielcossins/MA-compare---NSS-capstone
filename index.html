@@ -47,6 +47,7 @@
           <a href="/#/login" ng-hide="user">Login</a>
           <div ng-show="user" id="userInfo">
             <img src="{{user.password.profileImageURL}}" width="30px">
+            <a class="accentBG" href="/#/profile">Profile</a>
             <a href="" ng-click="logout()">Logout</a>
           </div>
         </form>
@@ -92,6 +93,7 @@
 
 <script src="app/controllers/AuthCtrl.js"></script>
 <script src="app/controllers/SignupCtrl.js"></script>
+<script src="app/controllers/ProfileCtrl.js"></script>
 
 </body>
 </html>
