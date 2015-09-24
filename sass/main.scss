@@ -181,7 +181,14 @@ li{
 }
 #rebel{
   padding-bottom: 60px;
-  // height: 700px;
+  height: 700px;
+  #firstRebel{
+    margin-top: 50px;
+  }
+  .rebels{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
 
@@ -217,6 +224,19 @@ a.gray:visited{
   color: white;
 }
 
+
+@media (max-width: 768px) {
+  #rebel{
+    height: 50px;
+    #firstRebel{
+      margin-top: 0px;
+    }
+    .rebels{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+}
 
 
 

@@ -137,7 +137,13 @@ li {
   list-style-type: none; }
 
 #rebel {
-  padding-bottom: 60px; }
+  padding-bottom: 60px;
+  height: 700px; }
+  #rebel #firstRebel {
+    margin-top: 50px; }
+  #rebel .rebels {
+    margin-top: 20px;
+    margin-bottom: 20px; }
 
 .navbar-inverse .navbar-nav > .active > a {
   background-color: #d43f3a; }
@@ -163,6 +169,14 @@ a.gray:visited {
 .navbar-default .navbar-nav > li > a {
   color: white; }
 
+@media (max-width: 768px) {
+  #rebel {
+    height: 50px; }
+    #rebel #firstRebel {
+      margin-top: 0px; }
+    #rebel .rebels {
+      margin-top: 0px;
+      margin-bottom: 0px; } }
 input[type=checkbox].css-checkbox {
   position: absolute;
   z-index: -1000;
