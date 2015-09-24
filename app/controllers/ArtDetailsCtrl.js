@@ -151,6 +151,9 @@ app.controller("ArtDetailsCtrl",
 
 
 
+      if($scope.clickedArt.votes===undefined){
+        $scope.clickedArt.votes = {};
+      }
       var votesArr = angular.element(".votes");
       console.log(votesArr);
       for(var i=0; i<votesArr.length; i++){
@@ -161,7 +164,9 @@ app.controller("ArtDetailsCtrl",
             if($scope.arts[k].name===previouslyVotedArt){
               console.log("before", $scope.arts[k]);
               console.log(votesArr[i].value);
-              $scope.arts[k].votes[votesArr[i].value]--;
+              if($scope.arts[k].votes[votesArr[i].value]>0){
+                $scope.arts[k].votes[votesArr[i].value]--;
+              }
               console.log("after", $scope.arts[k]);
               $scope.arts.$save($scope.arts[k]);
             }

@@ -48,10 +48,6 @@ app.config(['$routeProvider',
         templateUrl: 'partials/addArt.html',
         controller: 'AddArtCtrl'
       })
-      .when('/addGenre', {
-        templateUrl: 'partials/addGenre.html',
-        controller: 'AddGenreCtrl'
-      })
       .when('/addTechnique', {
         templateUrl: 'partials/addTechnique.html',
         controller: 'AddTechCtrl'

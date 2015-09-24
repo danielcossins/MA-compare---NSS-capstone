@@ -150,6 +150,9 @@ app.controller("TechDetailsCtrl",
 
 
 
+      if($scope.clickedTech.votes===undefined){
+        $scope.clickedTech.votes = {};
+      }
       var votesArr = angular.element(".votes");
       for(var i=0; i<votesArr.length; i++){
         if(votesArr[i].checked){
@@ -160,7 +163,10 @@ app.controller("TechDetailsCtrl",
             if($scope.techs[k].name===previouslyVotedTech){
               console.log("before", $scope.techs[k]);
               console.log(votesArr[i].value);
-              $scope.techs[k].votes[votesArr[i].value]--;
+              if($scope.techs[k].votes[votesArr[i].value]>0){
+                console.log($scope.techs[k].votes[votesArr[i].value]);
+                $scope.techs[k].votes[votesArr[i].value]--;
+              }
               // console.log($scope.techs[k].votes[votesArr[i].value]++);
               console.log("after", $scope.techs[k]);
               // $scope.techs.$remove($scope.techs[k]);
@@ -170,8 +176,10 @@ app.controller("TechDetailsCtrl",
           }
 ///////////////////////////////////////////////////////////
           console.log(votesArr[i], "checked");
+          console.log($scope.clickedTech.votes[votesArr[i].value]);
           if($scope.clickedTech.votes[votesArr[i].value]===undefined){
             $scope.clickedTech.votes[votesArr[i].value] = 1;
+          console.log($scope.clickedTech.votes[votesArr[i].value]);
           }else{
             $scope.clickedTech.votes[votesArr[i].value]++;
           }
@@ -184,6 +192,7 @@ app.controller("TechDetailsCtrl",
           }
         }
       }
+      console.log($scope.clickedTech);
       $scope.users.$save($scope.currentUser);
       // $scope.techs.$remove($scope.clickedTech);
       // $scope.techs.$add($scope.clickedTech);
