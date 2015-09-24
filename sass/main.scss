@@ -119,8 +119,15 @@ body{
 /////////
 /////////
 .main{
-  border: 5px solid black;
-  border-radius: 20%;
+  // border: 5px solid black;
+  // border-radius: 20%;
+
+}
+#artHeader{
+  width: 80%;
+}
+#techHeader{
+  width: 80%;
 }
 // #main {
 //   padding-bottom: 80px;
@@ -163,6 +170,10 @@ body{
 }
 li{
   list-style-type: none;
+}
+#rebel{
+  padding-bottom: 60px;
+  // height: 700px;
 }
 
 

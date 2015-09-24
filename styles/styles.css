@@ -87,9 +87,11 @@ img {
 #userInfo {
   float: right; }
 
-.main {
-  border: 5px solid black;
-  border-radius: 20%; }
+#artHeader {
+  width: 80%; }
+
+#techHeader {
+  width: 80%; }
 
 .divider {
   margin-top: 40px;
@@ -124,6 +126,9 @@ img {
 
 li {
   list-style-type: none; }
+
+#rebel {
+  padding-bottom: 60px; }
 
 .navbar-inverse .navbar-nav > .active > a {
   background-color: #d43f3a; }
