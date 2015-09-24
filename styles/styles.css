@@ -87,6 +87,9 @@ img {
 #userInfo {
   float: right; }
 
+.main {
+  height: 700px; }
+
 #artHeader {
   width: 80%; }
 
