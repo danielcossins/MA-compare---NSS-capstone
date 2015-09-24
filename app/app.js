@@ -71,6 +71,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl'
       })
+      .when('/users', {
+        templateUrl: 'partials/users.html',
+        controller: 'UserCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
