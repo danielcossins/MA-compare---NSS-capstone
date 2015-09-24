@@ -169,7 +169,18 @@ a.gray:visited {
 .navbar-default .navbar-nav > li > a {
   color: white; }
 
-@media (max-width: 692px) {
+@media only screen and (max-width: 768px) {
+  #rebel {
+    height: 50px; }
+    #rebel #firstRebel {
+      margin-top: 0px; }
+    #rebel .rebels {
+      margin-top: 0px;
+      margin-bottom: 0px; }
+
+  .main {
+    height: 610px; } }
+@media only screen and (min-width: 320px) and (max-width: 768) {
   #rebel {
     height: 50px; }
     #rebel #firstRebel {
@@ -180,6 +191,17 @@ a.gray:visited {
 
   .main {
     height: 560px; } }
+@media only screen and (max-width: 379px) {
+  #rebel {
+    height: 50px; }
+    #rebel #firstRebel {
+      margin-top: 0px; }
+    #rebel .rebels {
+      margin-top: 0px;
+      margin-bottom: 0px; }
+
+  .main {
+    height: 400px; } }
 input[type=checkbox].css-checkbox {
   position: absolute;
   z-index: -1000;

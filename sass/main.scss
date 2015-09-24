@@ -225,7 +225,23 @@ a.gray:visited{
 }
 
 
-@media (max-width: 692px) {
+@media only screen and (max-width: 768px) {
+  #rebel{
+    height: 50px;
+    #firstRebel{
+      margin-top: 0px;
+    }
+    .rebels{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+  .main{
+    height: 610px;
+  }
+}//768
+//692
+@media only screen and (min-width: 320px) and (max-width: 768) {
   #rebel{
     height: 50px;
     #firstRebel{
@@ -239,8 +255,22 @@ a.gray:visited{
   .main{
     height: 560px;
   }
-}//768
-//692
+}
+@media only screen and (max-width: 379px) {
+  #rebel{
+    height: 50px;
+    #firstRebel{
+      margin-top: 0px;
+    }
+    .rebels{
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+  }
+  .main{
+    height: 400px;
+  }
+}
 
 
 
