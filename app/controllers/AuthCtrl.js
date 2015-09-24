@@ -6,6 +6,10 @@ app.controller("AuthCtrl",
    "$firebaseAuth",
    "$rootScope",
   function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope, storage) {
+    //to create user info in firebase
+    var ref2 = new Firebase("https://ma-compare.firebaseio.com/users");
+    $scope.users = $firebaseArray(ref2);
+
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.user = {
       "email": "",
@@ -42,6 +46,23 @@ app.controller("AuthCtrl",
           // console.log("Login Failed!", error);
         } else {
           console.log("Authenticated successfully with payload:", authData);
+          var result = false;
+          for(var i=0; i<$scope.users.length; i++){
+            if($scope.users[i].uid===authData.uid){
+              result=true;
+            }
+          }
+          if(result===false){
+            var userObj = {
+              uid: authData.uid,
+              arts: {Overall: 0},
+              techniques: {Overall: 0},
+              email: authData.password.email,
+              image: authData.password.profileImageURL
+            };
+            console.log(userObj);
+            $scope.users.$add(userObj);
+          }
           location.reload();
           // $rootScope.user = $scope.authData;
         }

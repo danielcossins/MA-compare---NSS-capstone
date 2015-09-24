@@ -1,10 +1,10 @@
 app.controller("UserCtrl", 
   ["$scope",
   "$rootScope",
-  "$firebaseAuth",
   "$location",
-  function($scope, $rootScope, $firebaseAuth, $location) {
+  "$firebaseArray",
+  function($scope, $rootScope, $location, $firebaseArray) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/users");
-    $scope.users = $firebaseAuth(ref);
+    $scope.users = $firebaseArray(ref);
   }
 ]);

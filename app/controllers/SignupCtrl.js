@@ -2,7 +2,14 @@ app.controller("SignupCtrl",
   ["$scope",
    "$routeParams",
   "$firebaseObject",
-  function($scope, $routeParams, $firebaseObject) {
+  // "$firebaseArray",
+  function($scope, $routeParams, $firebaseObject/*, $firebaseArray*/) {
+    // //to create user info in firebase
+    // var ref2 = new Firebase("https://ma-compare.firebaseio.com/users");
+    // $scope.users = $firebaseArray(ref2);
+
+
+
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
 
     // Grabs user input from DOM
@@ -15,6 +22,7 @@ app.controller("SignupCtrl",
     $scope.createUser = function() {
 
       ref.createUser($scope.user, function(error, userData) {
+        console.log(userData);
         if (error) {
           switch (error.code) {
             case "EMAIL_TAKEN":
