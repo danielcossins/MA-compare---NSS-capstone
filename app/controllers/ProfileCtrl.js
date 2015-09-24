@@ -7,8 +7,10 @@ app.controller("ProfileCtrl",
    "$firebaseAuth",
    "uploadImage",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
-  // var ref2 = new Firebase("https://ma-compare.firebaseio.com/");
-  // $scope.auth = $firebaseAuth(ref2);
+    //CSS
+    angular.element(".active").removeClass("active");
+    angular.element("#users").addClass("active");
+    /////
   console.log($routeParams);
 
 
