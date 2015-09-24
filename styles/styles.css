@@ -47,11 +47,18 @@ p {
 .badge {
   background-color: black; }
 
-.evenHeight {
+.evenHeightGenres {
   height: 300px; }
 
-.imageFit {
-  max-height: 250px; }
+.imageFitGenres {
+  max-height: 240px; }
+
+.evenHeightArts {
+  height: 600px; }
+
+.imageFitArts {
+  max-height: 240px;
+  max-width: 100%; }
 
 a {
   color: black; }

@@ -1,7 +1,7 @@
 <h3 class="blackBG middle topMargin bottomMargin verticalMargins">Select from any one of these engagement styles to view details, related arts, and related techniques.</h3>
 <div ng-repeat="key in genres | filter: search">
-  <a href="{{'/#/genres/'+key.name}}"><div class="evenHeight col-sm-4 col-md-3 eachGenre mouseover">
+  <a href="{{'/#/genres/'+key.name}}"><div class="evenHeightGenres col-sm-4 col-md-3 eachGenre mouseover">
     <h4 class="header blackBG middle">{{key.name}}</h4>
-    <img class="middle imageFit" src="{{key.image}}" width="100%">
+    <img class="middle imageFitGenres" src="{{key.image}}">
   </div></a>
 </div>
