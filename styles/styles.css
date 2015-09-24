@@ -176,7 +176,10 @@ a.gray:visited {
       margin-top: 0px; }
     #rebel .rebels {
       margin-top: 0px;
-      margin-bottom: 0px; } }
+      margin-bottom: 0px; }
+
+  .main {
+    height: 560px; } }
 input[type=checkbox].css-checkbox {
   position: absolute;
   z-index: -1000;
