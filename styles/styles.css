@@ -47,6 +47,12 @@ p {
 .badge {
   background-color: black; }
 
+.evenHeight {
+  height: 300px; }
+
+.imageFit {
+  max-height: 250px; }
+
 a {
   color: black; }
 
