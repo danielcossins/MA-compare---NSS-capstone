@@ -5,24 +5,25 @@
     </button>
     <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
   </div>
-  <ul ng-show="voteShow" class="edit"><!-- ng-hide="edit" -->
-    <div ng-show="loggedIn" class="smallDivider">
-      <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox votes" value="Overall">
-      <label for="Overall" class="css-label">Overall</label></li>
-      <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
-      <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
-      <button class="btn btn-default" ng-click="vote()">Vote</button>
-    </div>
-    <div ng-hide="loggedIn" class="alert alert-warning">
-      You are not logged in.
-    </div>
-  </ul>
+  <div ng-show="voteShow">
+    <h4 class="accentBG">If you think {{clickedTech.name}} is the best technique for anyone of these engagement styles, select the appropriate boxes. You can only vote once, but you can change it at any time. Previous votes for {{clickedTech.name}} will already be checked.</h4>
+    <ul class="edit"><!-- ng-hide="edit" -->
+      <div ng-show="loggedIn" class="smallDivider">
+        <li><input type="checkbox" name="checkboxG5" id="Overall" class="css-checkbox votes" value="Overall">
+        <label for="Overall" class="css-label">Overall</label></li>
+        <li ng-repeat="key in genres"><input type="checkbox" name="checkboxG5" id="{{key.name}}" class="css-checkbox votes" value="{{key.name}}">
+        <label for="{{key.name}}" class="css-label">{{key.name}}</label></li>
+        <button class="btn btn-default" ng-click="vote(); changeVote()">Save Votes</button>
+      </div>
+      <div ng-hide="loggedIn" class="alert alert-warning">
+        You are not logged in.
+      </div>
+    </ul>
+  </div>
 
-  <!-- <button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button> -->
   <div ng-show="edit" class="edit">
     <div ng-show="loggedIn">
       <h4 class="accentBG middle smallDivider" id="techNameEdit"></h4>
-      <!-- <input type="text" id="techNameEdit" class="form-control" placeholder="Technique Name"> -->
       <label for="techLogoEdit">Change logo url</label>
       <input type="text" id="techLogoEdit" class="form-control" placeholder="Technique logo url">
       <label for="techDescriptionEdit" class="topMargin">Edit description</label>
@@ -31,8 +32,6 @@
         <h3 class="accent">Add a Video</h3>
         <input type="text" id="techVideoEdit" class="form-control" placeholder="Video url">
       </div>
-      <!-- <input type="text" class="form-control artVideo" placeholder="Video url" ng-repeat="vid in videos"> -->
-      <!-- <button type="button" class="btn btn-default" ng-click="addVideo()">Add another video</button> -->
 
       <!-- dropdown for checkboxes -->
       <div class="verticalMargins">
@@ -57,7 +56,7 @@
           <!-- <button ng-click="changeGenreCheck()">Done</button> -->
         </ul>
       </div>
-      <button type="button" class="btn btn-default" ng-click="update()">Save changes</button>
+      <button type="button" class="btn btn-danger" ng-click="update()">Save changes</button>
     </div>
     <div ng-hide="loggedIn">
       <h2>Sorry, you are not logged in</h2>
