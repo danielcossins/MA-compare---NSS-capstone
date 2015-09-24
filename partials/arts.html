@@ -1,6 +1,7 @@
-<div id="arts" ng-repeat="key in arts | filter: search">
-  <a href="{{'/#/arts/'+key.name}}"><div class="eachArt mouseover">
-    <h3>{{key.name}}</h3>
-    <img src="{{key.image}}">
+<h3 class="accentBG middle topMargin bottomMargin verticalMargins">Select from any one of these martial arts to view details, included engagement styles, and included techniques.</h3>
+<div ng-repeat="key in arts | filter: search">
+  <a href="{{'/#/arts/'+key.name}}"><div class="eachArt mouseover col-sm-4 col-md-3">
+    <h3 class="header middle accentBG">{{key.name}}</h3>
+    <img src="{{key.image}}" width="100%">
   </div></a>
 </div>

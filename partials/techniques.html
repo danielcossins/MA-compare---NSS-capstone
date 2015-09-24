@@ -1,6 +1,7 @@
-<div id="techniques" ng-repeat="key in techs | filter: search">
-  <a href="{{'/#/techniques/'+key.name}}"><div class="eachTech col-sm-4 mouseover">
-    <img src="{{key.image}}" width="100%">
-    <h4>{{key.name}}</h4>
+<h3 class="accentBG middle topMargin bottomMargin verticalMargins">Select from any one of these techniques to view details, arts that practice that technique, related engagement styles, and video demos.</h3>
+<div ng-repeat="key in techs | filter: search">
+  <a href="{{'/#/techniques/'+key.name}}"><div class="eachTech col-sm-4 col-md-3 mouseover">
+    <img class="middle" src="{{key.image}}" width="100%">
+    <h2 class="middle header accentBG">{{key.name}}</h2>
   </div></a>
 </div>

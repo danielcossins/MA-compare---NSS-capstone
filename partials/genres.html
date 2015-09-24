@@ -1,6 +1,7 @@
-<div id="genres" ng-repeat="key in genres | filter: search">
-  <a href="{{'/#/genres/'+key.name}}"><div class="col-sm-3 eachGenre mouseover">
-    <img src="{{key.image}}" width="100%">
-    <h4>{{key.name}}</h4>
+<h3 class="blackBG middle topMargin bottomMargin verticalMargins">Select from any one of these engagement styles to view details, related arts, and related techniques.</h3>
+<div ng-repeat="key in genres | filter: search">
+  <a href="{{'/#/genres/'+key.name}}"><div class="col-sm-4 col-md-3 eachGenre mouseover">
+    <img class="middle" src="{{key.image}}" width="100%">
+    <h4 class="header blackBG middle">{{key.name}}</h4>
   </div></a>
 </div>
