@@ -55,8 +55,8 @@ app.controller("AuthCtrl",
           if(result===false){
             var userObj = {
               uid: authData.uid,
-              arts: {Overall: 0},
-              techniques: {Overall: 0},
+              arts: {Overall: "no vote"},
+              techniques: {Overall: "no vote"},
               email: authData.password.email,
               image: authData.password.profileImageURL
             };

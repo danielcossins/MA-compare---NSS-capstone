@@ -6,5 +6,6 @@ app.controller("UserCtrl",
   function($scope, $rootScope, $location, $firebaseArray) {
     var ref = new Firebase("https://ma-compare.firebaseio.com/users");
     $scope.users = $firebaseArray(ref);
+    console.log($scope.users);
   }
 ]);

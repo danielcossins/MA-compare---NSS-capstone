@@ -7,6 +7,8 @@ app.controller("RootCtrl",
     var ref = new Firebase("https://ma-compare.firebaseio.com/");
     $scope.auth = $firebaseAuth(ref);
 
+    $scope.user = $rootScope.user;
+
     $scope.search = "";
 
     $scope.logout = function(){

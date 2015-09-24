@@ -9,7 +9,7 @@ app.controller("ProfileCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
   // var ref2 = new Firebase("https://ma-compare.firebaseio.com/");
   // $scope.auth = $firebaseAuth(ref2);
-
+  console.log($routeParams);
 
 
     var ref = new Firebase("https://ma-compare.firebaseio.com/users"); 
@@ -20,7 +20,8 @@ app.controller("ProfileCtrl",
     $scope.users.$loaded()
     .then(function(){
       for(var i=0; i<$scope.users.length; i++){
-        if($scope.users[i].uid===$rootScope.user.uid){
+        console.log($routeParams, $scope.users[i].uid);
+        if($scope.users[i].uid===$routeParams.uid){
           $scope.clickedUser = $scope.users[i];
           console.log($scope.clickedUser);
         }

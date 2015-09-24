@@ -1,2 +1,8 @@
-<h3 ng-repeat="key in users">{{key.uid}}</h3>
-<h1>{{asdf}}</h1>
+<div ng-repeat="key in users | filter: search">
+  <a href="{{'/#/profile/'+key.uid}}">
+  <div class="col-sm-4 mouseover">
+    <h6 class="header blackBG middle">{{key.email}}</h6>
+    <img class="middle" src="{{key.image}}">
+  </div>
+</a>
+</div>

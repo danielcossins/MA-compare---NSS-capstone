@@ -67,7 +67,7 @@ app.config(['$routeProvider',
         controller: 'RankCtrl'
       })
       //user profile
-      .when('/profile', {
+      .when('/profile/:uid', {
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl'
       })
