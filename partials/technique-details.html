@@ -125,8 +125,9 @@
       You must login in order to comment
     </div>
 
-    <div ng-repeat="key in clickedTech.comments">
-      <h3 class="accent">{{key.email}}</h3>
+    <div class="edit" ng-repeat="key in clickedTech.comments">
+      <h4 class="accentBG">{{key.email}}</h4>
+      <h6 class="accent">{{key.date}}</h6>
       <p>{{key.body}}</p>
     </div>
   </div>

@@ -282,8 +282,14 @@ app.controller("TechDetailsCtrl",
         body: angular.element("#addComment").val(),
         email: $rootScope.user.password.email,
         image: $rootScope.user.password.profileImageURL,
-        uid: $rootScope.user.uid
+        uid: $rootScope.user.uid,
+        date: Date()
       };
+      if($scope.clickedTech.comments===undefined){
+        $scope.clickedTech.comments = [];
+      }
+      $scope.clickedTech.comments.push(comment);
+      $scope.techs.$save($scope.clickedTech);
     };
 
 
