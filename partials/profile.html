@@ -1,6 +1,6 @@
 <img ng-if="clickedUser.userImage == false" class="middle" src="{{clickedUser.image}}" width="30%">
 <img ng-if="clickedUser.userImage != false" class="middle" src="{{clickedUser.userImage}}" width="30%">
-<button type="button" class="btn btn-default" ng-click="changeEdit()">Edit</button>
+<button type="button" class="btn btn-default middle verticalMargins" ng-click="changeEdit()">Edit</button>
   <div ng-show="edit">
     <div class="divider">
       <h3 class="accent">Change user logo</h3>
@@ -20,7 +20,9 @@
       <button type="button" class="btn btn-default" ng-click="changeName(); changeEdit()">Save</button>
     </div>
   </div>
-<h3 class="middle accentBG">{{clickedUser.email}}</h3>
+<h3 class="middle accentBG"><span ng-if="clickedUser.username == false">No Username</span><span ng-if="clickedUser.username != false">{{clickedUser.username}}</span> </h3>
+<br>
+<h4 class="middle accentBG">Email: <br>{{clickedUser.email}}</h4>
 <h4 class="accent topMargin middle">Voted Arts</h4>
 <ul>
   <li class="verticalMargins middle" ng-repeat="(key, art) in clickedUser.arts">{{key}}: <a ng-if="art != 'no vote'" href="{{'/#/arts/'+art}}"><span class="accent">{{art}}</span></a>
