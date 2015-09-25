@@ -58,7 +58,9 @@ app.controller("AuthCtrl",
               arts: {Overall: "no vote"},
               techniques: {Overall: "no vote"},
               email: authData.password.email,
-              image: authData.password.profileImageURL
+              image: authData.password.profileImageURL,
+              username: "",
+              userImage: ""
             };
             console.log(userObj);
             $scope.users.$add(userObj);

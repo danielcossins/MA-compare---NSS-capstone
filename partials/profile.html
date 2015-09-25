@@ -1,5 +1,5 @@
-<img ng-if="clickedUser.userImage == false" class="middle" src="{{clickedUser.image}}" width="30%">
-<img ng-if="clickedUser.userImage != false" class="middle" src="{{clickedUser.userImage}}" width="30%">
+<img ng-if="clickedUser.userImage == ''" class="middle" src="{{clickedUser.image}}" width="30%">
+<img ng-if="clickedUser.userImage != ''" class="middle" src="{{clickedUser.userImage}}" width="30%">
 <button type="button" class="btn btn-default middle verticalMargins" ng-click="changeEdit()">Edit</button>
   <div ng-show="edit">
     <div class="divider">
@@ -20,7 +20,7 @@
       <button type="button" class="btn btn-default" ng-click="changeName(); changeEdit()">Save</button>
     </div>
   </div>
-<h3 class="middle accentBG"><span ng-if="clickedUser.username == false">No Username</span><span ng-if="clickedUser.username != false">{{clickedUser.username}}</span> </h3>
+<h3 class="middle accentBG"><span ng-if="clickedUser.username == ''">No Username</span><span ng-if="clickedUser.username != ''">{{clickedUser.username}}</span> </h3>
 <br>
 <h4 class="middle accentBG">Email: <br>{{clickedUser.email}}</h4>
 <h4 class="accent topMargin middle">Voted Arts</h4>
