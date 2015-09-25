@@ -8,7 +8,10 @@ app.controller("ProfileCtrl",
    "uploadImage",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
 
-  console.log($routeParams);
+    console.log($routeParams);
+    $scope.showEdit = false;
+
+
     $scope.edit = false;
 
 
@@ -24,6 +27,11 @@ app.controller("ProfileCtrl",
         if($scope.users[i].uid===$routeParams.uid){
           $scope.clickedUser = $scope.users[i];
           console.log($scope.clickedUser);
+          
+          console.log($scope.clickedUser.uid, $rootScope.user.uid);
+          if($scope.clickedUser.uid === $rootScope.user.uid){
+            $scope.showEdit = true;
+          }
         }
       }
     });

@@ -1,6 +1,6 @@
 <img ng-if="clickedUser.userImage == ''" class="middle" src="{{clickedUser.image}}" width="30%">
 <img ng-if="clickedUser.userImage != ''" class="middle" src="{{clickedUser.userImage}}" width="30%">
-<button type="button" class="btn btn-default middle verticalMargins" ng-click="changeEdit()">Edit</button>
+<button type="button" class="btn btn-default middle verticalMargins" ng-show="showEdit" ng-click="changeEdit()">Edit</button>
   <div ng-show="edit">
     <div class="divider">
       <h3 class="accent">Change user logo</h3>
