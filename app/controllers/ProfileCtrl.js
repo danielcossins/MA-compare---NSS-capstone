@@ -43,7 +43,7 @@ app.controller("ProfileCtrl",
     $scope.savePhoto = function(){
       //This deals with photo gallary
       var image = angular.element("#profileUrl").val();
-      if(angular.element("#profileUpload").val()!==undefined){
+      if($scope.photoUpload!==undefined){
         image = $scope.photoUpload;
       }
       console.log(image);
