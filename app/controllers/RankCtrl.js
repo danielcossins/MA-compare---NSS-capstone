@@ -73,10 +73,18 @@ app.controller("RankCtrl",
                 $scope.art.name = "No award";
                 $scope.art.image = "";
               }
+              if($scope.arts[j].votes[$scope.genres[k].name]===undefined){
+                $scope.arts[j].votes[$scope.genres[k].name] = 0;
+              }
+              if($scope.arts[j].votes[$scope.genres[k].name]===0){
+                $scope.arts[j].name = "No award";
+                $scope.arts[j].image = "";
+              }
               if($scope.arts[j].votes[$scope.genres[k].name]>$scope.art.votes[$scope.genres[k].name]){
                 $scope.art = $scope.arts[j];
                 //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
                 $scope.bestArtsArr[k] = $scope.art;
+                break;
               }
             }
             console.log("for "+$scope.genres[k].name, $scope.art);
@@ -107,6 +115,7 @@ app.controller("RankCtrl",
                 $scope.tech = $scope.techs[l];
                 //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
                 $scope.bestTechsArr[k] = $scope.tech;
+                break;
               }
             }
             console.log($scope.bestTechsArr);

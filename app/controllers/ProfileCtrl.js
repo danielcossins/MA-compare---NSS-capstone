@@ -7,10 +7,7 @@ app.controller("ProfileCtrl",
    "$firebaseAuth",
    "uploadImage",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
-    //CSS
-    angular.element(".active").removeClass("active");
-    angular.element("#users").addClass("active");
-    /////
+
   console.log($routeParams);
 
 
