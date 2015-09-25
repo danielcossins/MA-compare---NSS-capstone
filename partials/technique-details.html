@@ -111,4 +111,23 @@
     <div class="panel-body panel panel-default">
       <div class="middle" id="video"></div>
   </div>
+
+  <div id="techComments" class="row panel panel-default">
+    <div class="panel-heading">
+      <h3 class="middle accent">Comments</h3>
+    </div>
+    <div ng-show="loggedIn" class="smallDivider">
+      <label for="addComment" class="topMargin">Add a comment</label>
+      <textarea id="addComment" class="form-control verticalMargins" rows="5" placeholder="Say something"></textarea>
+      <button type="button" ng-click="addComment()" class="btn btn-danger">Publish</button>
+    </div>
+    <div ng-hide="loggedIn" class="alert alert-warning">
+      You must login in order to comment
+    </div>
+
+    <div ng-repeat="key in clickedTech.comments">
+      <h3 class="accent">{{key.email}}</h3>
+      <p>{{key.body}}</p>
+    </div>
+  </div>
 </div>

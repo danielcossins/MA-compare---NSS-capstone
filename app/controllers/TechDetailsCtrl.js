@@ -277,6 +277,15 @@ app.controller("TechDetailsCtrl",
       }
     };
 
+    $scope.addComment = function(){
+      var comment = {
+        body: angular.element("#addComment").val(),
+        email: $rootScope.user.password.email,
+        image: $rootScope.user.password.profileImageURL,
+        uid: $rootScope.user.uid
+      };
+    };
+
 
     // function getArtBoxes(){
     //   var allTechniqueChecksArr = angular.element(".checkArts");
