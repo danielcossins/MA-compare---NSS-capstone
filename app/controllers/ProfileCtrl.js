@@ -9,6 +9,7 @@ app.controller("ProfileCtrl",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, $firebaseAuth, uploadImage) {
 
   console.log($routeParams);
+    $scope.edit = false;
 
 
     var ref = new Firebase("https://ma-compare.firebaseio.com/users"); 
@@ -49,6 +50,22 @@ app.controller("ProfileCtrl",
       console.log(image);
       $scope.clickedUser.userImage = image;
       $scope.users.$save($scope.clickedUser);
+    };
+
+    $scope.changeName = function(){
+      var name = angular.element("#username").val();
+      if(name!==""){
+        $scope.clickedUser.username = name;
+        $scope.users.$save($scope.clickedUser);
+      }
+    };
+
+    $scope.changeEdit = function(){
+      if($scope.edit){
+        $scope.edit=false;
+      }else{
+        $scope.edit=true;
+      }
     };
   }
 ]);
