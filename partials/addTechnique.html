@@ -17,8 +17,8 @@
       <label for="{{genre.name}}addTech" class="css-label genres">{{genre.name}}</label>
       <img src="{{genre.image}}" width="30px">
   </div>
-  <a href="/#/" class="btn btn-default gray" ng-click="saveToFirebase()">Add this technique</a>
+  <a href="/#/" class="btn btn-primary" ng-click="saveToFirebase()">Add this technique</a>
 </div>
-<div ng-hide="loggedIn">
-  <h1>Can't do this cause you ain't logged in</h1>
+<div ng-hide="loggedIn" class="alert alert-warning">
+  <h1>Sorry, you are not logged in</h1>
 </div>
