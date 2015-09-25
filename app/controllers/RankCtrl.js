@@ -103,36 +103,33 @@ app.controller("RankCtrl",
             $scope.bestArtsArr[k] = art;
 
 
-          //   // $scope.tech = {
-          //   //   name: "No award"
-          //   // };
-          //   $scope.tech = $scope.techs[$scope.techs.length-1];
-          //   $scope.bestTechsArr.push($scope.tech);
-          //   console.log($scope.tech);
-          //   /////POSSIBLE BUG: DOESN"T LOAD $scope.techs if remove console.log
-          //   console.log($scope.techs);
-          //   //might need to move all of this to $scope.techs.$loaded()
-          //   console.log("$scope.tech", $scope.tech);
-          //   for(var l=0; l<$scope.techs.length; l++){
-          //     if($scope.tech.votes[$scope.genres[k].name]===undefined){
-          //       $scope.tech.votes[$scope.genres[k].name] = 0;
-          //     }
-          //     if($scope.techs[l].votes[$scope.genres[k].name]===undefined){
-          //       $scope.techs[l].votes[$scope.genres[k].name] = 0;
-          //     }
-          //     if($scope.techs[l].votes[$scope.genres[k].name]>$scope.tech.votes[$scope.genres[k].name]){
-          //       $scope.tech = $scope.techs[l];
-          //       //IF THERE IS A BUG, THIS IS PROBABLY WHERE IT IS
-          //     }
-          //   }
-          //   if($scope.tech.votes[$scope.genres[k].name]===undefined || $scope.tech.votes[$scope.genres[k].name]===0){
-          //     $scope.tech.name = "No Award";
-          //     $scope.tech.image = "";
-          //   }
-          //   console.log("for "+$scope.genres[k].name, $scope.tech);
-          //   $scope.bestTechsArr[k] = $scope.tech;
+            // tech = $scope.techs[$scope.techs.length-1];
+            var tech = {
+              name: "No award",
+              image: "",
+              votes: {
+
+              }
+            };
+            $scope.bestTechsArr.push(tech);
+            console.log(tech);
+            console.log($scope.techs);
+            console.log("$scope.tech", tech);
+            for(var l=0; l<$scope.techs.length; l++){
+              if(tech.votes[$scope.genres[k].name]===undefined){
+                tech.votes[$scope.genres[k].name] = 0;
+              }
+              if($scope.techs[l].votes[$scope.genres[k].name]===undefined){
+                $scope.techs[l].votes[$scope.genres[k].name] = 0;
+              }
+              if($scope.techs[l].votes[$scope.genres[k].name]>tech.votes[$scope.genres[k].name]){
+                tech = $scope.techs[l];
+              }
+            }
+            console.log("for "+$scope.genres[k].name, tech);
+            $scope.bestTechsArr[k] = tech;
           }
-          // console.log($scope.bestTechsArr);
+          console.log($scope.bestTechsArr);
         })
         .catch(function(err) {
           console.error(err);
