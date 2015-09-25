@@ -87,6 +87,22 @@ app.controller("TechDetailsCtrl",
               angular.element("#video").append("<br><iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.clickedTech.videos[q]+"' allowfullscreen></iframe>");
             }
           }
+          for(var w=0; w<$scope.clickedTech.comments.length; w++){
+            for(var p=0; p<$scope.users.length; p++){
+              if($scope.users[p].uid===$scope.clickedTech.comments[w].uid){
+                if($scope.users[p].username!==""){
+                  $scope.clickedTech.comments[w].name=$scope.users[p].username;
+                }else{
+                  $scope.clickedTech.comments[w].name=$scope.users[p].email;
+                }
+                if($scope.users[p].userImage!==""){
+                  $scope.clickedTech.comments[w].image = $scope.users[p].userImage;
+                }else{
+                  $scope.clickedTech.commentspw[w].image = $scope.users[p].image;
+                }
+              }
+            }
+          }
         }
       }
 
@@ -281,20 +297,9 @@ app.controller("TechDetailsCtrl",
       console.log($scope.$parent.currentUser);
       var comment = {
         body: angular.element("#addComment").val(),
-        name: $rootScope.user.password.email,
-        image: $rootScope.user.password.profileImageURL,
         uid: $rootScope.user.uid,
         date: Date()
       };
-      if($scope.$parent.currentUser.username!==""){
-        comment.name = $scope.$parent.currentUser.username;
-      }
-      if($scope.$parent.currentUser.userImage!==""){
-        comment.image = $scope.$parent.currentUser.userImage;
-      }
-      if($scope.clickedTech.comments===undefined){
-        $scope.clickedTech.comments = [];
-      }
       $scope.clickedTech.comments.push(comment);
       $scope.techs.$save($scope.clickedTech);
     };
