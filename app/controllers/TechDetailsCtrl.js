@@ -278,13 +278,20 @@ app.controller("TechDetailsCtrl",
     };
 
     $scope.addComment = function(){
+      console.log($scope.$parent.currentUser);
       var comment = {
         body: angular.element("#addComment").val(),
-        email: $rootScope.user.password.email,
+        name: $rootScope.user.password.email,
         image: $rootScope.user.password.profileImageURL,
         uid: $rootScope.user.uid,
         date: Date()
       };
+      if($scope.$parent.currentUser.username!==""){
+        comment.name = $scope.$parent.currentUser.username;
+      }
+      if($scope.$parent.currentUser.userImage!==""){
+        comment.image = $scope.$parent.currentUser.userImage;
+      }
       if($scope.clickedTech.comments===undefined){
         $scope.clickedTech.comments = [];
       }
