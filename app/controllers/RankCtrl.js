@@ -38,6 +38,7 @@ app.controller("RankCtrl",
             $scope.bestArt = $scope.arts[i];
           }
         }
+        console.log($scope.bestArt);
 
 
 
@@ -59,6 +60,7 @@ app.controller("RankCtrl",
               $scope.bestTech = $scope.techs[i];
             }
           }
+          console.log($scope.bestTech);
 
 
 
@@ -103,7 +105,7 @@ app.controller("RankCtrl",
             // $scope.tech = {
             //   name: "No award"
             // };
-            $scope.tech = $scope.techs[0];
+            $scope.tech = $scope.techs[$scope.techs.length-1];
             $scope.bestTechsArr.push($scope.tech);
             console.log($scope.tech);
             /////POSSIBLE BUG: DOESN"T LOAD $scope.techs if remove console.log
