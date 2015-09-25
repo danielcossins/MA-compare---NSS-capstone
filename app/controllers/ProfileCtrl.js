@@ -27,30 +27,28 @@ app.controller("ProfileCtrl",
       }
     });
 
-    // $scope.setUpload = function(){
-    //   console.log(angular.element("#profileUpload").val());
-    //   // $scope.photoUpload = angular.element("#exampleInputFile").val();
-    //   // console.log(uploadImage());
-    //   // $scope.photoUpload = uploadImage();
-    //   var xhr = uploadImage("profileUpload");
-    //   angular.element("#profile").html("<h5 class='accent'>Please wait . . .</h5>");
-    //   xhr.onload = function() {
-    //     $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
-    //     angular.element("#profile").html("<img src='"+$scope.photoUpload+"' width='50px'>");
-    //   };
-    // };
+    $scope.setUpload = function(){
+      console.log(angular.element("#profileUpload").val());
+      // $scope.photoUpload = angular.element("#exampleInputFile").val();
+      // console.log(uploadImage());
+      // $scope.photoUpload = uploadImage();
+      var xhr = uploadImage("profileUpload");
+      angular.element("#profile").html("<h5 class='accent'>Please wait . . .</h5>");
+      xhr.onload = function() {
+        $scope.photoUpload = JSON.parse(xhr.responseText).data.link;
+        angular.element("#profile").html("<img src='"+$scope.photoUpload+"' width='50px'>");
+      };
+    };
 
-    // $scope.savePhoto = function(){
-    //   //This deals with photo gallary
-    //   var image = "";
-    //   if(angular.element("#profileUpload").val()!==undefined){
-    //     image = angular.element("#profileUpload").val();
-    //   }else{
-    //     if(angular.element("#profileUrl").val()!==""){
-    //       image = angular.element("#profileUrl").val();
-    //     }
-    //   }
-    //   $scope.auth.$save(image);
-    // };
+    $scope.savePhoto = function(){
+      //This deals with photo gallary
+      var image = angular.element("#profileUrl").val();
+      if(angular.element("#profileUpload").val()!==undefined){
+        image = $scope.photoUpload;
+      }
+      console.log(image);
+      $scope.clickedUser.userImage = image;
+      $scope.users.$save($scope.clickedUser);
+    };
   }
 ]);

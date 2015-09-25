@@ -1,5 +1,6 @@
-<img class="middle" src="{{clickedUser.image}}" width="30%">
-  <!-- <div class="divider">
+<img ng-if="clickedUser.userImage == false" class="middle" src="{{clickedUser.image}}" width="30%">
+<img ng-if="clickedUser.userImage != false" class="middle" src="{{clickedUser.userImage}}" width="30%">
+  <div class="divider">
     <h3 class="accent">Change user logo</h3>
     <input type="text" id="profileUrl" class="form-control" placeholder="Photo url">
     <h4 class="accent smallDivider">or</h4>
@@ -10,7 +11,7 @@
       <button type="button" ng-click="setUpload()">Upload</button>
     </div>
     <button type="button" class="btn btn-default" ng-click="savePhoto()">Save</button>
-  </div> -->
+  </div>
 <h3 class="middle accentBG">{{clickedUser.email}}</h3>
 <h4 class="accent topMargin middle">Voted Arts</h4>
 <ul>
