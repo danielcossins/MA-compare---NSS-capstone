@@ -16,7 +16,13 @@ app.controller("MainCtrl",
     .then(function() {
       console.log($scope.arts);
       $scope.bestArt = $scope.arts[0];
+      if($scope.bestArt.votes.Overall===undefined){
+        $scope.bestArt.votes.Overall=0;
+      }
       for(var i=0; i<$scope.arts.length; i++){
+        if($scope.arts[i].votes.Overall===undefined){
+          $scope.arts[i].votes.Overall=0;
+        }
         if($scope.arts[i].votes.Overall > $scope.bestArt.votes.Overall){
           $scope.bestArt = $scope.arts[i];
         }
@@ -39,7 +45,13 @@ app.controller("MainCtrl",
     .then(function() {
       console.log($scope.techs);
       $scope.bestTech = $scope.techs[0];
+      if($scope.bestTech.votes.Overall===undefined){
+        $scope.bestTech.votes.Overall=0;
+      }
       for(var i=0; i<$scope.techs.length; i++){
+        if($scope.techs[i].votes.Overall===undefined){
+          $scope.techs[i].votes.Overall=0;
+        }
         if($scope.techs[i].votes.Overall > $scope.bestTech.votes.Overall){
           $scope.bestTech = $scope.techs[i];
         }
