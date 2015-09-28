@@ -118,6 +118,9 @@ img {
 #techHeader {
   width: 80%; }
 
+#footer {
+  bottom: 0; }
+
 .divider {
   margin-top: 40px;
   border-top: 2px solid #e5e5e5;
