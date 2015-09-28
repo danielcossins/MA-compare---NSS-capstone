@@ -1,8 +1,10 @@
 <div ng-repeat="key in users | filter: search">
   <a href="{{'/#/profile/'+key.uid}}">
-  <div class="col-sm-4 mouseover">
-    <h6 class="header blackBG middle">{{key.email}}</h6>
-    <img class="middle" src="{{key.image}}">
+  <div class="evenHeightGenres col-sm-4 mouseover">
+    <h4 ng-if="key.username != ''" class="header blackBG middle">{{key.username}}</h4>
+    <h4 ng-if="key.username == ''" class="header blackBG middle">{{key.email}}</h4>
+    <img ng-if="key.userImage != ''" class="middle imageFitArts" src="{{key.userImage}}">
+    <img ng-if="key.userImage == ''" class="middle imageFitArts" src="{{key.image}}">
   </div>
 </a>
 </div>
