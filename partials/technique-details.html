@@ -36,7 +36,7 @@
       <!-- dropdown for checkboxes -->
       <div class="verticalMargins">
         <button class="btn btn-default" type="button" ng-click="checkCheckboxes(); changeArtsCheck()">
-          Included Arts
+          Arts That Use This Technique
         </button>
         <ul class="smallDivider" ng-show="artCheck">
           <!-- <li ng-repeat="key in techniques"><input type="checkbox" class="checkTechniques" value="{{key.name}}">{{key.name}}</li> -->
@@ -47,7 +47,7 @@
       </div>
       <div class="verticalMargins">
         <button class="btn btn-default" type="button" ng-click="checkCheckboxes(); changeGenreCheck()">
-          Included Genres
+          Styles of Engagement
         </button>
         <ul ng-show="genreCheck" class="smallDivider">
           <!-- <li ng-repeat="key in genres"><input type="checkbox" class="checkGenres" value="{{key.name}}">{{key.name}}</li> -->
@@ -70,7 +70,7 @@
 
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3 class="middle accent">Included Arts</h3>
+      <h3 class="middle accent">Arts That Use This Technique</h3>
     </div>
     <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="art in matchingArts">
       <div class="mouseover">
@@ -88,7 +88,7 @@
 
   <div class="row panel panel-default">
     <div class="panel-heading">
-      <h3 class="middle accent">Covered Genres</h3>
+      <h3 class="middle accent">Styles of Engagement</h3>
     </div>
     <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="genre in matchingGenres">
       <div class="mouseover">
