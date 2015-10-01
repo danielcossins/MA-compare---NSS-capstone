@@ -84,7 +84,7 @@ app.controller("TechDetailsCtrl",
               if($scope.clickedTech.videos[q].indexOf('=') !== -1){
                 $scope.clickedTech.videos[q] = $scope.clickedTech.videos[q].split("=")[1];
               }
-              angular.element("#video").append("<br><iframe width='420' height='315' src='http://www.youtube.com/embed/"+$scope.clickedTech.videos[q]+"' allowfullscreen></iframe>");
+              angular.element("#video").append("<br><iframe width='80%' height='315' src='http://www.youtube.com/embed/"+$scope.clickedTech.videos[q]+"' allowfullscreen></iframe>");
             }
           }
           for(var w=0; w<$scope.clickedTech.comments.length; w++){
