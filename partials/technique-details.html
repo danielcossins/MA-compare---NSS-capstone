@@ -72,11 +72,11 @@
     <div class="panel-heading">
       <h3 class="middle accent">Arts That Use This Technique</h3>
     </div>
-    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="art in matchingArts">
+    <div class="evenHeightGenres panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="art in matchingArts">
       <div class="mouseover">
       <a href="{{'/#/arts/'+art.name}}">
         <div class="panel-body">
-          <img src="{{art.image}}" alt="Image" width="100%" max-width="200px">
+          <img src="{{art.image}}" alt="Image"  class="middle imageFitLittles">
         </div>
         <div class="panel-heading">
           <h4 class="middle accent">{{art.name}}</h4>
@@ -90,11 +90,11 @@
     <div class="panel-heading">
       <h3 class="middle accent">Styles of Engagement</h3>
     </div>
-    <div class="panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="genre in matchingGenres">
+    <div class="evenHeightGenres panel-body panel panel-default col-md-2 col-sm-3 col-xs-6" ng-repeat="genre in matchingGenres">
       <div class="mouseover">
       <a href="{{'/#/genres/'+genre.name}}">
         <div class="panel-body">
-          <img src="{{genre.image}}" alt="Image" width="100%" max-width="200px">
+          <img src="{{genre.image}}" alt="Image" class="middle imageFitLittles">
         </div>
         <div class="panel-heading">
           <h4 class="middle accent">{{genre.name}}</h4>

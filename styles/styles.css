@@ -64,6 +64,10 @@ p {
   max-height: 200px;
   max-width: 100%; }
 
+.imageFitLittles {
+  max-height: 170px;
+  max-width: 100%; }
+
 a {
   color: black; }
 
