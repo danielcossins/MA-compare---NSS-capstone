@@ -117,6 +117,9 @@ img {
 #userInfo {
   float: right; }
 
+.small {
+  max-height: 30px; }
+
 .frontImage {
   max-height: 570px; }
 

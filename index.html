@@ -48,7 +48,7 @@
           <!-- <button type="submit" class="btn btn-default">Submit</button> -->
           <a href="/#/login" ng-hide="user">Login</a>
           <div ng-show="user" id="userInfo">
-            <a href="{{'/#/profile/'+user.uid}}"><img ng-if="currentUser.userImage == ''" src="{{user.password.profileImageURL}}" width="50px"><img ng-if="currentUser.userImage != ''" src="{{currentUser.userImage}}" width="50px"></a>
+            <a href="{{'/#/profile/'+user.uid}}"><img class="small" ng-if="currentUser.userImage == ''" src="{{user.password.profileImageURL}}"><img class="small" ng-if="currentUser.userImage != ''" src="{{currentUser.userImage}}"></a>
             <a href="" ng-click="logout()">Logout</a>
           </div>
         </form>
