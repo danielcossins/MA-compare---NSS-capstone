@@ -35,24 +35,24 @@
 
 <h2 class="divider">Top Rankings <span><button class="btn btn-xs btn-danger"><a href="/#/rankings">View All Rankings >></a></button></span></h2>
 
-<div class="evenHeightArts panel panel-default col-sm-6">
+<div class="panel panel-default col-sm-6">
   <div class="panel-heading">
     <h2 class="middle accentBG">Voted best overall art</h2>
   </div>
   <a href="{{'/#/arts/'+bestArt.name}}">
-    <div class="panel-body mouseover">
+    <div class="evenHeightArts panel-body mouseover">
       <img class="middle mainRank" src="{{bestArt.image}}" width="50%" alt="Image">
       <h2 class="media-heading middle accent verticalMargins">{{bestArt.name}}</h2>
       <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestArt.votes.Overall}}</span></h4>
     </div>
   </a>
 </div>
-<div class="evenHeightArts panel panel-default col-sm-6">
+<div class="panel panel-default col-sm-6">
   <div class="panel-heading">
     <h2 class="middle accentBG">Voted best overall technique</h2>
   </div>
   <a href="{{'/#/techniques/'+bestTech.name}}">
-    <div class="panel-body mouseover">
+    <div class="evenHeightArts panel-body mouseover">
       <img class="middle mainRank" src="{{bestTech.image}}" width="50%" alt="Image">
       <h2 class="media-heading middle accent verticalMargins">{{bestTech.name}}</h2>
       <h4 class="label label-default middle verticalMargins">Number of votes: <span class="badge">{{bestTech.votes.Overall}}</span></h4>
