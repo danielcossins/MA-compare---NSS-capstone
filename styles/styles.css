@@ -60,6 +60,10 @@ p {
   max-height: 240px;
   max-width: 100%; }
 
+.imageFitTechs {
+  max-height: 200px;
+  max-width: 100%; }
+
 .imageFitPhotos {
   max-height: 200px;
   max-width: 100%; }
