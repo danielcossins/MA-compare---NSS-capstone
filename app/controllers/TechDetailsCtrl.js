@@ -87,18 +87,20 @@ app.controller("TechDetailsCtrl",
               angular.element("#video").append("<br><iframe width='80%' height='315' src='http://www.youtube.com/embed/"+$scope.clickedTech.videos[q]+"' allowfullscreen></iframe>");
             }
           }
-          for(var w=0; w<$scope.clickedTech.comments.length; w++){
-            for(var p=0; p<$scope.users.length; p++){
-              if($scope.users[p].uid===$scope.clickedTech.comments[w].uid){
-                if($scope.users[p].username!==""){
-                  $scope.clickedTech.comments[w].name=$scope.users[p].username;
-                }else{
-                  $scope.clickedTech.comments[w].name=$scope.users[p].email;
-                }
-                if($scope.users[p].userImage!==""){
-                  $scope.clickedTech.comments[w].image = $scope.users[p].userImage;
-                }else{
-                  $scope.clickedTech.commentspw[w].image = $scope.users[p].image;
+          if($scope.clickedTech.comments!==undefined){
+            for(var w=0; w<$scope.clickedTech.comments.length; w++){
+              for(var p=0; p<$scope.users.length; p++){
+                if($scope.users[p].uid===$scope.clickedTech.comments[w].uid){
+                  if($scope.users[p].username!==""){
+                    $scope.clickedTech.comments[w].name=$scope.users[p].username;
+                  }else{
+                    $scope.clickedTech.comments[w].name=$scope.users[p].email;
+                  }
+                  if($scope.users[p].userImage!==""){
+                    $scope.clickedTech.comments[w].image = $scope.users[p].userImage;
+                  }else{
+                    $scope.clickedTech.comments[w].image = $scope.users[p].image;
+                  }
                 }
               }
             }
@@ -118,7 +120,7 @@ app.controller("TechDetailsCtrl",
             }
           }
         }
-        console.log($scope.matchingGenres);
+        console.log("matching genres", $scope.matchingGenres);
       });
 
       $scope.arts.$loaded()
@@ -133,7 +135,7 @@ app.controller("TechDetailsCtrl",
             }
           }
         }
-        console.log($scope.matchingArts);
+        console.log("matching arts", $scope.matchingArts);
       });
     })
     .catch(function(err) {
