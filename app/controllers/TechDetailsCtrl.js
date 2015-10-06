@@ -6,6 +6,9 @@ app.controller("TechDetailsCtrl",
    "$rootScope",
    "getCheckboxes",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, getCheckboxes) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     $scope.edit=false;
@@ -302,6 +305,7 @@ app.controller("TechDetailsCtrl",
         uid: $rootScope.user.uid,
         date: Date()
       };
+      document.getElementById("addComment").value = "";
       $scope.clickedTech.comments.push(comment);
       $scope.techs.$save($scope.clickedTech);
     };

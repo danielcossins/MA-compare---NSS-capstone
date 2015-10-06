@@ -7,6 +7,9 @@ app.controller("ArtDetailsCtrl",
    "getCheckboxes",
    "uploadImage",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope, getCheckboxes, uploadImage) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     $scope.edit=false;

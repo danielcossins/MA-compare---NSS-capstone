@@ -5,6 +5,9 @@ app.controller("GenreDetailsCtrl",
    "$location",
    "$rootScope",
   function($scope,  $routeParams, $firebaseArray, $location, $rootScope) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     var ref = new Firebase("https://ma-compare.firebaseio.com/genres"); 
 
     // Data from firebase 

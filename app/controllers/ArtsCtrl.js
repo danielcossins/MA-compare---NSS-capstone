@@ -4,6 +4,9 @@ app.controller("ArtsCtrl",
    "$firebaseArray",
    "$location",
   function($scope,  $routeParams, $firebaseArray, $location) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     var ref = new Firebase("https://ma-compare.firebaseio.com/arts"); 
 
     // Data from firebase 

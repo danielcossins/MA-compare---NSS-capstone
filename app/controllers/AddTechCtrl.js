@@ -8,6 +8,9 @@ app.controller("AddTechCtrl",
    "$rootScope",
    "getCheckboxes",
   function($scope,  $routeParams, $firebaseArray, $location, $http, $firebaseAuth, $rootScope, getCheckboxes) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     var ref = new Firebase("https://ma-compare.firebaseio.com/techniques"); 
 
     // Data from firebase 

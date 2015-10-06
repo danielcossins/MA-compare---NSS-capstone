@@ -6,6 +6,9 @@ app.controller("AuthCtrl",
    "$firebaseAuth",
    "$rootScope",
   function($scope,  $routeParams, $firebaseArray, $location, $firebaseAuth, $rootScope, storage) {
+    //CSS
+    angular.element(".active").removeClass("active");
+    /////
     //to create user info in firebase
     var ref2 = new Firebase("https://ma-compare.firebaseio.com/users");
     $scope.users = $firebaseArray(ref2);
